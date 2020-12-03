@@ -1,0 +1,66 @@
+{% extends "global/Page.html" %}
+{% load otree static %}
+
+{% block title %}
+Regarding the report of each regional manager, please indicate the extent to which you agree or disagree with the following statements.
+{% endblock %}
+
+{% block content %}
+
+
+{{ form.north1.label }}<br>
+<table style="table-layout: fixed; width: 100%;">
+    <tr>
+        <td><center><br></center></td>
+        <td><center><br></center></td>
+        <td><center>{{ form.north1.0.choice_label }}<br>{{ form.north1.0.tag}}</center></td>
+        <td><center><br>{{ form.north1.1.tag}}</center></td>
+        <td><center><br>{{ form.north1.2.tag}}</center></td>
+        <td><center><br>{{ form.north1.3.tag}}</center></td>
+        <td><center>{{ form.north1.4.choice_label }}<br>{{ form.north1.4.tag}}</center></td>
+    </tr>
+</table><br>
+
+{{ form.north2.label }}<br>
+<table style="table-layout: fixed; width: 100%;">
+    <tr>
+        <td><center><br></center></td>
+        <td><center><br></center></td>
+        <td><center>{{ form.north2.0.choice_label }}<br>{{ form.north2.0.tag}}</center></td>
+        <td><center><br>{{ form.north2.1.tag}}</center></td>
+        <td><center><br>{{ form.north2.2.tag}}</center></td>
+        <td><center><br>{{ form.north2.3.tag}}</center></td>
+        <td><center>{{ form.north2.4.choice_label }}<br>{{ form.north2.4.tag}}</center></td>
+    </tr>
+</table><br>
+
+{{ form.south1.label }}<br>
+<table style="table-layout: fixed; width: 100%;">
+    <tr>
+        <td><center><br></center></td>
+        <td><center><br></center></td>
+        <td><center>{{ form.south1.0.choice_label }}<br>{{ form.south1.0.tag}}</center></td>
+        <td><center><br>{{ form.south1.1.tag}}</center></td>
+        <td><center><br>{{ form.south1.2.tag}}</center></td>
+        <td><center><br>{{ form.south1.3.tag}}</center></td>
+        <td><center>{{ form.south1.4.choice_label }}<br>{{ form.south1.4.tag}}</center></td>
+    </tr>
+</table><br>
+
+{{ form.south2.label }}<br>
+<table style="table-layout: fixed; width: 100%;">
+    <tr>
+        <td><center><br></center></td>
+        <td><center><br></center></td>
+        <td><center>{{ form.south2.0.choice_label }}<br>{{ form.south2.0.tag}}</center></td>
+        <td><center><br>{{ form.south2.1.tag}}</center></td>
+        <td><center><br>{{ form.south2.2.tag}}</center></td>
+        <td><center><br>{{ form.south2.3.tag}}</center></td>
+        <td><center>{{ form.south2.4.choice_label }}<br>{{ form.south2.4.tag}}</center></td>
+    </tr>
+</table><br>
+
+    {% next_button %}
+{% endblock %}
+
+

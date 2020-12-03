@@ -1,0 +1,93 @@
+{% extends "global/Page.html" %}
+{% load otree static %}
+
+{% block title %}
+Please indicate the extent to which you agree or disagree with the following statements.
+
+{% endblock %}
+
+{% block content %}
+
+{{ form.unc7.label }}<br>
+<table style="table-layout: fixed; width: 100%;">
+    <tr>
+        <td><center><br></center></td>
+        <td><center><br></center></td>
+        <td><center>{{ form.unc7.0.choice_label }}<br>{{ form.unc7.0.tag}}</center></td>
+        <td><center><br>{{ form.unc7.1.tag}}</center></td>
+        <td><center><br>{{ form.unc7.2.tag}}</center></td>
+        <td><center><br>{{ form.unc7.3.tag}}</center></td>
+        <td><center>{{ form.unc7.4.choice_label }}<br>{{ form.unc7.4.tag}}</center></td>
+    </tr>
+</table><br>
+
+{{ form.unc8.label }}<br>
+<table style="table-layout: fixed; width: 100%;">
+    <tr>
+        <td><center><br></center></td>
+        <td><center><br></center></td>
+        <td><center>{{ form.unc8.0.choice_label }}<br>{{ form.unc8.0.tag}}</center></td>
+        <td><center><br>{{ form.unc8.1.tag}}</center></td>
+        <td><center><br>{{ form.unc8.2.tag}}</center></td>
+        <td><center><br>{{ form.unc8.3.tag}}</center></td>
+        <td><center>{{ form.unc8.4.choice_label }}<br>{{ form.unc8.4.tag}}</center></td>
+    </tr>
+</table><br>
+
+{{ form.unc9.label }}<br>
+<table style="table-layout: fixed; width: 100%;">
+    <tr>
+        <td><center><br></center></td>
+        <td><center><br></center></td>
+        <td><center>{{ form.unc9.0.choice_label }}<br>{{ form.unc9.0.tag}}</center></td>
+        <td><center><br>{{ form.unc9.1.tag}}</center></td>
+        <td><center><br>{{ form.unc9.2.tag}}</center></td>
+        <td><center><br>{{ form.unc9.3.tag}}</center></td>
+        <td><center>{{ form.unc9.4.choice_label }}<br>{{ form.unc9.4.tag}}</center></td>
+    </tr>
+</table><br>
+
+{{ form.unc10.label }}<br>
+<table style="table-layout: fixed; width: 100%;">
+    <tr>
+        <td><center><br></center></td>
+        <td><center><br></center></td>
+        <td><center>{{ form.unc10.0.choice_label }}<br>{{ form.unc10.0.tag}}</center></td>
+        <td><center><br>{{ form.unc10.1.tag}}</center></td>
+        <td><center><br>{{ form.unc10.2.tag}}</center></td>
+        <td><center><br>{{ form.unc10.3.tag}}</center></td>
+        <td><center>{{ form.unc10.4.choice_label }}<br>{{ form.unc10.4.tag}}</center></td>
+    </tr>
+</table><br>
+
+{{ form.unc11.label }}<br>
+<table style="table-layout: fixed; width: 100%;">
+    <tr>
+        <td><center><br></center></td>
+        <td><center><br></center></td>
+        <td><center>{{ form.unc11.0.choice_label }}<br>{{ form.unc11.0.tag}}</center></td>
+        <td><center><br>{{ form.unc11.1.tag}}</center></td>
+        <td><center><br>{{ form.unc11.2.tag}}</center></td>
+        <td><center><br>{{ form.unc11.3.tag}}</center></td>
+         <td><center>{{ form.unc11.4.choice_label }}<br>{{ form.unc11.4.tag}}</center></td>
+    </tr>
+</table><br>
+
+{{ form.unc12.label }}<br>
+<table style="table-layout: fixed; width: 100%;">
+    <tr>
+        <td><center><br></center></td>
+        <td><center><br></center></td>
+        <td><center>{{ form.unc12.0.choice_label }}<br>{{ form.unc12.0.tag}}</center></td>
+        <td><center><br>{{ form.unc12.1.tag}}</center></td>
+        <td><center><br>{{ form.unc12.2.tag}}</center></td>
+        <td><center><br>{{ form.unc12.3.tag}}</center></td>
+        <td><center>{{ form.unc12.4.choice_label }}<br>{{ form.unc12.4.tag}}</center></td>
+    </tr>
+</table><br>
+
+
+    {% next_button %}
+{% endblock %}
+
+

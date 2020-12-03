@@ -1,0 +1,60 @@
+{% extends "global/Page.html" %}
+{% load otree static %}
+
+{% block title %}
+I felt that ............................. if I reported the risks that I was exposed to.
+{% endblock %}
+
+{% block content %}
+{{ form.sup6.label }}<br>
+<table style="table-layout: fixed; width: 100%;">
+    <tr>
+        <td><center><br></center></td>
+        <td><center>{{ form.sup6.0.choice_label }}<br>{{ form.sup6.0.tag}}</center></td>
+        <td><center><br>{{ form.sup6.1.tag}}</center></td>
+        <td><center><br>{{ form.sup6.2.tag}}</center></td>
+        <td><center><br>{{ form.sup6.3.tag}}</center></td>
+         <td><center>{{ form.sup6.4.choice_label }}<br>{{ form.sup6.4.tag}}</center></td>
+    </tr>
+</table><br>
+
+{{ form.sup7.label }}<br>
+<table style="table-layout: fixed; width: 100%;">
+    <tr>
+        <td><center><br></center></td>
+        <td><center>{{ form.sup7.0.choice_label }}<br>{{ form.sup7.0.tag}}</center></td>
+        <td><center><br>{{ form.sup7.1.tag}}</center></td>
+        <td><center><br>{{ form.sup7.2.tag}}</center></td>
+        <td><center><br>{{ form.sup7.3.tag}}</center></td>
+         <td><center>{{ form.sup7.4.choice_label }}<br>{{ form.sup7.4.tag}}</center></td>
+    </tr>
+</table><br>
+
+{{ form.sup8.label }}<br>
+<table style="table-layout: fixed; width: 100%;">
+    <tr>
+        <td><center><br></center></td>
+        <td><center>{{ form.sup8.0.choice_label }}<br>{{ form.sup8.0.tag}}</center></td>
+        <td><center><br>{{ form.sup8.1.tag}}</center></td>
+        <td><center><br>{{ form.sup8.2.tag}}</center></td>
+        <td><center><br>{{ form.sup8.3.tag}}</center></td>
+         <td><center>{{ form.sup8.4.choice_label }}<br>{{ form.sup8.4.tag}}</center></td>
+    </tr>
+</table><br>
+
+{{ form.sup9.label }}<br>
+<table style="table-layout: fixed; width: 100%;">
+    <tr>
+        <td><center><br></center></td>
+        <td><center>{{ form.sup9.0.choice_label }}<br>{{ form.sup9.0.tag}}</center></td>
+        <td><center><br>{{ form.sup9.1.tag}}</center></td>
+        <td><center><br>{{ form.sup9.2.tag}}</center></td>
+        <td><center><br>{{ form.sup9.3.tag}}</center></td>
+         <td><center>{{ form.sup9.4.choice_label }}<br>{{ form.sup9.4.tag}}</center></td>
+    </tr>
+</table><br>
+
+    {% next_button %}
+{% endblock %}
+
+

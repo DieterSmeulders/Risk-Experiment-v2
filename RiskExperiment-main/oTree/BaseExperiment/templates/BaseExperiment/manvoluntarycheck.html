@@ -1,0 +1,54 @@
+{% extends "global/Page.html" %}
+{% load otree static %}
+
+{% block title %}
+Please indicate how accurate each statement describes the risk reporting policy at AC Company (the company that you work for).
+
+{% endblock %}
+
+{% block content %}
+
+
+{{ form.manvol1.label }}<br>
+<table style="table-layout: fixed; width: 100%;">
+    <tr>
+        <td><center><br></center></td>
+        <td><center><br></center></td>
+        <td><center>{{ form.manvol1.0.choice_label }}<br>{{ form.manvol1.0.tag}}</center></td>
+        <td><center><br>{{ form.manvol1.1.tag}}</center></td>
+        <td><center><br>{{ form.manvol1.2.tag}}</center></td>
+        <td><center><br>{{ form.manvol1.3.tag}}</center></td>
+        <td><center>{{ form.manvol1.4.choice_label }}<br>{{ form.manvol1.4.tag}}</center></td>
+    </tr>
+</table><br>
+
+{{ form.manvol2.label }}<br>
+<table style="table-layout: fixed; width: 100%;">
+    <tr>
+        <td><center><br></center></td>
+        <td><center><br></center></td>
+        <td><center>{{ form.manvol2.0.choice_label }}<br>{{ form.manvol2.0.tag}}</center></td>
+        <td><center><br>{{ form.manvol2.1.tag}}</center></td>
+        <td><center><br>{{ form.manvol2.2.tag}}</center></td>
+        <td><center><br>{{ form.manvol2.3.tag}}</center></td>
+        <td><center>{{ form.manvol2.4.choice_label }}<br>{{ form.manvol2.4.tag}}</center></td>
+    </tr>
+</table><br>
+
+{{ form.manvol3.label }}<br>
+<table style="table-layout: fixed; width: 100%;">
+    <tr>
+        <td><center><br></center></td>
+        <td><center><br></center></td>
+        <td><center>{{ form.manvol3.0.choice_label }}<br>{{ form.manvol3.0.tag}}</center></td>
+        <td><center><br>{{ form.manvol3.1.tag}}</center></td>
+        <td><center><br>{{ form.manvol3.2.tag}}</center></td>
+        <td><center><br>{{ form.manvol3.3.tag}}</center></td>
+        <td><center>{{ form.manvol3.6.choice_label }}<br>{{ form.manvol3.6.tag}}</center></td>
+    </tr>
+</table><br>
+
+    {% next_button %}
+{% endblock %}
+
+

@@ -1,0 +1,66 @@
+{% extends "global/Page.html" %}
+{% load otree static %}
+
+{% block title %}
+    Comprehension Survey
+{% endblock %}
+
+{% block content %}
+
+To ensure that you fully understand the instructions, please read carefully the summary below in the form of Q&A. <br><br>
+
+1. What is your role?<br><br>
+{% if player.id_in_group == 1 %}
+Northern regional manager<br><br>
+{% endif%}
+
+{% if player.id_in_group == 3 %}
+Southern regional manager<br><br>
+{% endif%}
+
+{% if player.id_in_group == 3 %}
+Supervisor<br><br>
+{% endif%}
+
+2. 	Which one best describes the responsibility of the regional managers?<br><br>
+Increasing sales performance in their region<br><br>
+
+3. 	What is the responsibility of the supervisor?<br><br>
+Allocating 10 minutes of production time between two regional managers in each round<br><br>
+
+4. 	Who will decide about the location of a new shop in each region?<br><br>
+The corresponding regional manager<br><br>
+
+5. How much time is each regional manager given to make sandwiches in each round?<br><br>
+Depends on the supervisor’s decision<br><br>
+
+6. How much time is each regional manager given to make sandwiches in the first round?<br><br>
+Five minutes<br><br>
+
+7. What will the regional managers do after each round?<br><br>
+They will report their sales performance to the supervisor.<br><br>
+
+8. Who has access to the local market survey reports in each region?<br><br>
+Only the corresponding regional manager<br><br>
+
+9. How is sales performance of each regional manager computed?<br><br>
+Sales performance in each region is the multiplication of the number of sandwiches made and the selling price of each sandwich in that region.<br><br>
+
+10. What is the company’s risk reporting policy?<br><br>
+{% if group.reportingcondition == 'Mandatory' %}
+Mandatory: regional managers are required to report the risks that could impact their sales performance going forward.<br><br>
+{% endif%}
+
+{% if group.reportingcondition == 'Voluntary' %}
+Voluntary: regional managers can report the risks that could impact their sales performance going forward if they wish.<br><br>
+{% endif%}
+
+11. What is the emergency monetary budget for?<br><br>
+An emergency monetary budget is set to be spent in case of unexpected expenses/events in each region.<br><br>
+
+12. Who can ask for the emergency monetary budget?<br><br>
+Only the supervisor<br><br>
+
+    {% next_button %}
+
+{% endblock %}

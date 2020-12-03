@@ -1,0 +1,18 @@
+{% extends "global/Page.html" %}
+{% load otree static %}
+
+{% block title %}
+
+{% endblock %}
+
+{% block content %}
+
+{% if group.reportingconditions == 'voluntary' %}
+{% formfield voluntary %}
+
+{% if group.reportingconditions == 'mandatory' %}
+
+{% formfield mandatory %}
+    {% next_button %}
+
+{% endblock %}

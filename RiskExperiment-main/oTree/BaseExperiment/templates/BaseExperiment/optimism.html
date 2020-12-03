@@ -1,0 +1,93 @@
+{% extends "global/Page.html" %}
+{% load otree static %}
+
+{% block title %}
+Please indicate the extent to which you agree or disagree with the following statements.
+
+{% endblock %}
+
+{% block content %}
+
+{{ form.opt1.label }}<br>
+<table style="table-layout: fixed; width: 100%;">
+    <tr>
+        <td><center><br></center></td>
+        <td><center><br></center></td>
+        <td><center>{{ form.opt1.0.choice_label }}<br>{{ form.opt1.0.tag}}</center></td>
+        <td><center><br>{{ form.opt1.1.tag}}</center></td>
+        <td><center><br>{{ form.opt1.2.tag}}</center></td>
+        <td><center><br>{{ form.opt1.3.tag}}</center></td>
+        <td><center>{{ form.opt1.4.choice_label }}<br>{{ form.opt1.4.tag}}</center></td>
+    </tr>
+</table><br>
+
+{{ form.opt2.label }}<br>
+<table style="table-layout: fixed; width: 100%;">
+    <tr>
+        <td><center><br></center></td>
+        <td><center><br></center></td>
+        <td><center>{{ form.opt2.0.choice_label }}<br>{{ form.opt2.0.tag}}</center></td>
+        <td><center><br>{{ form.opt2.1.tag}}</center></td>
+        <td><center><br>{{ form.opt2.2.tag}}</center></td>
+        <td><center><br>{{ form.opt2.3.tag}}</center></td>
+        <td><center>{{ form.opt2.4.choice_label }}<br>{{ form.opt2.4.tag}}</center></td>
+    </tr>
+</table><br>
+
+{{ form.opt3.label }}<br>
+<table style="table-layout: fixed; width: 100%;">
+    <tr>
+        <td><center><br></center></td>
+        <td><center><br></center></td>
+        <td><center>{{ form.opt3.0.choice_label }}<br>{{ form.opt3.0.tag}}</center></td>
+        <td><center><br>{{ form.opt3.1.tag}}</center></td>
+        <td><center><br>{{ form.opt3.2.tag}}</center></td>
+        <td><center><br>{{ form.opt3.3.tag}}</center></td>
+        <td><center>{{ form.opt3.4.choice_label }}<br>{{ form.opt3.4.tag}}</center></td>
+    </tr>
+</table><br>
+
+{{ form.opt4.label }}<br>
+<table style="table-layout: fixed; width: 100%;">
+    <tr>
+        <td><center><br></center></td>
+        <td><center><br></center></td>
+        <td><center>{{ form.opt4.0.choice_label }}<br>{{ form.opt4.0.tag}}</center></td>
+        <td><center><br>{{ form.opt4.1.tag}}</center></td>
+        <td><center><br>{{ form.opt4.2.tag}}</center></td>
+        <td><center><br>{{ form.opt4.3.tag}}</center></td>
+        <td><center>{{ form.opt4.4.choice_label }}<br>{{ form.opt4.4.tag}}</center></td>
+    </tr>
+</table><br>
+
+{{ form.opt5.label }}<br>
+<table style="table-layout: fixed; width: 100%;">
+    <tr>
+        <td><center><br></center></td>
+        <td><center><br></center></td>
+        <td><center>{{ form.opt5.0.choice_label }}<br>{{ form.opt5.0.tag}}</center></td>
+        <td><center><br>{{ form.opt5.1.tag}}</center></td>
+        <td><center><br>{{ form.opt5.2.tag}}</center></td>
+        <td><center><br>{{ form.opt5.3.tag}}</center></td>
+         <td><center>{{ form.opt5.4.choice_label }}<br>{{ form.opt5.4.tag}}</center></td>
+    </tr>
+</table><br>
+
+{{ form.opt6.label }}<br>
+<table style="table-layout: fixed; width: 100%;">
+    <tr>
+        <td><center><br></center></td>
+        <td><center><br></center></td>
+        <td><center>{{ form.opt6.0.choice_label }}<br>{{ form.opt6.0.tag}}</center></td>
+        <td><center><br>{{ form.opt6.1.tag}}</center></td>
+        <td><center><br>{{ form.opt6.2.tag}}</center></td>
+        <td><center><br>{{ form.opt6.3.tag}}</center></td>
+        <td><center>{{ form.opt6.4.choice_label }}<br>{{ form.opt6.4.tag}}</center></td>
+    </tr>
+</table><br>
+
+
+    {% next_button %}
+{% endblock %}
+
+

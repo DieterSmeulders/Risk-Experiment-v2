@@ -1,0 +1,53 @@
+{% extends "global/Page.html" %}
+{% load otree static %}
+
+{% block title %}
+
+{% endblock %}
+
+{% block content %}
+
+{% if player.id_in_group == 1}
+{% formfield player.NReportedPerf %}<br><br>
+
+    {% if group.reportingcondition ==  'mandatory' %}
+    {% formfield player.NReportedRiskMan %}
+
+          {% if player.NReportedRiskMan == 'Yes' %}
+          {% formfield player.NReportedRiskManD %}<br><br>
+          {% endif %}
+
+    {% endif %}
+
+    {% if group.reportingcondition ==  'voluntary' %}
+    {% formfield player.NReportedRiskVol %}
+    {% endif %}
+
+{% endif %}
+
+
+{% if player.id_in_group == 2}
+{% formfield player.SReportedPerf %}<br><br>
+
+    {% if group.reportingcondition ==  'mandatory' %}
+    {% formfield player.SReportedRiskMan %}<br><br>
+
+         {% if player.SReportedRiskMan == 'Yes' %}
+         {% formfield player.SReportedRiskManD %}<br><br>
+         {% endif %}
+
+    {% endif %}
+
+    {% if group.reportingcondition ==  'voluntary' %}
+    {% formfield player.SReportedRiskVol %}
+    {% endif %}
+
+{% endif %}
+
+You can get access to the local market survey report and your sales performance if you wish by clicking on “access”.
+
+Click on next to send your report to the supervisor. Having received the reports of both regional managers, the supervisor will allocate 10 minutes of production time between you and {% if player.id_in_group == 1 %} the southern regional manager {% else %} the northern regional manager {% endif %}.
+
+    {% next_button %}
+
+{% endblock %}

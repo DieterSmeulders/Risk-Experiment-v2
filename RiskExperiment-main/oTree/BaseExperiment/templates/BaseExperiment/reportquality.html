@@ -1,0 +1,38 @@
+{% extends "global/Page.html" %}
+{% load otree static %}
+
+{% block title %}
+
+{% endblock %}
+
+{% block content %}
+
+{{ form.repq1.label }}<br>
+<table style="table-layout: fixed; width: 100%;">
+    <tr>
+        <td><center><br></center></td>
+        <td><center><br></center></td>
+        <td><center>{{ form.repq1.0.choice_label }}<br>{{ form.repq1.0.tag}}</center></td>
+        <td><center><br>{{ form.repq1.1.tag}}</center></td>
+        <td><center><br>{{ form.repq1.2.tag}}</center></td>
+        <td><center><br>{{ form.repq1.3.tag}}</center></td>
+        <td><center>{{ form.repq1.4.choice_label }}<br>{{ form.repq1.4.tag}}</center></td>
+    </tr>
+</table><br>
+
+{{ form.repq2.label }}<br>
+<table style="table-layout: fixed; width: 100%;">
+    <tr>
+        <td><center><br></center></td>
+        <td><center><br></center></td>
+        <td><center>{{ form.repq2.0.choice_label }}<br>{{ form.repq2.0.tag}}</center></td>
+        <td><center><br>{{ form.repq2.1.tag}}</center></td>
+        <td><center><br>{{ form.repq2.2.tag}}</center></td>
+        <td><center><br>{{ form.repq2.3.tag}}</center></td>
+        <td><center>{{ form.repq2.4.choice_label }}<br>{{ form.repq2.4.tag}}</center></td>
+    </tr>
+</table><br>
+
+    {% next_button %}
+
+{% endblock %}

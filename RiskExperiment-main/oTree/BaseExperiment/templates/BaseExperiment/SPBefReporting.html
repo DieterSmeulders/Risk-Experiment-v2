@@ -1,0 +1,37 @@
+{% extends "global/Page.html" %}
+{% load otree static %}
+
+{% block title %}
+
+{% endblock %}
+
+{% block content %}
+Please wait for several minutes to receive the sales performance reports of the regional managers for the first round. <br><br>
+
+{% if group.reportingcondition ==  'mandatory' %}
+The company has a mandatory risk reporting policy, that is, along with sales performance, regional managers are required to report the risks (if any) that could impact the sales performance of their region going forward.
+{% endif %}
+
+{% if group.reportingcondition ==  'voluntary' %}
+The company has a voluntary risk reporting policy, that is, along with sales performance, regional managers, if they wish, can report the risks (if any) that could impact the sales performance of their region going forward.
+{% endif %}
+
+{% if group.culturecondition == 'supportive' %}
+Everyone at AC Company knows that the company promotes a climate of doing things with an adventurous spirit.
+People appreciate each other’s efforts. No negative comments are made about those who make mistakes.
+People easily ask others for help in the face of difficulties.
+In addition, people value working in a trial and error way and encourage speaking out freely.
+People are therefore comfortable talking to others about what could go wrong.
+{% endif %}
+
+{% if group.culturecondition ==  'unsupportive' %}
+Everyone at AC Company knows that the company promotes a climate of doing things accurately.
+People monitor each other’s efforts. Negative comments are made about those who make mistakes.
+People hardly ask others for help in the face of difficulties.
+In addition, people value working in a proven way and encourage looking before leaping.
+People are therefore uncomfortable talking to others about what could go wrong.
+{% endif %}
+
+    {% next_button %}
+
+{% endblock %}

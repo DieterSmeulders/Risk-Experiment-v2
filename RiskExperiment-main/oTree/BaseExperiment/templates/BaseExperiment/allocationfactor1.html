@@ -1,0 +1,92 @@
+{% extends "global/Page.html" %}
+{% load otree static %}
+
+{% block title %}
+To what extent did you consider the following factors when you allocated the production time to the regional managers?
+{% endblock %}
+
+{% block content %}
+
+
+{{ form.sfact1.label }}<br>
+<table style="table-layout: fixed; width: 100%;">
+    <tr>
+        <td><center><br></center></td>
+        <td><center><br></center></td>
+        <td><center>{{ form.sfact1.0.choice_label }}<br>{{ form.sfact1.0.tag}}</center></td>
+        <td><center><br>{{ form.sfact1.1.tag}}</center></td>
+        <td><center><br>{{ form.sfact1.2.tag}}</center></td>
+        <td><center><br>{{ form.sfact1.3.tag}}</center></td>
+        <td><center>{{ form.sfact1.4.choice_label }}<br>{{ form.sfact1.4.tag}}</center></td>
+    </tr>
+</table><br>
+
+{{ form.sfact2.label }}<br>
+<table style="table-layout: fixed; width: 100%;">
+    <tr>
+        <td><center><br></center></td>
+        <td><center><br></center></td>
+        <td><center>{{ form.sfact2.0.choice_label }}<br>{{ form.sfact2.0.tag}}</center></td>
+        <td><center><br>{{ form.sfact2.1.tag}}</center></td>
+        <td><center><br>{{ form.sfact2.2.tag}}</center></td>
+        <td><center><br>{{ form.sfact2.3.tag}}</center></td>
+        <td><center>{{ form.sfact2.4.choice_label }}<br>{{ form.sfact2.4.tag}}</center></td>
+    </tr>
+</table><br>
+
+{{ form.sfact3.label }}<br>
+<table style="table-layout: fixed; width: 100%;">
+    <tr>
+        <td><center><br></center></td>
+        <td><center><br></center></td>
+        <td><center>{{ form.sfact3.0.choice_label }}<br>{{ form.sfact3.0.tag}}</center></td>
+        <td><center><br>{{ form.sfact3.1.tag}}</center></td>
+        <td><center><br>{{ form.sfact3.2.tag}}</center></td>
+        <td><center><br>{{ form.sfact3.3.tag}}</center></td>
+        <td><center>{{ form.sfact3.4.choice_label }}<br>{{ form.sfact3.4.tag}}</center></td>
+    </tr>
+</table><br>
+
+{{ form.sfact4.label }}<br>
+<table style="table-layout: fixed; width: 100%;">
+    <tr>
+        <td><center><br></center></td>
+        <td><center><br></center></td>
+        <td><center>{{ form.sfact4.0.choice_label }}<br>{{ form.sfact4.0.tag}}</center></td>
+        <td><center><br>{{ form.sfact4.1.tag}}</center></td>
+        <td><center><br>{{ form.sfact4.2.tag}}</center></td>
+        <td><center><br>{{ form.sfact4.3.tag}}</center></td>
+        <td><center>{{ form.sfact4.4.choice_label }}<br>{{ form.sfact4.4.tag}}</center></td>
+    </tr>
+</table><br>
+
+{{ form.sfact5.label }}<br>
+<table style="table-layout: fixed; width: 100%;">
+    <tr>
+        <td><center><br></center></td>
+        <td><center><br></center></td>
+        <td><center>{{ form.sfact5.0.choice_label }}<br>{{ form.sfact5.0.tag}}</center></td>
+        <td><center><br>{{ form.sfact5.1.tag}}</center></td>
+        <td><center><br>{{ form.sfact5.2.tag}}</center></td>
+        <td><center><br>{{ form.sfact5.3.tag}}</center></td>
+        <td><center>{{ form.sfact5.4.choice_label }}<br>{{ form.sfact5.4.tag}}</center></td>
+    </tr>
+</table><br>
+
+{{ form.sfact6.label }}<br>
+<table style="table-layout: fixed; width: 100%;">
+    <tr>
+        <td><center><br></center></td>
+        <td><center><br></center></td>
+        <td><center>{{ form.sfact6.0.choice_label }}<br>{{ form.sfact6.0.tag}}</center></td>
+        <td><center><br>{{ form.sfact6.1.tag}}</center></td>
+        <td><center><br>{{ form.sfact6.2.tag}}</center></td>
+        <td><center><br>{{ form.sfact6.3.tag}}</center></td>
+        <td><center>{{ form.sfact6.4.choice_label }}<br>{{ form.sfact6.4.tag}}</center></td>
+    </tr>
+</table><br>
+
+    {% next_button %}
+{% endblock %}
+
+

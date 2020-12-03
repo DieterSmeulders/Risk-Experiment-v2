@@ -1,0 +1,51 @@
+{% extends "global/Page.html" %}
+{% load otree static %}
+
+{% block title %}
+When you were reporting to the supervisor, to what extent did you think that the supervisor would …
+{% endblock %}
+
+{% block content %}
+{{ form.exbudget.label }}<br>
+<table style="table-layout: fixed; width: 100%;">
+    <tr>
+        <td><center><br></center></td>
+        <td><center><br></center></td>
+        <td><center>{{ form.exbudget.0.choice_label }}<br>{{ form.exbudget.0.tag}}</center></td>
+        <td><center><br>{{ form.exbudget.1.tag}}</center></td>
+        <td><center><br>{{ form.exbudget.2.tag}}</center></td>
+        <td><center><br>{{ form.exbudget.3.tag}}</center></td>
+        <td><center>{{ form.exbudget.4.choice_label }}<br>{{ form.exbudget.4.tag}}</center></td>
+    </tr>
+</table><br>
+
+{{ form.exshort.label }}<br>
+<table style="table-layout: fixed; width: 100%;">
+    <tr>
+        <td><center><br></center></td>
+        <td><center><br></center></td>
+        <td><center>{{ form.exshort.0.choice_label }}<br>{{ form.exshort.0.tag}}</center></td>
+        <td><center><br>{{ form.exshort.1.tag}}</center></td>
+        <td><center><br>{{ form.exshort.2.tag}}</center></td>
+        <td><center><br>{{ form.exshort.3.tag}}</center></td>
+        <td><center>{{ form.exshort.4.choice_label }}<br>{{ form.exshort.4.tag}}</center></td>
+    </tr>
+</table><br>
+
+{{ form.exlong.label }}<br>
+<table style="table-layout: fixed; width: 100%;">
+    <tr>
+        <td><center><br></center></td>
+        <td><center><br></center></td>
+        <td><center>{{ form.exlong.0.choice_label }}<br>{{ form.exlong.0.tag}}</center></td>
+        <td><center><br>{{ form.exlong.1.tag}}</center></td>
+        <td><center><br>{{ form.exlong.2.tag}}</center></td>
+        <td><center><br>{{ form.exlong.3.tag}}</center></td>
+        <td><center>{{ form.exlong.4.choice_label }}<br>{{ form.exlong.4.tag}}</center></td>
+    </tr>
+</table><br>
+
+    {% next_button %}
+{% endblock %}
+
+

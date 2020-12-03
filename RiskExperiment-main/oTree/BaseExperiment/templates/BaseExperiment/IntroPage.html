@@ -1,0 +1,23 @@
+{% extends "global/Page.html" %}
+{% load otree static %}
+
+{% block title %}
+
+{% endblock %}
+
+{% block content %}
+Thank you for participating in this study.
+
+You will receive {{ BasePay }} for completing this study regardless of the choices that you make. You can also receive additional money depending on your choices and the choices of other participants.
+
+Participants have one of three different roles. They will be randomly assigned to work for a specific company and play one of the following three roles: a supervisor, a northern regional manager, and a southern regional manager. A northern regional manager will be randomly paired with a southern regional manager and a supervisor, thus forming a triad   of one supervisor and two regional managers who all work for the same company.
+
+You will receive instructions about your task and role. Please read them carefully.
+
+Participants will never know the identity of each other, so that anonymity is preserved. You will not be deceived in any form. The data will be used only for the scientific purposes at the aggregated level.
+
+By clicking on “next”, you agree to participate in this study and the study will begin.
+
+    {% next_button %}
+
+{% endblock %}

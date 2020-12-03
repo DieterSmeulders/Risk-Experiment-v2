@@ -1,0 +1,93 @@
+{% extends "global/Page.html" %}
+{% load otree static %}
+
+{% block title %}
+To what extent do you agree or disagree with the following statements?
+{% endblock %}
+
+{% block content %}
+
+{{ form.suptrust1.label }}<br>
+<table style="table-layout: fixed; width: 100%;">
+    <tr>
+        <td><center><br></center></td>
+        <td><center><br></center></td>
+        <td><center>{{ form.suptrust1.0.choice_label }}<br>{{ form.suptrust1.0.tag}}</center></td>
+        <td><center><br>{{ form.suptrust1.1.tag}}</center></td>
+        <td><center><br>{{ form.suptrust1.2.tag}}</center></td>
+        <td><center><br>{{ form.suptrust1.3.tag}}</center></td>
+         <td><center>{{ form.suptrust1.4.choice_label }}<br>{{ form.suptrust1.4.tag}}</center></td>
+    </tr>
+</table><br>
+
+{{ form.suptrust2.label }}<br>
+<table style="table-layout: fixed; width: 100%;">
+    <tr>
+        <td><center><br></center></td>
+        <td><center><br></center></td>
+        <td><center>{{ form.suptrust2.0.choice_label }}<br>{{ form.suptrust2.0.tag}}</center></td>
+        <td><center><br>{{ form.suptrust2.1.tag}}</center></td>
+        <td><center><br>{{ form.suptrust2.2.tag}}</center></td>
+        <td><center><br>{{ form.suptrust2.3.tag}}</center></td>
+         <td><center>{{ form.suptrust2.4.choice_label }}<br>{{ form.suptrust2.4.tag}}</center></td>
+    </tr>
+</table><br>
+
+{{ form.suptrust3.label }}<br>
+<table style="table-layout: fixed; width: 100%;">
+    <tr>
+        <td><center><br></center></td>
+        <td><center><br></center></td>
+        <td><center>{{ form.suptrust3.0.choice_label }}<br>{{ form.suptrust3.0.tag}}</center></td>
+        <td><center><br>{{ form.suptrust3.1.tag}}</center></td>
+        <td><center><br>{{ form.suptrust3.2.tag}}</center></td>
+        <td><center><br>{{ form.suptrust3.3.tag}}</center></td>
+         <td><center>{{ form.suptrust3.4.choice_label }}<br>{{ form.suptrust3.4.tag}}</center></td>
+    </tr>
+</table><br>
+
+{{ form.suptrust4.label }}<br>
+<table style="table-layout: fixed; width: 100%;">
+    <tr>
+        <td><center><br></center></td>
+        <td><center><br></center></td>
+        <td><center>{{ form.suptrust4.0.choice_label }}<br>{{ form.suptrust4.0.tag}}</center></td>
+        <td><center><br>{{ form.suptrust4.1.tag}}</center></td>
+        <td><center><br>{{ form.suptrust4.2.tag}}</center></td>
+        <td><center><br>{{ form.suptrust4.3.tag}}</center></td>
+         <td><center>{{ form.suptrust4.4.choice_label }}<br>{{ form.suptrust4.4.tag}}</center></td>
+    </tr>
+</table><br>
+
+{{ form.suptrust5.label }}<br>
+<table style="table-layout: fixed; width: 100%;">
+    <tr>
+        <td><center><br></center></td>
+        <td><center><br></center></td>
+        <td><center>{{ form.suptrust5.0.choice_label }}<br>{{ form.suptrust5.0.tag}}</center></td>
+        <td><center><br>{{ form.suptrust5.1.tag}}</center></td>
+        <td><center><br>{{ form.suptrust5.2.tag}}</center></td>
+        <td><center><br>{{ form.suptrust5.3.tag}}</center></td>
+         <td><center>{{ form.suptrust5.4.choice_label }}<br>{{ form.suptrust5.4.tag}}</center></td>
+    </tr>
+</table><br>
+
+{{ form.suptrust6.label }}<br>
+<table style="table-layout: fixed; width: 100%;">
+    <tr>
+        <td><center><br></center></td>
+        <td><center><br></center></td>
+        <td><center>{{ form.suptrust6.0.choice_label }}<br>{{ form.suptrust6.0.tag}}</center></td>
+        <td><center><br>{{ form.suptrust6.1.tag}}</center></td>
+        <td><center><br>{{ form.suptrust6.2.tag}}</center></td>
+        <td><center><br>{{ form.suptrust6.3.tag}}</center></td>
+         <td><center>{{ form.suptrust6.4.choice_label }}<br>{{ form.suptrust6.4.tag}}</center></td>
+    </tr>
+</table><br>
+
+
+
+    {% next_button %}
+{% endblock %}
+
+

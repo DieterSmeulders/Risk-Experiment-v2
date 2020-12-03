@@ -1,0 +1,106 @@
+{% extends "global/Page.html" %}
+{% load otree static %}
+
+{% block title %}
+Please indicate the extent to which you agree or disagree with the following statements.
+{% endblock %}
+
+{% block content %}
+
+
+{{ form.closure1.label }}<br>
+<table style="table-layout: fixed; width: 100%;">
+    <tr>
+        <td><center><br></center></td>
+        <td><center><br></center></td>
+        <td><center>{{ form.closure1.0.choice_label }}<br>{{ form.closure1.0.tag}}</center></td>
+        <td><center><br>{{ form.closure1.1.tag}}</center></td>
+        <td><center><br>{{ form.closure1.2.tag}}</center></td>
+        <td><center><br>{{ form.closure1.3.tag}}</center></td>
+        <td><center>{{ form.closure1.4.choice_label }}<br>{{ form.closure1.4.tag}}</center></td>
+    </tr>
+</table><br>
+
+{{ form.closure2.label }}<br>
+<table style="table-layout: fixed; width: 100%;">
+    <tr>
+        <td><center><br></center></td>
+        <td><center><br></center></td>
+        <td><center>{{ form.closure2.0.choice_label }}<br>{{ form.closure2.0.tag}}</center></td>
+        <td><center><br>{{ form.closure2.1.tag}}</center></td>
+        <td><center><br>{{ form.closure2.2.tag}}</center></td>
+        <td><center><br>{{ form.closure2.3.tag}}</center></td>
+        <td><center>{{ form.closure2.4.choice_label }}<br>{{ form.closure2.4.tag}}</center></td>
+    </tr>
+</table><br>
+
+{{ form.closure3.label }}<br>
+<table style="table-layout: fixed; width: 100%;">
+    <tr>
+        <td><center><br></center></td>
+        <td><center><br></center></td>
+        <td><center>{{ form.closure3.0.choice_label }}<br>{{ form.closure3.0.tag}}</center></td>
+        <td><center><br>{{ form.closure3.1.tag}}</center></td>
+        <td><center><br>{{ form.closure3.2.tag}}</center></td>
+        <td><center><br>{{ form.closure3.3.tag}}</center></td>
+        <td><center>{{ form.closure3.4.choice_label }}<br>{{ form.closure3.4.tag}}</center></td>
+    </tr>
+</table><br>
+
+{{ form.closure4.label }}<br>
+<table style="table-layout: fixed; width: 100%;">
+    <tr>
+        <td><center><br></center></td>
+        <td><center><br></center></td>
+        <td><center>{{ form.closure4.0.choice_label }}<br>{{ form.closure4.0.tag}}</center></td>
+        <td><center><br>{{ form.closure4.1.tag}}</center></td>
+        <td><center><br>{{ form.closure4.2.tag}}</center></td>
+        <td><center><br>{{ form.closure4.3.tag}}</center></td>
+        <td><center>{{ form.closure4.4.choice_label }}<br>{{ form.closure4.4.tag}}</center></td>
+    </tr>
+</table><br>
+
+{{ form.closure5.label }}<br>
+<table style="table-layout: fixed; width: 100%;">
+    <tr>
+        <td><center><br></center></td>
+        <td><center><br></center></td>
+        <td><center>{{ form.closure5.0.choice_label }}<br>{{ form.closure5.0.tag}}</center></td>
+        <td><center><br>{{ form.closure5.1.tag}}</center></td>
+        <td><center><br>{{ form.closure5.2.tag}}</center></td>
+        <td><center><br>{{ form.closure5.3.tag}}</center></td>
+         <td><center>{{ form.closure5.4.choice_label }}<br>{{ form.closure5.4.tag}}</center></td>
+    </tr>
+</table><br>
+
+{{ form.closure6.label }}<br>
+<table style="table-layout: fixed; width: 100%;">
+    <tr>
+        <td><center><br></center></td>
+        <td><center><br></center></td>
+        <td><center>{{ form.closure6.0.choice_label }}<br>{{ form.closure6.0.tag}}</center></td>
+        <td><center><br>{{ form.closure6.1.tag}}</center></td>
+        <td><center><br>{{ form.closure6.2.tag}}</center></td>
+        <td><center><br>{{ form.closure6.3.tag}}</center></td>
+        <td><center>{{ form.closure6.4.choice_label }}<br>{{ form.closure6.4.tag}}</center></td>
+    </tr>
+</table><br>
+
+{{ form.closure7.label }}<br>
+<table style="table-layout: fixed; width: 100%;">
+    <tr>
+        <td><center><br></center></td>
+        <td><center><br></center></td>
+        <td><center>{{ form.closure7.0.choice_label }}<br>{{ form.closure7.0.tag}}</center></td>
+        <td><center><br>{{ form.closure7.1.tag}}</center></td>
+        <td><center><br>{{ form.closure7.2.tag}}</center></td>
+        <td><center><br>{{ form.closure7.3.tag}}</center></td>
+        <td><center>{{ form.closure7.4.choice_label }}<br>{{ form.closure7.4.tag}}</center></td>
+    </tr>
+</table><br>
+
+
+    {% next_button %}
+{% endblock %}
+
+

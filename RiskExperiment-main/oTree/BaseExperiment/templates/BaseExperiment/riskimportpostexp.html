@@ -1,0 +1,50 @@
+{% extends "global/Page.html" %}
+{% load otree static %}
+
+{% block title %}
+
+{% endblock %}
+
+{% block content %}
+
+{{ form.riskimp3.label }}<br>
+<table style="table-layout: fixed; width: 100%;">
+    <tr>
+        <td><center><br></center></td>
+        <td><center>{{ form.riskimp3.0.choice_label }}<br>{{ form.riskimp3.0.tag}}</center></td>
+        <td><center><br>{{ form.riskimp3.1.tag}}</center></td>
+        <td><center><br>{{ form.riskimp3.2.tag}}</center></td>
+        <td><center><br>{{ form.riskimp3.3.tag}}</center></td>
+         <td><center>{{ form.riskimp3.4.choice_label }}<br>{{ form.riskimp3.4.tag}}</center></td>
+    </tr>
+</table><br>
+
+{{ form.riskimp4.label }}<br>
+<table style="table-layout: fixed; width: 100%;">
+    <tr>
+        <td><center><br></center></td>
+        <td><center>{{ form.riskimp4.0.choice_label }}<br>{{ form.riskimp4.0.tag}}</center></td>
+        <td><center><br>{{ form.riskimp4.1.tag}}</center></td>
+        <td><center><br>{{ form.riskimp4.2.tag}}</center></td>
+        <td><center><br>{{ form.riskimp4.3.tag}}</center></td>
+         <td><center>{{ form.riskimp4.4.choice_label }}<br>{{ form.riskimp4.4.tag}}</center></td>
+    </tr>
+</table><br>
+
+{{ form.riskimp5.label }}<br>
+<table style="table-layout: fixed; width: 100%;">
+    <tr>
+        <td><center><br></center></td>
+        <td><center>{{ form.riskimp5.0.choice_label }}<br>{{ form.riskimp5.0.tag}}</center></td>
+        <td><center><br>{{ form.riskimp5.1.tag}}</center></td>
+        <td><center><br>{{ form.riskimp5.2.tag}}</center></td>
+        <td><center><br>{{ form.riskimp5.3.tag}}</center></td>
+         <td><center>{{ form.riskimp5.4.choice_label }}<br>{{ form.riskimp5.4.tag}}</center></td>
+    </tr>
+</table><br>
+
+
+    {% next_button %}
+{% endblock %}
+
+
