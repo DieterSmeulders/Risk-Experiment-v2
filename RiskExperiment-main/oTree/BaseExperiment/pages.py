@@ -353,5 +353,5 @@ page_sequence = [IntroPage, IntroPage2, CultureCondition, Randomization, PlayerI
                  AfterRound1Allocation, allocationfactor1, allocationfactor2, responsibility, perf, riskimportpostexp, reportimp, factor1, factor2, reportqual1,
                  reportqual2, reportquality, orgtrust, suptrust,
                  emergencyfactor, supimpress1, supimpress2, riskattitude1, riskattitude2,
-                 mansafetycheck, manvoluntarycheck, pclosure1, pclosure2,
+                 mansafetycheck, manvoluntarycheck, volexp, pclosure1, pclosure2,
                  uncertainaversion1, uncertainaversion2, optimism, dark, Results]
