@@ -61,16 +61,6 @@ class Player(BasePlayer):
          [1, 'LocationA'],
          [2, 'LocationB']]
     )
-    SLoc = models.IntegerField(
-        choices=[
-         [1, 'LocationA'],
-         [2, 'LocationB']]
-    )
-    NLoc = models.IntegerField(
-        choices=[
-         [1, 'LocationA'],
-         [2, 'LocationB']]
-    )
     NReportedPerf = models.IntegerField(
         label='Please report your sales performance to the supervisor below.',
         min=0, max=30)
@@ -491,19 +481,19 @@ class Player(BasePlayer):
         widget=widgets.RadioSelectHorizontal
     )
     mandatory = models.StringField(
-        label='Why do you think the company chose a mandatory risk reporting policy?',
+        label='Why do you think your company chose a mandatory risk reporting policy?',
     )
     voluntary = models.StringField(
-        label='Why do you think the company chose a voluntary risk reporting policy?',
+        label='Why do you think your company chose a voluntary risk reporting policy?',
     )
     perf1 = models.IntegerField(
         label='1.',
-        choices=[[1, 'Way below the average'], [2, ''], [3, ''], [4, ''], [5, 'Way above the average']],
+        choices=[[1, 'Way below the average'], [2, ''], [3, 'Average'], [4, ''], [5, 'Way above the average']],
         widget=widgets.RadioSelectHorizontal
     )
     perf2 = models.IntegerField(
         label='2.',
-        choices=[[1, 'Way below my expectation'], [2, ''], [3, ''], [4, ''], [5, 'Way above my expectation']],
+        choices=[[1, 'Way below my expectation'], [2, ''], [3, 'In line with my expectation'], [4, ''], [5, 'Way above my expectation']],
         widget=widgets.RadioSelectHorizontal
     )
     riskat1 = models.IntegerField(

@@ -6,11 +6,11 @@
 
 The supervisor allocated {% if player.id_in_group == 1 %} {{ player.NTime}} {% else %} {{ player.STime}} {% endif %} production minutes to you for the second round. <br><br>
 
-{% if player.id_in_group == 1}
+{% if player.id_in_group == 1 %}
 The supervisor {{% if player.NEM==2 %} asked {% else %} did not ask {% endif %} for the emergency monetary budget for your region. <br><br>
 {% endif %}
 
-{% if player.id_in_group == 2}
+{% if player.id_in_group == 2 %}
 The supervisor {{% if player.SEM==2 %} asked {% else %} did not ask {% endif %} for the emergency monetary budget for your region. <br><br>
 {% endif %}
 

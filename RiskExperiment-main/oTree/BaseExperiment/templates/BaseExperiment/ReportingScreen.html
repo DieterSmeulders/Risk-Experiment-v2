@@ -7,8 +7,12 @@
 
 {% block content %}
 
-{% if player.id_in_group == 1}
-{% formfield player.NReportedPerf %}<br><br>
+    def get_form_fields(self):
+        if self.player.id_in_group == 1:
+            return ['NReportedPerf']
+        else:
+            return ['SReportedPerf']
+
 
     {% if group.reportingcondition ==  'mandatory' %}
     {% formfield player.NReportedRiskMan %}
@@ -25,9 +29,6 @@
 
 {% endif %}
 
-
-{% if player.id_in_group == 2}
-{% formfield player.SReportedPerf %}<br><br>
 
     {% if group.reportingcondition ==  'mandatory' %}
     {% formfield player.SReportedRiskMan %}<br><br>
