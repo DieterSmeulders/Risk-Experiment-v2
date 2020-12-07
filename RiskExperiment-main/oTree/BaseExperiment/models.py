@@ -89,7 +89,7 @@ class Player(BasePlayer):
         label='Please specify:'
     )
 
-    NReportedRiskVol = models.StingField(
+    NReportedRiskVol = models.StringField(
         label='Notes (optional).',
     )
 
@@ -103,14 +103,14 @@ class Player(BasePlayer):
         label='Please specify:'
     )
 
-    SReportedRiskVol = models.StingField(
+    SReportedRiskVol = models.StringField(
         label='Notes (optional).',
     )
-    Ntime = models.IntegField(
+    Ntime = models.IntegerField(
         label='Northern regional manager:', min=0, max=10
     )
 
-    Stime = models.IntegField(
+    Stime = models.IntegerField(
         label='Southern regional manager:', min=0, max=10
     )
     NEM = models.IntegerField(

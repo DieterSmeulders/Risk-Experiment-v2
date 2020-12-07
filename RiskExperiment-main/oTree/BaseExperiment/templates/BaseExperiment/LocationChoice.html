@@ -16,12 +16,12 @@ Which location do you choose?<br><br>
 
 Click on next to inform the supervisor about your decision.
 
-{% if player.id_in_group == 1}
-{% formfield player.NLocation %}
+{% if player.id_in_group == 1 %}
+{% formfield player.NLocationChoice %}
 {% endif %}
 
-{% if player.id_in_group == 2}
-{% formfield player.SLocation %}
+{% if player.id_in_group == 2 %}
+{% formfield player.SLocationChoice %}
 {% endif %}
 
     {% next_button %}

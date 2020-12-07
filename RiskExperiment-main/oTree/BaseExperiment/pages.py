@@ -38,7 +38,11 @@ class ComprehensionSurvey(Page):
 
 class LocationChoice(Page):
     form_model = 'player'
-    form_fields = ['NLocationChoice', 'SLocationChoice']
+    def get_form_fields(self):
+        if self.player.id_in_group == 1:
+            return ['NLocationChoice']
+        else:
+            return ['SLocationChoice']
     def is_displayed(self):
         return self.player.id_in_group in (1,2)
 
@@ -68,8 +72,17 @@ class ReportingIntro(Page):
 
 class ReportingScreen(Page):
     form_model = 'player'
-    form_fields = ['SReportedPerf', 'NReportedPerf', 'SReportedRiskMan', 'NReportedRiskMan',
-                   'SReportedRiskManD', 'SReportedRiskVol', 'NReportedRiskManD', 'NReportedRiskVol']
+    def get_form_fields(self):
+        if self.player.id_in_group == 1:
+            if self.group.reportingcondition ==  'mandatory':
+                return ['NReportedPerf','NReportedRiskMan','NReportedRiskManD']
+            else:
+                return ['NReportedPerf','NReportedRiskVol']
+        else:
+            if self.group.reportingcondition ==  'mandatory':
+                return ['SReportedPerf','SReportedRiskManD','SReportedRiskMan']
+            else:
+                return ['SReportedPerf','SReportedRiskVol']
     def is_displayed(self):
         return self.player.id_in_group in (1,2)
 
@@ -83,27 +96,27 @@ class AfterRound1Report(Page):
 
 class SPLocation1(Page):
     def is_displayed(self):
-        return self.player.id_in_group in (3)
+        return self.player.id_in_group == 3
 
 class SPLocation2(Page):
     form_model = 'player'
     form_fields = ['Sloc','Nloc']
     def is_displayed(self):
-        return self.player.id_in_group in (3)
+        return self.player.id_in_group == 3
 
 class SPBefReporting(Page):
     def is_displayed(self):
-        return self.player.id_in_group in (3)
+        return self.player.id_in_group == 3
 
 class SPAllocation(Page):
     form_model = 'player'
     form_fields = ['Stime','Ntime','SEM', 'NEM']
     def is_displayed(self):
-        return self.player.id_in_group in (3)
+        return self.player.id_in_group == 3
 
 class SPAfterAllocation(Page):
     def is_displayed(self):
-        return self.player.id_in_group in (3)
+        return self.player.id_in_group == 3
 
 
 class expectancy1(Page):
@@ -347,7 +360,7 @@ class Results(Page):
 
 
 page_sequence = [IntroPage, IntroPage2, CultureCondition, Randomization, PlayerIntroPage, GameIntro, ComprehensionSurvey,
-                 LocationChoice, SPLocation1, SPLocation2, Approval, SandwichIntro, AfterPractice, AfterRound1Game,
+                 LocationChoice, SPLocation1, SPLocation2, SandwichIntro, AfterPractice, AfterRound1Game,
                  RiskEvent, SPBefReporting, ReportingIntro, ReportingScreen, ReminderAccess, SPAllocation,
                  SPAfterAllocation, AfterRound1Report, expectancy1, expectancy2, riskperception1, riskperception2, riskimpexexp,
                  AfterRound1Allocation, allocationfactor1, allocationfactor2, responsibility, perf, riskimportpostexp, reportimp, factor1, factor2, reportqual1,
