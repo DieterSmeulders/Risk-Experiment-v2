@@ -389,7 +389,7 @@ class Results(Page):
 
 
 page_sequence = [IntroPage, IntroPage2, CultureCondition, Randomization, PlayerIntroPage, GameIntro, ComprehensionSurvey,
-                 LocationChoice, SPLocation1, SPLocation2, SandwichIntro, Shop, AfterPractice, AfterRound1Game,
+                 LocationChoice, SPLocation1, SPLocation2, SandwichIntro, Shop, AfterPractice, Round1, AfterRound1Game,
                  RiskEvent, SPBefReporting, ReportingIntro, ReportingScreen, ReminderAccess, SPAllocation,
                  SPAfterAllocation, AfterRound1Report, expectancy1, expectancy2, riskperception1, riskperception2, riskimpexexp,
                  AfterRound1Allocation, allocationfactor1, allocationfactor2, responsibility, perf, riskimportpostexp, reportimp, factor1, factor2, reportqual1,
