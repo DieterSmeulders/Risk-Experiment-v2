@@ -66,10 +66,24 @@ class Shop(Page):
         return dict(ingredients=INGREDIENTS, menu=RECIPES)
 
     def js_vars(self):
-        return dict(duration=300, menu=RECIPES, images=IMAGES)
+        return dict(duration=120, menu=RECIPES, images=IMAGES)
 
+    def is_displayed(self):
+        return self.player.id_in_group in (1, 2)
 
 class AfterPractice(Page):
+    def is_displayed(self):
+        return self.player.id_in_group in (1, 2)
+
+class Round1(Page):
+    live_method = "handle_message"
+
+    def vars_for_template(self):
+        return dict(ingredients=INGREDIENTS, menu=RECIPES)
+
+    def js_vars(self):
+        return dict(duration=300, menu=RECIPES, images=IMAGES)
+
     def is_displayed(self):
         return self.player.id_in_group in (1, 2)
 

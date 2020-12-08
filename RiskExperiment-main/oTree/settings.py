@@ -5,7 +5,11 @@ SESSION_CONFIGS = [
     name='BasicExperiment',
     display_name="Basic Experiment",
     num_demo_participants=3,
-    app_sequence=['BaseExperiment']
+    app_sequence=['BaseExperiment'],
+    P1_duration_min=1, P1_duration_max=10,
+    P1_price_min=1, P1_price_max=1,
+    P2_duration_min=1, P2_duration_max=10,
+    P2_price_min=1, P2_price_max=1,
     ),
 ]
 

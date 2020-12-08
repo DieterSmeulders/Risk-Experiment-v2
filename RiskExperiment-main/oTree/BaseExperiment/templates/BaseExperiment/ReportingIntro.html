@@ -6,7 +6,7 @@
 {% endblock %}
 
 {% block content %}
-You are now asked to report your sales performance to the supervisor. <br><br>
+You are now asked to report your sales performance to the supervisor. You sold {{player.performed}} sandwiches, and generated {{player.revenue}} in revenue.<br><br>
 
 {% if group.reportingcondition ==  'mandatory' %}
 The company has a <b> mandatory </b> risk reporting policy, that is, along with sales performance, regional managers are required to report the risks (if any) that could impact the sales performance of their region going forward.

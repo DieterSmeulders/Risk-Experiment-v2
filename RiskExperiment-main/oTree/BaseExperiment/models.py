@@ -1,3 +1,4 @@
+import random
 from otree.api import (
     models,
     widgets,
@@ -10,6 +11,7 @@ from otree.api import (
     currency_range,
 )
 
+from .recipes import RECIPES
 
 author = 'Dieter Smeulders'
 
@@ -23,7 +25,7 @@ class Constants(BaseConstants):
     players_per_group = 3
     num_rounds = 1
     BasePay = Currency(1)
-    SellingPrice = Currency(1)
+#    SellingPrice = Currency(1)
     EmployeeRatio = 0.5
     ManagerRatio = 0.25
 
@@ -93,7 +95,6 @@ class Subsession(BaseSubsession):
         game.next_order(player.price)
         game.save()
         return game
-
 
     def play(self, player, sandwich):
         """Main gameplay logic:
@@ -196,11 +197,13 @@ class Player(BasePlayer):
 #All other parameters
 
     NLocationChoice = models.IntegerField(
+     label='Location Decision.',
      choices=[
          [1, 'LocationA'],
          [2, 'LocationB']]
     )
     SLocationChoice = models.IntegerField(
+        label='Location Decision.',
         choices=[
          [1, 'LocationA'],
          [2, 'LocationB']]
