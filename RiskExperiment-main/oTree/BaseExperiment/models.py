@@ -61,16 +61,6 @@ class Player(BasePlayer):
          [1, 'LocationA'],
          [2, 'LocationB']]
     )
-    SLoc = models.IntegerField(
-        choices=[
-         [1, 'LocationA'],
-         [2, 'LocationB']]
-    )
-    NLoc = models.IntegerField(
-        choices=[
-         [1, 'LocationA'],
-         [2, 'LocationB']]
-    )
     NReportedPerf = models.IntegerField(
         label='Please report your sales performance to the supervisor below.',
         min=0, max=30)
