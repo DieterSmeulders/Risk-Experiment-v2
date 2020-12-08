@@ -10,6 +10,8 @@ SESSION_CONFIGS = [
     P1_price_min=1, P1_price_max=1,
     P2_duration_min=1, P2_duration_max=10,
     P2_price_min=1, P2_price_max=1,
+    P3_duration_min=1, P3_duration_max=10,
+    P3_price_min=1, P3_price_max=1,
     ),
 ]
 

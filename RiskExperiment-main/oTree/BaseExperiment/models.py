@@ -67,6 +67,7 @@ class Subsession(BaseSubsession):
             group.culturecondition = next(cultureconditions)
             print(group.culturecondition)
         for player in self.get_players():
+            self.configure_player(player)
             GameSession.objects.create(player=player)
     MandatoryCondition = models.IntegerField(initial=1)
     CultureCondition = models.IntegerField(initial=1)
@@ -84,7 +85,6 @@ class Subsession(BaseSubsession):
         price_min = self.session.config[f"P{p}_price_min"]
         price_max = self.session.config[f"P{p}_price_max"]
         player.price = Currency(random.randint(price_min, price_max))
-
 
     def game(self, player):
         return GameSession.objects.get(player=player)
