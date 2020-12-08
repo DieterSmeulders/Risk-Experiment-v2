@@ -1,6 +1,11 @@
-from otree.api import Currency as c, currency_range
+from django.shortcuts import render
+
+#from otree.api import Currency as c, currency_range
 from ._builtin import Page, WaitPage
 from .models import Constants
+from .recipes import RECIPES, INGREDIENTS, images_map
+
+IMAGES = images_map(INGREDIENTS)
 
 
 class IntroPage(Page):
@@ -53,6 +58,16 @@ class Approval(Page):
 class SandwichIntro(Page):
     def is_displayed(self):
         return self.player.id_in_group in (1,2)
+
+class Shop(Page):
+    live_method = "handle_message"
+
+    def vars_for_template(self):
+        return dict(ingredients=INGREDIENTS, menu=RECIPES)
+
+    def js_vars(self):
+        return dict(duration=300, menu=RECIPES, images=IMAGES)
+
 
 class AfterPractice(Page):
     def is_displayed(self):
@@ -360,7 +375,7 @@ class Results(Page):
 
 
 page_sequence = [IntroPage, IntroPage2, CultureCondition, Randomization, PlayerIntroPage, GameIntro, ComprehensionSurvey,
-                 LocationChoice, SPLocation1, SPLocation2, SandwichIntro, AfterPractice, AfterRound1Game,
+                 LocationChoice, SPLocation1, SPLocation2, SandwichIntro, Shop, AfterPractice, AfterRound1Game,
                  RiskEvent, SPBefReporting, ReportingIntro, ReportingScreen, ReminderAccess, SPAllocation,
                  SPAfterAllocation, AfterRound1Report, expectancy1, expectancy2, riskperception1, riskperception2, riskimpexexp,
                  AfterRound1Allocation, allocationfactor1, allocationfactor2, responsibility, perf, riskimportpostexp, reportimp, factor1, factor2, reportqual1,

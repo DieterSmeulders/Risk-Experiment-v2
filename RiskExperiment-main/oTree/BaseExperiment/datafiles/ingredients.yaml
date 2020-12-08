@@ -1,0 +1,65 @@
+bread:
+- burger bun
+- white bread
+- whole grain bread
+- baguette
+- rustic bread
+- Italian bread
+- Focaccia bread
+
+meat:
+- beef steak
+- salmon
+- lamb steak
+- chicken
+- turkey
+- shrimp
+- crab
+- sausage
+- bacon
+- ham
+- tuna
+
+cheese:
+- white cheddar
+- sharp cheddar
+- blue cheese
+- smoked gouda
+- Monterey Jack cheese
+- American cheese
+- Gruyere cheese
+- Pepper Jack cheese
+- mozarella
+- cream cheese
+- Swiss cheese
+
+vegetable:
+- carrot
+- lettuce
+- cucumber
+- onion
+- corn
+- potato
+- tomato
+- celery
+- radish
+- green onion
+- avocado
+- parsley
+- green cabbage
+- spinach
+- mushroom
+
+condiment:
+- ketchup
+- mayonnaise
+- mustard
+- soy sauce
+- black pepper
+- salt
+- hot sauce
+- black cumin
+- garlic powder
+- ginger
+- red pepper
+- paprika

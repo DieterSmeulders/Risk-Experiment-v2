@@ -1,0 +1,46 @@
+.flex-fill {
+    flex: 1;
+}
+
+ul.sandwich {
+    width: 320px;
+    padding: 0;
+}
+
+ul.sandwich li {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    width: 320px;
+    height: 48px;
+    background: url(images/empty.png);
+    border-radius: 24px;
+    background-size: cover;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+ul.sandwich button.del-btn {
+    position: absolute;
+    top: 4px;
+    right: 4px;
+    background: white;
+    border-radius: 50%;
+    padding: 4px;
+    width: 24px;
+    height: 24px;
+    font-size: 16px;
+    line-height: 16px;
+    opacity: 0.75;
+}
+
+#timer {
+    font-size: x-large;
+    padding: 0.5em;
+}
+
+#recipe ul {
+    height: 27ex;  /* fits 9 items */
+}

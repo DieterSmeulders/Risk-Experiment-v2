@@ -5,7 +5,8 @@ from otree.api import (
     BaseSubsession,
     BaseGroup,
     BasePlayer,
-    Currency as c,
+    ExtraModel,
+    Currency,
     currency_range,
 )
 
@@ -21,10 +22,36 @@ class Constants(BaseConstants):
     name_in_url = 'BaseExperiment'
     players_per_group = 3
     num_rounds = 1
-    BasePay = c(1)
-    SellingPrice = c(1)
+    BasePay = Currency(1)
+    SellingPrice = Currency(1)
     EmployeeRatio = 0.5
     ManagerRatio = 0.25
+
+class GameSession(ExtraModel):
+    """Persistent game state linked to each player.
+    Holds name of ordered sandwich and its price.
+    Implements core game logic independant from other models.
+    """
+    # TODO: this is a temporary data and should be deleted afterwards
+    player = models.Link('Player')
+    ordered = models.StringField()
+    price = models.CurrencyField()
+
+    def next_order(self, price):
+        """Generates and saves next random order"""
+        self.ordered = random.choice(list(RECIPES.keys()))
+        self.price = price
+
+    def validate(self, sandwich):
+        """Validates if submitted sandwich matches ordered
+        Returns: valid, reward, errors
+        """
+        expected = RECIPES[self.ordered]
+        mismatches = len(set(sandwich) ^ set(expected))
+        if mismatches == 0:
+            return True, self.price, 0
+        else:
+            return False, 0, mismatches
 
 
 class Subsession(BaseSubsession):
@@ -37,9 +64,59 @@ class Subsession(BaseSubsession):
             print(group.reportingcondition)
             group.culturecondition = next(cultureconditions)
             print(group.culturecondition)
+        for player in self.get_players():
+            GameSession.objects.create(player=player)
     MandatoryCondition = models.IntegerField(initial=1)
     CultureCondition = models.IntegerField(initial=1)
+#setting gamesession variables
 
+
+#Game Related Logic
+    def configure_player(self, player):
+        p = player.id_in_group
+
+        duration_min = self.session.config[f"P{p}_duration_min"]
+        duration_max = self.session.config[f"P{p}_duration_max"]
+        player.duration = random.randint(duration_min, duration_max)
+
+        price_min = self.session.config[f"P{p}_price_min"]
+        price_max = self.session.config[f"P{p}_price_max"]
+        player.price = Currency(random.randint(price_min, price_max))
+
+
+    def game(self, player):
+        return GameSession.objects.get(player=player)
+
+
+    def start(self, player):
+        game = self.game(player)
+        game.next_order(player.price)
+        game.save()
+        return game
+
+
+    def play(self, player, sandwich):
+        """Main gameplay logic:
+        - validating submitted sandwich
+        - updating metrics
+        - advancing to next order
+        """
+        game = self.game(player)
+        valid, reward, errors = game.validate(sandwich)
+
+        if valid:
+            player.performed += 1
+            player.revenue += reward
+        else:
+            player.errors += 1
+            player.mismatches = max(player.mismatches, errors)
+        player.save()
+
+        if valid:
+            game.next_order(player.price)
+            game.save()
+
+        return game, valid, errors
 
 
 class Group(BaseGroup):
@@ -50,6 +127,73 @@ class Group(BaseGroup):
 class Player(BasePlayer):
     name = models.StringField
     age = models.StringField
+
+#All Parameters for the sandwich making task
+    """A player parameters and metrics
+
+        Implements communication logic:
+
+        received 'start':
+        - send order
+
+        received 'sandwich':
+        - validate sandwich
+
+        received valid sandwich:
+        - send status (number of sandwiches sold)
+        - send new order
+
+        received invalid sandwish:
+        - send error messages (with number of mismatches)
+        """
+
+    # duration of the round
+    duration = models.FloatField()
+    # sandwich price for the round
+    price = models.CurrencyField()
+
+    # number of valid sandwiches sold
+    performed = models.IntegerField(initial=0)
+    # total revenue
+    revenue = models.CurrencyField(initial=0)
+    # number of invalid sandwiches submitted
+    errors = models.IntegerField(initial=0)
+    # maximal number of mismatched components
+    mismatches = models.IntegerField(initial=0)
+
+    def handle_message(self, message):
+        kind = message['type']
+        if kind == 'start':
+            return self.handle_start()
+        elif kind == 'sandwich':
+            return self.handle_sandwich(message['components'])
+        else:
+            raise ValueError("Invalid message received", kind)
+
+    def handle_start(self):
+        game = self.subsession.start(self)
+        return self.reply(self.order_message(game))
+
+    def handle_sandwich(self, components):
+        game, valid, errors = self.subsession.play(self, components)
+        if valid:
+            return self.reply([self.status_message(), self.order_message(game)])
+        else:
+            return self.reply(self.errors_message(errors))
+
+    def reply(self, message):
+        return {self.id_in_group: message}
+
+    def order_message(self, game):
+        return {'type': 'order', 'order': game.ordered}
+
+    def errors_message(self, errors):
+        return {'type': 'error', 'mismatches': errors}
+
+    def status_message(self):
+        return {'type': 'status', 'performed': self.performed}
+
+#All other parameters
 
     NLocationChoice = models.IntegerField(
      choices=[

@@ -1,0 +1,154 @@
+{% extends "global/Page.html" %}
+{% load otree static %}
+
+{% block title %}
+Sandwich Shop
+{% endblock %}
+
+
+{% block styles %}
+<link rel="stylesheet" href="{% static 'sandwiches/main.css' %}" />
+{% endblock %}
+
+{% block scripts %}
+<script src="{% static 'sandwiches/main.js' %}"></script>
+{% endblock %}
+
+{% block content %}
+
+<div class="d-flex flex-row justify-content-center align-items-stretch">
+
+    <div class="d-flex flex-column justify-content-center" id="menu-column">
+        <div class="form-group ctrl-ingredient">
+            <label for="select-bread">Breads</label>
+            <div class="input-group">
+                <select class="form-control">
+                    <option value=""></option>
+                    {% for item in ingredients.bread %}
+                    <option value="{{item}}">{{item}}</option>
+                    {% endfor %}
+                </select>
+                <div class="input-group-append">
+                    <button class="btn btn-outline-primary add-btn" type="button">Add</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="bread-select">Meat</label>
+            <div class="input-group ctrl-ingredient">
+                <select class="form-control">
+                    <option value=""></option>
+                    {% for item in ingredients.meat %}
+                    <option value="{{item}}">{{item}}</option>
+                    {% endfor %}
+                </select>
+                <div class="input-group-append">
+                    <button class="btn btn-outline-primary add-btn" type="button">Add</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="select-cheese">Cheese</label>
+            <div class="input-group ctrl-ingredient">
+                <select class="form-control">
+                    <option value=""></option>
+                    {% for item in ingredients.cheese %}
+                    <option value="{{item}}">{{item}}</option>
+                    {% endfor %}
+                </select>
+                <div class="input-group-append">
+                    <button class="btn btn-outline-primary add-btn" type="button">Add</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="select-vegetable">Vegetables</label>
+            <div class="input-group ctrl-ingredient">
+                <select class="form-control">
+                    <option value=""></option>
+                    {% for item in ingredients.vegetable %}
+                    <option value="{{item}}">{{item}}</option>
+                    {% endfor %}
+                </select>
+                <div class="input-group-append">
+                    <button class="btn btn-outline-primary add-btn" type="button">Add</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="select-condiment">Condiment</label>
+            <div class="input-group ctrl-ingredient">
+                <select class="form-control">
+                    <option value=""></option>
+                    {% for item in ingredients.condiment %}
+                    <option value="{{item}}">{{item}}</option>
+                    {% endfor %}
+                </select>
+                <div class="input-group-append">
+                    <button class="btn btn-outline-primary add-btn" type="button">Add</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="d-flex flex-column justify-content-between align-items-center" id="main-column">
+        <button type="button" class="btn btn-danger" id="reset-btn">Reset</button>
+        <ul id="assembly" class="sandwich m-4"></ul>
+        <button type="button" class="btn btn-success" id="submit-btn">Submit</button>
+    </div>
+
+    <div class="d-flex flex-column justify-content-start">
+        <div class="form-group">
+            <label for="order">Order</label>
+            <div class="form-control" id="order">Something</div>
+        </div>
+
+        <div class="form-group" id="recipe">
+            <label for="bread-select">Menu</label>
+            <select class="form-control">
+                <option value=""></option>
+                {% for item in menu.keys %}
+                <option value="{{item}}">{{item}}</option>
+                {% endfor %}
+            </select>
+            <ul class="m-1"></ul>
+        </div>
+
+        <div class="form-group">
+            <label>Remaining time</label>
+            <div id="timer" class="form-control"></div>
+        </div>
+
+        <div class="form-group">
+            <label>Sandwiches served</label>
+            <div id="counter" class="form-control"></div>
+        </div>
+
+    </div>
+</div>
+
+<div id="finish">
+    {% next_button %}
+</div>
+
+<div id="error" class="modal" tabindex="-1">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header bg-danger">
+                <h5 class="modal-title">Sandwich is wrong</h5>
+            </div>
+            <div class="modal-body">
+                Some ingredients do not match.
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
