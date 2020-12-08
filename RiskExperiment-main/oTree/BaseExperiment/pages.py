@@ -290,7 +290,7 @@ class pclosure1(Page):
     form_fields = ['closure1', 'closure2', 'closure3', 'closure4', 'closure5', 'closure6', 'closure7']
 
     def is_displayed(self):
-        return self.player.id_in_group in (3,)
+        return self.player.id_in_group == 3
 
 
 class pclosure2(Page):
@@ -298,7 +298,7 @@ class pclosure2(Page):
     form_fields = ['closure8', 'closure9', 'closure10', 'closure11', 'closure12', 'closure13', 'closure14', 'closure15']
 
     def is_displayed(self):
-        return self.player.id_in_group in (3,)
+        return self.player.id_in_group == 3
 
 
 class uncertainaversion1(Page):
@@ -316,7 +316,7 @@ class allocationfactor1(Page):
     form_fields = ['sfact1', 'sfact2', 'sfact3', 'sfact4', 'sfact5', 'sfact6']
 
     def is_displayed(self):
-        return self.player.id_in_group in (3,)
+        return self.player.id_in_group == 3
 
 
 class allocationfactor2(Page):
@@ -324,7 +324,7 @@ class allocationfactor2(Page):
     form_fields = ['sfact7', 'sfact8', 'sfact9', 'sfact10', 'sfact11', 'sfact12']
 
     def is_displayed(self):
-        return self.player.id_in_group in (3,)
+        return self.player.id_in_group == 3
 
 
 class emergencyfactor(Page):
@@ -332,7 +332,7 @@ class emergencyfactor(Page):
     form_fields = ['emfact1', 'emfact2', 'emfact3', 'emfact4', 'emfact5', 'emfact6']
 
     def is_displayed(self):
-        return self.player.id_in_group in (3,)
+        return self.player.id_in_group == 3
 
 
 class reportqual1(Page):
@@ -340,7 +340,7 @@ class reportqual1(Page):
     form_fields = ['north1', 'north2', 'south1', 'south2']
 
     def is_displayed(self):
-        return self.player.id_in_group in (3,)
+        return self.player.id_in_group == 3
 
 
 class reportqual2(Page):
@@ -348,7 +348,7 @@ class reportqual2(Page):
     form_fields = ['north3', 'north4', 'south3', 'south4']
 
     def is_displayed(self):
-        return self.player.id_in_group in (3,)
+        return self.player.id_in_group == 3
 
 class mansafetycheck(Page):
     form_model = 'player'
