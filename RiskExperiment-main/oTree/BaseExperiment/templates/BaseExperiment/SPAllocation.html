@@ -6,47 +6,47 @@
 
 The report of the northern regional manager: <br><br>
 
-The sales performance is {{ display player.NReportedPerf }} dollars. <br><br>
+The sales performance is {{ northernreportedperformance }} dollars. <br><br>
 
 {% if group.reportingcondition ==  'mandatory' %}
-    {% if player.NReportedRiskMan == 'None' %} No risk is identified.
-    {% endif %}
-    {% if player.NReportedRiskMan == 'None' %} Some risk is identified in this region. See the report of the northern regional manager below: <br><br>
-    {{display player.NReportedRiskManD}}
+    {% if northernmandatoryrisk == 'None' %} No risk is identified.
+    {% else %}
+    Some risk is identified in this region. See the report of the northern regional manager below: <br><br>
+    {{northernmandatoryrisk}}
     {% endif %}
 {% endif %}
 
 {% if group.reportingcondition ==  'voluntary' %}
-{{display player.NReportedRiskVol}}
+{{northernvoluntaryrisk}}
 {% endif %}
 
 
 The report of the southern regional manager: <br><br>
 
-The sales performance is {{ display player.SReportedPerf }} dollars. <br><br>
+The sales performance is {{ southernreportedperformance }} dollars. <br><br>
 
 {% if group.reportingcondition ==  'mandatory' %}
-    {% if player.SReportedRiskMan == 'None' %} No risk is identified.
-    {% endif %}
-    {% if player.SReportedRiskMan == 'None' %} Some risk is identified in this region. See the report of the northern regional manager below:<br><br>
-    {{display player.SReportedRiskManD}}
+    {% if southernmandatoryrisk == 'None' %} No risk is identified.
+    {% else %}
+    Some risk is identified in this region. See the report of the northern regional manager below:<br><br>
+    {{southernmandatoryrisk}}
     {% endif %}
 {% endif %}
 
 {% if group.reportingcondition ==  'voluntary' %}
-{{display player.SReportedRiskVol}}
+{{southernvoluntaryrisk}}
 {% endif %}
 
 Please allocate 10 minutes of production time between the southern and the northern regional managers.
 
 
-{% formfield player. Ntime %}
-{% formfield player. Stime %}
+{% formfield player.Ntime %}
+{% formfield player.Stime %}
 
 Would you like to ask for the emergency monetary budget for each region?
 
-{% formfield player. NEM %}
-{% formfield player. SEM %}
+{% formfield player.NEM %}
+{% formfield player.SEM %}
 
 Once you click on “next”, Your request to the company will be sent and the regional managers will be informed about the production time you allocated to them and whether you asked for the emergency budget for their region or not.
 

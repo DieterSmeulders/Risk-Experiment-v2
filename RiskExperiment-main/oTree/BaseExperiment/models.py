@@ -161,6 +161,13 @@ class Player(BasePlayer):
     errors = models.IntegerField(initial=0)
     # maximal number of mismatched components
     mismatches = models.IntegerField(initial=0)
+    # time allocated
+    time = models.IntegerField(initial=5)
+    # first round performance
+    performedR1 = models.IntegerField(initial=0)
+    revenueR1 = models.IntegerField(initial=0)
+    errorsR1 = models.IntegerField(initial=0)
+    mismatchesR1 = models.IntegerField(initial=0)
 
     def handle_message(self, message):
         kind = message['type']
@@ -200,16 +207,24 @@ class Player(BasePlayer):
         self.errors = 0
         self.mismatches = 0
 
-    def gettime(self):
-        self.time = models.integerfield(initial=5)
+    def set_up_second_round(self):
+        self.performedR1 = self.performed
+        self.revenueR1 = self.revenue
+        self.errorsR1 = self.errors
+        self.mismatchesR1 = self.mismatches
+        self.performed = 0
+        self.revenue = 0
+        self.errors = 0
+        self.mismatches = 0
         manager = self.group.get_player_by_id(3)
         if self.player.id_in_group == 1:
             self.time = manager.Ntime
         if self.player.id_in_group == 2:
             self.time = manager.Stime
 
-#All other parameters
 
+
+#All other parameters
     NLocationChoice = models.IntegerField(
      label='Location Decision.',
      choices=[

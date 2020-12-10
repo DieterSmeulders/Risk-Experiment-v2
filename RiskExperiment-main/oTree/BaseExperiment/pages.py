@@ -66,7 +66,7 @@ class Shop(Page):
         return dict(ingredients=INGREDIENTS, menu=RECIPES)
 
     def js_vars(self):
-        return dict(duration=120, menu=RECIPES, images=IMAGES)
+        return dict(duration=10, menu=RECIPES, images=IMAGES)
 
     def is_displayed(self):
         return self.player.id_in_group in (1, 2)
@@ -77,7 +77,7 @@ class AfterPractice(Page):
 
 #Reset Game Values
     def before_next_page(self):
-        self.player.reset_after_practice
+        self.player.reset_after_practice()
 
 class Round1(Page):
     live_method = "handle_message"
@@ -86,7 +86,7 @@ class Round1(Page):
         return dict(ingredients=INGREDIENTS, menu=RECIPES)
 
     def js_vars(self):
-        return dict(duration=300, menu=RECIPES, images=IMAGES)
+        return dict(duration=10, menu=RECIPES, images=IMAGES)
 
     def is_displayed(self):
         return self.player.id_in_group in (1, 2)
@@ -133,7 +133,13 @@ class SPLocation1(Page):
 
 class SPLocation2(Page):
     form_model = 'player'
-    form_fields = ['Sloc','Nloc']
+
+    def vars_for_template(self):
+        return dict(
+            northernlocation=self.group.get_player_by_id(1).NLocationChoice,
+            southernlocation=self.group.get_player_by_id(2).SLocationChoice
+        )
+
     def is_displayed(self):
         return self.player.id_in_group == 3
 
@@ -144,6 +150,17 @@ class SPBefReporting(Page):
 class SPAllocation(Page):
     form_model = 'player'
     form_fields = ['Stime','Ntime','SEM', 'NEM']
+
+    def vars_for_template(self):
+        return dict(
+            northernreportedperformance=self.group.get_player_by_id(1).NReportedPerf,
+            northernmandatoryrisk=self.group.get_player_by_id(1).NReportedRiskManD,
+            northernvoluntaryrisk=self.group.get_player_by_id(1).NReportedRiskVol,
+            southernreportedperformance=self.group.get_player_by_id(2).SReportedPerf,
+            southernmandatoryrisk=self.group.get_player_by_id(1).SReportedRiskManD,
+            southernvoluntaryrisk=self.group.get_player_by_id(1).SReportedRiskVol,
+        )
+
     def is_displayed(self):
         return self.player.id_in_group == 3
 
@@ -183,7 +200,7 @@ class riskperception2(Page):
         return self.player.id_in_group in (1, 2)
 
     def before_next_page(self):
-        self.player.gettime
+        self.player.set_up_second_round()
 
 
 class riskimpexexp(Page):
