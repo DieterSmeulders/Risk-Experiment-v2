@@ -75,6 +75,10 @@ class AfterPractice(Page):
     def is_displayed(self):
         return self.player.id_in_group in (1, 2)
 
+#Reset Game Values
+    def before_next_page(self):
+        self.player.reset_after_practice
+
 class Round1(Page):
     live_method = "handle_message"
 
@@ -147,7 +151,6 @@ class SPAfterAllocation(Page):
     def is_displayed(self):
         return self.player.id_in_group == 3
 
-
 class expectancy1(Page):
     form_model = 'player'
     form_fields = ['extime']
@@ -179,6 +182,9 @@ class riskperception2(Page):
     def is_displayed(self):
         return self.player.id_in_group in (1, 2)
 
+    def before_next_page(self):
+        self.player.gettime
+
 
 class riskimpexexp(Page):
     form_model = 'player'
@@ -186,7 +192,6 @@ class riskimpexexp(Page):
 
 
 class AfterRound1Allocation(Page):
-    pass
     def is_displayed(self):
         return self.player.id_in_group in (1, 2)
 

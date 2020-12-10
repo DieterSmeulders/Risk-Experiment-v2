@@ -194,6 +194,20 @@ class Player(BasePlayer):
     def status_message(self):
         return {'type': 'status', 'performed': self.performed}
 
+    def reset_after_practice(self):
+        self.performed = 0
+        self.revenue = 0
+        self.errors = 0
+        self.mismatches = 0
+
+    def gettime(self):
+        self.time = models.integerfield(initial=5)
+        manager = self.group.get_player_by_id(3)
+        if self.id_in_group == 1
+            self.time = manager.Ntime
+        if self.id_in_group == 2
+            self.time = manager.Stime
+
 #All other parameters
 
     NLocationChoice = models.IntegerField(
