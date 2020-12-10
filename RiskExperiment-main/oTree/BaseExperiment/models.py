@@ -203,9 +203,9 @@ class Player(BasePlayer):
     def gettime(self):
         self.time = models.integerfield(initial=5)
         manager = self.group.get_player_by_id(3)
-        if self.id_in_group == 1
+        if self.player.id_in_group == 1:
             self.time = manager.Ntime
-        if self.id_in_group == 2
+        if self.player.id_in_group == 2:
             self.time = manager.Stime
 
 #All other parameters
