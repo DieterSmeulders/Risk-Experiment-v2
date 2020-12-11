@@ -8,10 +8,10 @@
 {% block content %}
 
 
-{% if group.reportingconditions == 'voluntary' %}
+{% if group.reportingcondition == 'voluntary' %}
 {% formfield play.voluntary %}
 
-{% if group.reportingconditions == 'mandatory' %}
+{% if group.reportingcondition == 'mandatory' %}
 
 {% formfield play.mandatory %}
     {% next_button %}

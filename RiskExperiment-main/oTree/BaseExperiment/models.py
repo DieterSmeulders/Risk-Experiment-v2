@@ -399,6 +399,7 @@ class Player(BasePlayer):
     safety7 = models.IntegerField(
         label='Working with members of this company, my unique skills and talents are valued and utilized.',
         choices=[[1, 'Very inaccurate'], [2, ''], [3, ''], [4, ''], [5, 'Very accurate']],
+        widget=widgets.RadioSelectHorizontal
     )
     riskimp3 = models.IntegerField(
         label='To what extent did the company put emphasis on the communication of risk information?',

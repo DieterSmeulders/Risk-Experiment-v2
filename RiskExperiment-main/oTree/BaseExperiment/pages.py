@@ -1,6 +1,6 @@
 from django.shortcuts import render
 
-#from otree.api import Currency as c, currency_range
+# from otree.api import Currency as c, currency_range
 from ._builtin import Page, WaitPage
 from .models import Constants
 from .recipes import RECIPES, INGREDIENTS, images_map
@@ -11,8 +11,9 @@ IMAGES = images_map(INGREDIENTS)
 class IntroPage(Page):
     def vars_for_template(self):
         return dict(
-            BasePay = Constants.BasePay
+            BasePay=Constants.BasePay
         )
+
 
 class IntroPage2(Page):
     def vars_for_template(self):
@@ -24,40 +25,53 @@ class IntroPage2(Page):
 
 class CultureCondition(Page):
     pass
+
+
 class Randomization(Page):
     pass
+
+
 class PlayerIntroPage(Page):
     def is_displayed(self):
-        return self.player.id_in_group in (1,2,3)
+        return self.player.id_in_group in (1, 2, 3)
+
     def vars_for_template(self):
         return dict(
             employeepercent=100 * Constants.EmployeeRatio,
             managerpercent=100 * Constants.ManagerRatio
         )
 
+
 class GameIntro(Page):
     pass
+
 
 class ComprehensionSurvey(Page):
     pass
 
+
 class LocationChoice(Page):
     form_model = 'player'
+
     def get_form_fields(self):
         if self.player.id_in_group == 1:
             return ['NLocationChoice']
         else:
             return ['SLocationChoice']
+
     def is_displayed(self):
-        return self.player.id_in_group in (1,2)
+        return self.player.id_in_group in (1, 2)
+
 
 class Approval(Page):
     def is_displayed(self):
-        return self.player.id_in_group in (1,2)
+        return self.player.id_in_group in (1, 2)
+
 
 class SandwichIntro(Page):
     def is_displayed(self):
-        return self.player.id_in_group in (1,2)
+        return self.player.id_in_group in (1, 2)
+
 
 class Shop(Page):
     live_method = "handle_message"
@@ -71,13 +85,15 @@ class Shop(Page):
     def is_displayed(self):
         return self.player.id_in_group in (1, 2)
 
+
 class AfterPractice(Page):
     def is_displayed(self):
         return self.player.id_in_group in (1, 2)
 
-#Reset Game Values
+    # Reset Game Values
     def before_next_page(self):
         self.player.reset_after_practice()
+
 
 class Round1(Page):
     live_method = "handle_message"
@@ -91,45 +107,55 @@ class Round1(Page):
     def is_displayed(self):
         return self.player.id_in_group in (1, 2)
 
+
 class AfterRound1Game(Page):
     def is_displayed(self):
         return self.player.id_in_group in (1, 2)
 
+
 class RiskEvent(Page):
     def is_displayed(self):
-        return self.player.id_in_group in (1,2)
+        return self.player.id_in_group in (1, 2)
+
 
 class ReportingIntro(Page):
     def is_displayed(self):
         return self.player.id_in_group in (1, 2)
 
+
 class ReportingScreen(Page):
     form_model = 'player'
+
     def get_form_fields(self):
         if self.player.id_in_group == 1:
-            if self.group.reportingcondition ==  'mandatory':
-                return ['NReportedPerf','NReportedRiskMan','NReportedRiskManD']
+            if self.group.reportingcondition == 'mandatory':
+                return ['NReportedPerf', 'NReportedRiskMan', 'NReportedRiskManD']
             else:
-                return ['NReportedPerf','NReportedRiskVol']
+                return ['NReportedPerf', 'NReportedRiskVol']
         else:
-            if self.group.reportingcondition ==  'mandatory':
-                return ['SReportedPerf','SReportedRiskManD','SReportedRiskMan']
+            if self.group.reportingcondition == 'mandatory':
+                return ['SReportedPerf', 'SReportedRiskManD', 'SReportedRiskMan']
             else:
-                return ['SReportedPerf','SReportedRiskVol']
+                return ['SReportedPerf', 'SReportedRiskVol']
+
     def is_displayed(self):
-        return self.player.id_in_group in (1,2)
+        return self.player.id_in_group in (1, 2)
+
 
 class ReminderAccess(Page):
     def is_displayed(self):
         return self.player.id_in_group in (1, 2)
 
+
 class AfterRound1Report(Page):
     def is_displayed(self):
         return self.player.id_in_group in (1, 2)
 
+
 class SPLocation1(Page):
     def is_displayed(self):
         return self.player.id_in_group == 3
+
 
 class SPLocation2(Page):
     form_model = 'player'
@@ -143,13 +169,15 @@ class SPLocation2(Page):
     def is_displayed(self):
         return self.player.id_in_group == 3
 
+
 class SPBefReporting(Page):
     def is_displayed(self):
         return self.player.id_in_group == 3
 
+
 class SPAllocation(Page):
     form_model = 'player'
-    form_fields = ['Stime','Ntime','SEM', 'NEM']
+    form_fields = ['Stime', 'Ntime', 'SEM', 'NEM']
 
     def vars_for_template(self):
         return dict(
@@ -164,9 +192,11 @@ class SPAllocation(Page):
     def is_displayed(self):
         return self.player.id_in_group == 3
 
+
 class SPAfterAllocation(Page):
     def is_displayed(self):
         return self.player.id_in_group == 3
+
 
 class expectancy1(Page):
     form_model = 'player'
@@ -199,9 +229,11 @@ class riskperception2(Page):
     def is_displayed(self):
         return self.player.id_in_group in (1, 2)
 
+
 class riskimpexexp(Page):
     form_model = 'player'
     form_fields = ['riskimp1', 'riskimp2']
+
 
 class AfterRound1Allocation(Page):
     def is_displayed(self):
@@ -210,6 +242,7 @@ class AfterRound1Allocation(Page):
     def before_next_page(self):
         self.player.set_up_second_round()
         self.player.handleriskevent()
+
 
 class Round2(Page):
     live_method = "handle_message"
@@ -222,6 +255,7 @@ class Round2(Page):
 
     def is_displayed(self):
         return self.player.id_in_group in (1, 2)
+
 
 class riskimportpostexp(Page):
     form_model = 'player'
@@ -319,6 +353,12 @@ class volexp(Page):
     form_model = 'player'
     form_fields = ['mandatory', 'voluntary']
 
+    def get_form_fields(self):
+        if self.group.reportingcondition == 'mandatory':
+            return ['mandatory']
+        else:
+            return ['voluntary']
+
 
 class perf(Page):
     form_model = 'player'
@@ -327,9 +367,11 @@ class perf(Page):
     def is_displayed(self):
         return self.player.id_in_group in (1, 2)
 
+
 class riskattitude1(Page):
     form_model = 'player'
     form_fields = ['riskat1', 'riskat2', 'riskat3', 'riskat4', 'riskat5', 'riskat6']
+
 
 class riskattitude2(Page):
     form_model = 'player'
@@ -367,10 +409,10 @@ class uncertainaversion1(Page):
     form_model = 'player'
     form_fields = ['unc1', 'unc2', 'unc3', 'unc4', 'unc5', 'unc6']
 
+
 class uncertainaversion2(Page):
     form_model = 'player'
     form_fields = ['unc7', 'unc8', 'unc9', 'unc10', 'unc11', 'unc12']
-
 
 
 class allocationfactor1(Page):
@@ -412,6 +454,7 @@ class reportqual2(Page):
     def is_displayed(self):
         return self.player.id_in_group == 3
 
+
 class mansafetycheck(Page):
     form_model = 'player'
     form_fields = ['safety1', 'safety2', 'safety3', 'safety4', 'safety5', 'safety6', 'safety7']
@@ -421,11 +464,14 @@ class Results(Page):
     pass
 
 
-page_sequence = [IntroPage, IntroPage2, CultureCondition, Randomization, PlayerIntroPage, GameIntro, ComprehensionSurvey,
+page_sequence = [IntroPage, IntroPage2, CultureCondition, Randomization, PlayerIntroPage, GameIntro,
+                 ComprehensionSurvey,
                  LocationChoice, SPLocation1, SPLocation2, SandwichIntro, Shop, AfterPractice, Round1, AfterRound1Game,
                  RiskEvent, SPBefReporting, ReportingIntro, ReportingScreen, ReminderAccess, SPAllocation,
-                 SPAfterAllocation, AfterRound1Report, expectancy1, expectancy2, riskperception1, riskperception2, riskimpexexp,
-                 AfterRound1Allocation, Round2, allocationfactor1, allocationfactor2, responsibility, perf, riskimportpostexp, reportimp, factor1, factor2, reportqual1,
+                 SPAfterAllocation, AfterRound1Report, expectancy1, expectancy2, riskperception1, riskperception2,
+                 riskimpexexp,
+                 AfterRound1Allocation, Round2, allocationfactor1, allocationfactor2, responsibility, perf,
+                 riskimportpostexp, reportimp, factor1, factor2, reportqual1,
                  reportqual2, reportquality, orgtrust, suptrust,
                  emergencyfactor, supimpress1, supimpress2, riskattitude1, riskattitude2,
                  mansafetycheck, manvoluntarycheck, volexp, pclosure1, pclosure2,
