@@ -165,9 +165,11 @@ class Player(BasePlayer):
     time = models.IntegerField(initial=5)
     # first round performance
     performedR1 = models.IntegerField(initial=0)
-    revenueR1 = models.IntegerField(initial=0)
+    revenueR1 = models.CurrencyField(initial=0)
     errorsR1 = models.IntegerField(initial=0)
     mismatchesR1 = models.IntegerField(initial=0)
+    # risk materialisation
+    riskmaterialized = models.BooleanField()
 
     def handle_message(self, message):
         kind = message['type']
@@ -217,12 +219,23 @@ class Player(BasePlayer):
         self.errors = 0
         self.mismatches = 0
         manager = self.group.get_player_by_id(3)
-        if self.player.id_in_group == 1:
+        if self.id_in_group == 1:
             self.time = manager.Ntime
-        if self.player.id_in_group == 2:
+        if self.id_in_group == 2:
             self.time = manager.Stime
 
+    def handleriskevent(self):
+        manager = self.group.get_player_by_id(3)
+        probability = random.random()
+        if probability > 0.5:
+            self.riskmaterialized = True
+        else:
+            self.riskmaterialized = False
 
+        if (self.id_in_group == 1 and manager.NEM == 1 and self.riskmaterialized == True):
+                    self.price = 0.7
+        if (self.id_in_group == 2 and manager.NEM == 1 and self.riskmaterialized == True):
+                    self.price = 0.7
 
 #All other parameters
     NLocationChoice = models.IntegerField(

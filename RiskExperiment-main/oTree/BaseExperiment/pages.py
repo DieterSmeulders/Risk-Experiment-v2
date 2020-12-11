@@ -199,16 +199,27 @@ class riskperception2(Page):
     def is_displayed(self):
         return self.player.id_in_group in (1, 2)
 
-    def before_next_page(self):
-        self.player.set_up_second_round()
-
-
 class riskimpexexp(Page):
     form_model = 'player'
     form_fields = ['riskimp1', 'riskimp2']
 
-
 class AfterRound1Allocation(Page):
+    def is_displayed(self):
+        return self.player.id_in_group in (1, 2)
+
+    def before_next_page(self):
+        self.player.set_up_second_round()
+        self.player.handleriskevent()
+
+class Round2(Page):
+    live_method = "handle_message"
+
+    def vars_for_template(self):
+        return dict(ingredients=INGREDIENTS, menu=RECIPES)
+
+    def js_vars(self):
+        return dict(duration=60 * self.player.time, menu=RECIPES, images=IMAGES)
+
     def is_displayed(self):
         return self.player.id_in_group in (1, 2)
 
@@ -414,7 +425,7 @@ page_sequence = [IntroPage, IntroPage2, CultureCondition, Randomization, PlayerI
                  LocationChoice, SPLocation1, SPLocation2, SandwichIntro, Shop, AfterPractice, Round1, AfterRound1Game,
                  RiskEvent, SPBefReporting, ReportingIntro, ReportingScreen, ReminderAccess, SPAllocation,
                  SPAfterAllocation, AfterRound1Report, expectancy1, expectancy2, riskperception1, riskperception2, riskimpexexp,
-                 AfterRound1Allocation, allocationfactor1, allocationfactor2, responsibility, perf, riskimportpostexp, reportimp, factor1, factor2, reportqual1,
+                 AfterRound1Allocation, Round2, allocationfactor1, allocationfactor2, responsibility, perf, riskimportpostexp, reportimp, factor1, factor2, reportqual1,
                  reportqual2, reportquality, orgtrust, suptrust,
                  emergencyfactor, supimpress1, supimpress2, riskattitude1, riskattitude2,
                  mansafetycheck, manvoluntarycheck, volexp, pclosure1, pclosure2,
