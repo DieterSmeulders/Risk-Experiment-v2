@@ -2,25 +2,28 @@
 {% load otree static %}
 
 {% block title %}
-    Introduction
+
 {% endblock %}
 
 {% block content %}
+
 {% if group.culturecondition == 'supportive' %}
-Everyone at AC Company knows that the company promotes a climate of doing things with an adventurous spirit.
-People appreciate each other’s efforts. <b>No negative comments </b> are made about those who make mistakes.
+<b>Everyone at AC Company knows </b> that the company promotes a climate of doing things with <b>an adventurous spirit</b>.
+People <b>appreciate</b> each other’s efforts. <b>No negative comments </b> are made about those who make mistakes.
 People <b> easily </b> ask others for help in the face of difficulties.
-In addition, people value working in a trial and error way and encourage speaking out freely.
+In addition, people value working in <b>a trial and error way</b> and encourage <b>speaking out freely</b>.
 People are therefore <b>comfortable </b> talking to others about what could go wrong.
 {% endif %}
 
 {% if group.culturecondition ==  'unsupportive' %}
-Everyone at AC Company knows that the company promotes a climate of doing things accurately.
-People monitor each other’s efforts. <b>Negative comments </b> are made about those who make mistakes.
+<b>Everyone at AC Company knows </b> that the company promotes a climate of doing things <b>accurately</b>.
+People <b>monitor</b> each other’s efforts. <b>Negative comments </b> are made about those who make mistakes.
 People <b> hardly </b> ask others for help in the face of difficulties.
-In addition, people value working in a proven way and encourage looking before leaping.
+In addition, people value working in <b>a proven way</b> and encourage <b>looking before leaping</b>.
 People are therefore <b>uncomfortable </b> talking to others about what could go wrong.
 {% endif %}
+<br><br>
+
 
     {% next_button %}
 

@@ -2,26 +2,24 @@
 {% load otree static %}
 
 {% block title %}
-    Introduction
+
 {% endblock %}
 
 {% block content %}
+<b>Procedure:</b> <br><br>
+<br>
+
+1. For the first round, the supervisor will <u>not</u> allocate the production time to managers and each regional manager will be given <b>5</b> minutes of production time to make sandwiches. <br><br>
+2. The regional managers make as many sandwiches as they can in the time given. <br><br>
+3. Once the time is over, the regional managers will be informed about the <u>sales performance</u> they have achieved in this round. Furthermore, they receive a <u>local market survey report</u>, conducted in their shop during this round. As it is locally conducted, this survey report is <b>available only</b> to the shop’s regional manager, not to others. <br><br>
+4. Then the regional managers will send a report of the sales performance they achieved to the supervisor. The supervisor will receive the reports and subsequently allocate <b>10</b> minutes of production time between two regional managers for the next round. Each regional manager can make sandwiches <b>only</b> during the production time the supervisor will allocate to him/her in the next round.<br><br>
+<u>The game will continue with steps 2,3, and 4 for the next rounds</u>.<br><br>
 
 
-For the first round, each regional manager will simply receive 5 minutes. For subsequent rounds, the supervisor has a total of 10 minutes of production time to allocate for each round. She/he is supposed to allocate this production time between a northern regional manager and a southern regional manager in each round.<br><br>
+{% if group.reportingcondition ==  'mandatory' %}Note that the AC company has a <b>mandatory risk reporting policy</b>, that is, <b>along with sales performance, regional managers are required to report the risks (if any) that could impact the sales performance of their region going forward</b>. <br><br> {% endif%}
+{% if group.reportingcondition ==  'voluntary' %}Note that the AC company has a <b>voluntary risk reporting policy</b>, that is, <b>along with sales performance, regional managers, if they wish, can report the risks (if any) that could impact the sales performance of their region going forward</b>. <br><br> {% endif%}
 
-
-1. For the first round, each regional manager will simply receive 5 minutes of production time and make as many sandwiches as they can in this time period.
-2. When time is over, regional managers will see their sales performance and receive a local market survey report, conducted in their shop during this round. As it is locally conducted, this survey report is available only to the shop’s regional manager, not to others.
-3. Then regional managers will send a report of the sales performance they achieved to the supervisor. The supervisor will receive the reports and allocate 10 minutes of production time between two regional managers for the next round. Each regional manager will make sandwiches only during the production time the supervisor will allocate to him/her in the next round.  Then the game will go on with steps 2 and 3 for the next rounds
-
-
-
-{% if group.reportingcondition ==  'mandatory' %}The company has a mandatory risk reporting policy, that is, along with sales performance, regional managers are required to report the risks (if any) that could impact the sales performance of their region going forward. <br> {% endif%}
-{% if group.reportingcondition ==  'voluntary' %}The company has a voluntary risk reporting policy, that is, along with sales performance, regional managers, if they wish, can report the risks (if any) that could impact the sales performance of their region going forward. <br> {% endif%}
-
-The company has set aside an emergency monetary budget in case of unexpected expenses/events in each region. At the beginning of each round, the supervisor can send a formal request to ask for this budget if she/he finds it necessary.
-
+The company has set aside an <b>emergency monetary budget</b> in case of unexpected expenses/events in each region. At the beginning of each round, the supervisor can send a formal request to ask for this budget if she/he finds it necessary.<br><br>
 
     {% next_button %}
 

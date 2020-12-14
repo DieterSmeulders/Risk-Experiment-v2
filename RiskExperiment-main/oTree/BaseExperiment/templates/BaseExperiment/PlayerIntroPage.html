@@ -8,20 +8,20 @@
 {% block content %}
 
 {% if player.id_in_group == 1 %}
-You have been assigned to the role of a <u>northern regional manager</u>. You are randomly paired with a supervisor and a southern regional manager.
+You have been assigned to the role of a <u>northern regional manager</u>. You are randomly paired with a supervisor and a southern regional manager.<br><br>
 {% endif%}
 
 {% if player.id_in_group == 2 %}
-You have been assigned to the role of a <u>southern regional manager</u>. You are randomly paired with a supervisor and a northern regional manager.
+You have been assigned to the role of a <u>southern regional manager</u>. You are randomly paired with a supervisor and a northern regional manager.<br><br>
 {% endif%}
 
 {% if player.id_in_group == 3 %}
-You have been assigned to the role of a supervisor of regional managers. You are randomly paired with a northern regional manager and a southern regional manager.
+You have been assigned to the role of a supervisor of regional managers. You are randomly paired with a northern regional manager and a southern regional manager. <br><br>
 {% endif%}
 
-The company wants to open a new shop in the north and a new shop in the south. <b>Two locations in each region </b> are selected as candidates for setting up a new shop. Given that the regional managers have more knowledge about their regions, the supervisor delegates the location decision to regional managers. They will choose the best location in their own regions and inform the supervisor about their decision. Then, the supervisor asks the company to invest in the locations chosen. Having opened a shop in the locations chosen, each regional manager can start working in the new shop for multiple rounds. However, regional managers still need production resources in the form of production time to be able to make sandwiches.
-On the next page, you will receive instructions about it.
+The company wants to open a new shop in the north and a new shop in the south. <u>Two locations in each region are selected as candidates for setting up a new shop </u>. Given that the regional managers have more knowledge about their regions, the supervisor delegates the location decision to regional managers. <br><br>
 
+Each regional managers will choose the best location in his/her region and inform the supervisor about his/her decision. Then, the supervisor asks the company to open a new shop in the location chosen in each region. Afterwards, each regional manager can start working in the new shop <u>for multiple rounds</u> once the company has opened it. <u>However</u>, regional managers still need production resources in the form of <u>production time </u> to be able to make sandwiches. On the next page, you will receive instructions about it. <br><br>
 
     {% next_button %}
 
