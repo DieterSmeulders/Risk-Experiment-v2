@@ -25,9 +25,10 @@ class Constants(BaseConstants):
     players_per_group = 3
     num_rounds = 1
     BasePay = Currency(1)
-#    SellingPrice = Currency(1)
+    #    SellingPrice = Currency(1)
     EmployeeRatio = 0.5
     ManagerRatio = 0.25
+
 
 class GameSession(ExtraModel):
     """Persistent game state linked to each player.
@@ -69,12 +70,13 @@ class Subsession(BaseSubsession):
         for player in self.get_players():
             self.configure_player(player)
             GameSession.objects.create(player=player)
+
     MandatoryCondition = models.IntegerField(initial=1)
     CultureCondition = models.IntegerField(initial=1)
-#setting gamesession variables
 
+    # setting gamesession variables
 
-#Game Related Logic
+    # Game Related Logic
     def configure_player(self, player):
         p = player.id_in_group
 
@@ -88,7 +90,6 @@ class Subsession(BaseSubsession):
 
     def game(self, player):
         return GameSession.objects.get(player=player)
-
 
     def start(self, player):
         game = self.game(player)
@@ -129,7 +130,7 @@ class Player(BasePlayer):
     name = models.StringField
     age = models.StringField
 
-#All Parameters for the sandwich making task
+    # All Parameters for the sandwich making task
     """A player parameters and metrics
 
         Implements communication logic:
@@ -233,29 +234,31 @@ class Player(BasePlayer):
             self.riskmaterialized = False
 
         if (self.id_in_group == 1 and manager.NEM == 1 and self.riskmaterialized == True):
-                    self.price = 0.7
+            self.price = 0.7
         if (self.id_in_group == 2 and manager.NEM == 1 and self.riskmaterialized == True):
-                    self.price = 0.7
+            self.price = 0.7
 
-#All other parameters
+    # All other parameters
     NLocationChoice = models.IntegerField(
-     label='Location Decision.',
-     choices=[
-         [1, 'LocationA'],
-         [2, 'LocationB']]
+        label='',
+        choices=[
+            [1, 'Location A'],
+            [2, 'Location B']],
+        widget=widgets.RadioSelectHorizontal
     )
     SLocationChoice = models.IntegerField(
-        label='Location Decision.',
+        label='',
         choices=[
-         [1, 'LocationA'],
-         [2, 'LocationB']]
+            [1, 'Location A'],
+            [2, 'Location B']],
+        widget=widgets.RadioSelectHorizontal
     )
     NReportedPerf = models.IntegerField(
-        label='Please report your sales performance to the supervisor below.',
+        label='Please report your sales performance below.',
         min=0, max=30)
 
     SReportedPerf = models.IntegerField(
-        label='Please report your sales performance to the supervisor below.',
+        label='Please report your sales performance below.',
         min=0, max=30)
 
     NReportedRiskMan = models.IntegerField(
@@ -303,8 +306,7 @@ class Player(BasePlayer):
         widget=widgets.RadioSelectHorizontal
     )
 
-
-    #PostQuestionnaire
+    # PostQuestionnaire
     extime = models.IntegerField(
         label='How many minutes do you think the supervisor will offer you?',
         min=0, max=10
@@ -329,7 +331,7 @@ class Player(BasePlayer):
     )
 
     riskiden = models.IntegerField(
-        label='Did you notice any risk to sales performance of your region in the local market survey report?',
+        label='Was there any risk to the sales performance of your region in the local market survey report?',
         choices=[[1, 'Yes'], [2, 'No']],
         widget=widgets.RadioSelectHorizontal
     )
@@ -360,7 +362,7 @@ class Player(BasePlayer):
     )
 
     riskimp2 = models.IntegerField(
-        label='How much importance do you think the company places to internal communication of risk (information)?',
+        label='How much importance do you think the company places to internal communication of risk information?',
         choices=[[1, 'No importance'], [2, 'Low importance'], [3, 'Some importance'], [4, 'High importance'],
                  [5, 'Very high importance']],
         widget=widgets.RadioSelectHorizontal
@@ -683,7 +685,8 @@ class Player(BasePlayer):
     )
     perf2 = models.IntegerField(
         label='2.',
-        choices=[[1, 'Way below my expectation'], [2, ''], [3, 'In line with my expectation'], [4, ''], [5, 'Way above my expectation']],
+        choices=[[1, 'Way below my expectation'], [2, ''], [3, 'In line with my expectation'], [4, ''],
+                 [5, 'Way above my expectation']],
         widget=widgets.RadioSelectHorizontal
     )
     riskat1 = models.IntegerField(
@@ -892,31 +895,21 @@ class Player(BasePlayer):
         widget=widgets.RadioSelectHorizontal
     )
     gen1 = models.IntegerField(
-        label='The sandwich-making task was fun.',
+        label='The sandwich-making task was boring.',
         choices=[[1, 'Strongly disagree'], [2, ''], [3, ''], [4, ''], [5, 'Strongly agree']],
         widget=widgets.RadioSelectHorizontal
     )
     gen2 = models.IntegerField(
-        label='Making sandwiches was a boring task.',
-        choices=[[1, 'Strongly disagree'], [2, ''], [3, ''], [4, ''], [5, 'Strongly agree']],
-        widget=widgets.RadioSelectHorizontal
-    )
-    gen3 = models.IntegerField(
         label='I wanted to maximize my payoff in this study.',
         choices=[[1, 'Strongly disagree'], [2, ''], [3, ''], [4, ''], [5, 'Strongly agree']],
         widget=widgets.RadioSelectHorizontal
     )
-    gen4 = models.IntegerField(
-        label='I was motivated to participate in this study.',
-        choices=[[1, 'Strongly disagree'], [2, ''], [3, ''], [4, ''], [5, 'Strongly agree']],
-        widget=widgets.RadioSelectHorizontal
-    )
-    gen5 = models.IntegerField(
+    gen3 = models.IntegerField(
         label='I enjoyed participating in this study.',
         choices=[[1, 'Strongly disagree'], [2, ''], [3, ''], [4, ''], [5, 'Strongly agree']],
         widget=widgets.RadioSelectHorizontal
     )
-    gen6 = models.IntegerField(
+    gen4 = models.IntegerField(
         label='The instructions were clearly formulated.',
         choices=[[1, 'Strongly disagree'], [2, ''], [3, ''], [4, ''], [5, 'Strongly agree']],
         widget=widgets.RadioSelectHorizontal

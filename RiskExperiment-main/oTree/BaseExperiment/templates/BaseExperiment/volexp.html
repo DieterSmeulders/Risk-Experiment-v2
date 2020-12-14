@@ -9,11 +9,13 @@
 
 
 {% if group.reportingcondition == 'voluntary' %}
-{% formfield play.voluntary %}
+{% formfield player.voluntary %}
+{% endif %}
 
 {% if group.reportingcondition == 'mandatory' %}
+{% formfield player.mandatory %}
+{% endif %}
 
-{% formfield play.mandatory %}
     {% next_button %}
 
 {% endblock %}

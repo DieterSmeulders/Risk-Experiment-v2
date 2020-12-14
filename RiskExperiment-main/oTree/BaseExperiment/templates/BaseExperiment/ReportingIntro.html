@@ -6,33 +6,34 @@
 {% endblock %}
 
 {% block content %}
-You are now asked to report your sales performance to the supervisor. You sold {{player.performed}} sandwiches, and generated {{player.revenue}} in revenue.<br><br>
 
 {% if group.reportingcondition ==  'mandatory' %}
-The company has a <b> mandatory </b> risk reporting policy, that is, along with sales performance, regional managers are required to report the risks (if any) that could impact the sales performance of their region going forward.
+The company has a <b> mandatory risk reporting policy</b>, that is, along with sales performance, you are required to report the risks (if any) that could impact the sales performance of your region going forward. <br><br>
 {% endif %}
 
 {% if group.reportingcondition ==  'voluntary' %}
-The company has a <b> voluntary risk </b> reporting policy, that is, along with sales performance, regional managers, if they wish, can report the risks (if any) that could impact the sales performance of their region going forward.
+The company has a <b> voluntary risk reporting policy</b>, that is, along with sales performance, you can, if you wish, report the risks (if any) that could impact the sales performance of your region going forward.<br><br>
 {% endif %}
 
 {% if group.culturecondition == 'supportive' %}
-Everyone at AC Company knows that the company promotes a climate of doing things with an adventurous spirit.
-People appreciate each other’s efforts. <b> No negative comments </b> are made about those who make mistakes.
+The company promotes a climate of doing things with <b>an adventurous spirit</b>.
+People <b>appreciate</b> each other’s efforts. <b>No negative comments </b> are made about those who make mistakes.
 People <b> easily </b> ask others for help in the face of difficulties.
-In addition, people value working in a trial and error way and encourage speaking out freely.
-People are therefore <b> comfortable </b> talking to others about what could go wrong.
+In addition, people value working in <b>a trial and error way</b> and encourage <b>speaking out freely</b>.
+People are therefore <b>comfortable </b> talking to others about what could go wrong.<br> <br>
 {% endif %}
 
 {% if group.culturecondition ==  'unsupportive' %}
-Everyone at AC Company knows that the company promotes a climate of doing things accurately.
-People monitor each other’s efforts. <b> Negative comments </b> are made about those who make mistakes.
+The company promotes a climate of doing things <b>accurately</b>.
+People <b>monitor</b> each other’s efforts. <b>Negative comments </b> are made about those who make mistakes.
 People <b> hardly </b> ask others for help in the face of difficulties.
-In addition, people value working in a proven way and encourage looking before leaping.
-People are therefore <b> uncomfortable </b> talking to others about what could go wrong.
+In addition, people value working in <b>a proven way</b> and encourage <b>looking before leaping</b>.
+People are therefore <b>uncomfortable </b> talking to others about what could go wrong.<br> <br>
 {% endif %}
 
-Click on “next” to write your report to the supervisor.
+On the next page, you will be asked to write your report to the supervisor. Think about it <br><br>
+
+
 
     {% next_button %}
 

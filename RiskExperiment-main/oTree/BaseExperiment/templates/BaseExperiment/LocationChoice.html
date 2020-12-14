@@ -14,8 +14,6 @@ The company considers two locations in the {% if player.id_in_group == 1 %} nort
 
 Which location do you choose?<br><br>
 
-Click on next to inform the supervisor about your decision.
-
 {% if player.id_in_group == 1 %}
 {% formfield player.NLocationChoice %}
 {% endif %}
@@ -23,6 +21,9 @@ Click on next to inform the supervisor about your decision.
 {% if player.id_in_group == 2 %}
 {% formfield player.SLocationChoice %}
 {% endif %}
+
+Click on next to inform the supervisor about your decision.<br><br>
+
 
     {% next_button %}
 

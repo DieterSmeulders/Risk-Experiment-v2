@@ -63,7 +63,7 @@ class LocationChoice(Page):
         return self.player.id_in_group in (1, 2)
 
 
-class Approval(Page):
+class LocationApproval(Page):
     def is_displayed(self):
         return self.player.id_in_group in (1, 2)
 
@@ -109,6 +109,16 @@ class Round1(Page):
 
 
 class AfterRound1Game(Page):
+    def is_displayed(self):
+        return self.player.id_in_group in (1, 2)
+
+
+class AfterRound2Game(Page):
+    def is_displayed(self):
+        return self.player.id_in_group in (1, 2)
+
+
+class AnnounceSalesRound1(Page):
     def is_displayed(self):
         return self.player.id_in_group in (1, 2)
 
@@ -256,6 +266,15 @@ class Round2(Page):
     def is_displayed(self):
         return self.player.id_in_group in (1, 2)
 
+
+class AnnounceSalesRound2(Page):
+    def is_displayed(self):
+        return self.player.id_in_group in (1, 2)
+
+
+class PostExpQuest(Page):
+    def is_displayed(self):
+        return self.player.id_in_group in (1, 2)
 
 class riskimportpostexp(Page):
     form_model = 'player'
@@ -459,20 +478,25 @@ class mansafetycheck(Page):
     form_model = 'player'
     form_fields = ['safety1', 'safety2', 'safety3', 'safety4', 'safety5', 'safety6', 'safety7']
 
+class GenQuest(Page):
+    form_model = 'player'
+    form_fields = ['gen1', 'gen2', 'gen3', 'gen4']
+
 
 class Results(Page):
     pass
 
 
 page_sequence = [IntroPage, IntroPage2, CultureCondition, Randomization, PlayerIntroPage, GameIntro,
-                 ComprehensionSurvey,
-                 LocationChoice, SPLocation1, SPLocation2, SandwichIntro, Shop, AfterPractice, Round1, AfterRound1Game,
+                 LocationChoice, LocationApproval, SPLocation1, SPLocation2, SandwichIntro, Shop, AfterPractice,
+                 ComprehensionSurvey, Round1, AfterRound1Game, AnnounceSalesRound1,
                  RiskEvent, SPBefReporting, ReportingIntro, ReportingScreen, ReminderAccess, SPAllocation,
                  SPAfterAllocation, AfterRound1Report, expectancy1, expectancy2, riskperception1, riskperception2,
                  riskimpexexp,
-                 AfterRound1Allocation, Round2, allocationfactor1, allocationfactor2, responsibility, perf,
+                 AfterRound1Allocation, Round2, AfterRound2Game, AnnounceSalesRound2, PostExpQuest, allocationfactor1,
+                 allocationfactor2, responsibility, perf,
                  riskimportpostexp, reportimp, factor1, factor2, reportqual1,
                  reportqual2, reportquality, orgtrust, suptrust,
                  emergencyfactor, supimpress1, supimpress2, riskattitude1, riskattitude2,
                  mansafetycheck, manvoluntarycheck, volexp, pclosure1, pclosure2,
-                 uncertainaversion1, uncertainaversion2, optimism, dark, Results]
+                 uncertainaversion1, uncertainaversion2, optimism, dark, GenQuest, Results]

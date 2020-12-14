@@ -7,6 +7,8 @@
 
 {% block content %}
 
+<b>Report:</b> <br><br>
+
 {% if player.id_in_group == 1 %}
 {% formfield player.NReportedPerf %}<br><br>
 
@@ -39,15 +41,18 @@
     {% endif %}
 
     {% if group.reportingcondition ==  'voluntary' %}
-    {% formfield player.SReportedRiskVol %}
+    {% formfield player.SReportedRiskVol %}<br><br>
     {% endif %}
 
-{% endif %}
+{% endif %}<br><br>
 
-You can get access to the local market survey report and your sales performance if you wish by clicking on “access”.
 
-Click on next to send your report to the supervisor. Having received the reports of both regional managers, the supervisor will allocate 10 minutes of production time between you and {% if player.id_in_group == 1 %} the southern regional manager {% else %} the northern regional manager {% endif %}.
+You can get access to the local market survey report and your sales performance if you wish by clicking on “access”. <br>
+Click on "Next" to send your report to the supervisor. <br>
+Having received the reports of both regional managers, the supervisor will allocate 10 minutes of production time between you and {% if player.id_in_group == 1 %} the southern regional manager {% else %} the northern regional manager {% endif %}. <br><br>
+
 
     {% next_button %}
+
 
 {% endblock %}

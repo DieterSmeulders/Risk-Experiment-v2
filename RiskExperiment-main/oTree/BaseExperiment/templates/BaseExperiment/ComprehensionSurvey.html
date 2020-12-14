@@ -28,25 +28,22 @@ Increasing sales performance in their region<br><br>
 3. 	What is the responsibility of the supervisor?<br>
 Allocating 10 minutes of production time between two regional managers in each round<br><br>
 
-4. 	Who will decide about the location of a new shop in each region?<br>
-The corresponding regional manager<br><br>
-
-5. How much time is each regional manager given to make sandwiches in each round?<br>
+4. How much time is each regional manager given to make sandwiches in each round?<br>
 Depends on the supervisor’s decision<br><br>
 
-6. How much time is each regional manager given to make sandwiches in the first round?<br>
+5. How much time is each regional manager given to make sandwiches in the first round?<br>
 Five minutes<br><br>
 
-7. What will the regional managers do after each round?<br>
+6. What will the regional managers do after each round?<br>
 They will report their sales performance to the supervisor.<br><br>
 
-8. Who has access to the local market survey reports in each region?<br>
+7. Who has access to the local market survey reports in each region?<br>
 Only the corresponding regional manager<br><br>
 
-9. How is sales performance of each regional manager computed?<br>
+8. How is sales performance of each regional manager computed?<br>
 Sales performance in each region is the multiplication of the number of saleable sandwiches and the selling price of each sandwich in that region.<br><br>
 
-10. What is the company’s risk reporting policy?<br>
+9. What is the company’s risk reporting policy?<br>
 {% if group.reportingcondition ==  'mandatory' %}
 <b> Mandatory </b>: regional managers are required to report the risks (if any) that could impact their sales performance going forward.<br><br>
 {% endif%}
@@ -55,10 +52,10 @@ Sales performance in each region is the multiplication of the number of saleable
 <b> Voluntary </b>: regional managers can report the risks (if any) that could impact their sales performance going forward if they wish.<br><br>
 {% endif%}
 
-11. What is the emergency monetary budget for?<br>
+10. What is the emergency monetary budget for?<br>
 An emergency monetary budget is set to be spent in case of unexpected expenses/events in each region.<br><br>
 
-12. Who can ask for the emergency monetary budget?<br>
+11. Who can ask for the emergency monetary budget?<br>
 Only the supervisor at the beginning of each round<br><br>
 
 {% if group.culturecondition == 'supportive' %}
@@ -78,7 +75,7 @@ People are therefore <b>uncomfortable </b> talking to others about what could go
 {% endif %}
 <br><br>
 
-
+By clicking on “next”, the first round will start. You have 5 minutes in this round.<br><br>
 
     {% next_button %}
 
