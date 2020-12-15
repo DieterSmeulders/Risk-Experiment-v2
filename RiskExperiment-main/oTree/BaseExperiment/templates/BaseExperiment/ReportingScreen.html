@@ -47,7 +47,18 @@
 {% endif %}<br><br>
 
 
-You can get access to the local market survey report and your sales performance if you wish by clicking on “access”. <br>
+You can get access to the local market survey report and your sales performance if you wish by clicking on “Access Report”. <br>
+{% if player.report_displayed == False %}
+<button type="button" name="report_displayed" value="True">
+    Access Report
+</button><br>
+{% else %}
+<button type="button" name="report_displayed" value="False">
+    Close Report
+</button><br>
+ INSERT PERFORMANCE AND RISK REPORT HERE<br>
+{% endif %}
+
 Click on "Next" to send your report to the supervisor. <br>
 Having received the reports of both regional managers, the supervisor will allocate 10 minutes of production time between you and {% if player.id_in_group == 1 %} the southern regional manager {% else %} the northern regional manager {% endif %}. <br><br>
 
