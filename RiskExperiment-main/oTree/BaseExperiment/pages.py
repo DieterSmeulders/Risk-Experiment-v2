@@ -199,9 +199,15 @@ class SPAllocation(Page):
             southernvoluntaryrisk=self.group.get_player_by_id(1).SReportedRiskVol,
         )
 
+    def error_message(self, values):
+        print('Allocated', values)
+        if values['Stime'] + values['Ntime'] > 10:
+            return 'You can allocate a maximum of 10 minutes to the two regional managers.'
+        if values['Stime'] + values['Ntime'] < 10:
+            return 'Please allocate the full 10 minutes to the two regional managers.'
+
     def is_displayed(self):
         return self.player.id_in_group == 3
-
 
 class SPAfterAllocation(Page):
     def is_displayed(self):

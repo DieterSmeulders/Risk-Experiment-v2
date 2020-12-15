@@ -273,6 +273,7 @@ class Player(BasePlayer):
 
     NReportedRiskVol = models.StringField(
         label='Notes (optional).',
+        blank=True
     )
 
     SReportedRiskMan = models.IntegerField(
@@ -287,13 +288,16 @@ class Player(BasePlayer):
 
     SReportedRiskVol = models.StringField(
         label='Notes (optional).',
+        blank=True
     )
     Ntime = models.IntegerField(
-        label='Northern regional manager:', min=0, max=10
+        label='Northern regional manager:', min=0, max=10,
+        initial=1
     )
 
     Stime = models.IntegerField(
-        label='Southern regional manager:', min=0, max=10
+        label='Southern regional manager:', min=0, max=10,
+        initial=1
     )
     NEM = models.IntegerField(
         label='In the north:',
