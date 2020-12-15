@@ -47,7 +47,7 @@
 {% endif %}<br><br>
 
 
-You can get access to the local market survey report and your sales performance if you wish by clicking on “Access Report”. <br>
+For reference, you can find the local market survey report and your sales performance repeated at the bottom of this page. <br>
 
 
 Click on "Next" to send your report to the supervisor. <br>
@@ -55,6 +55,19 @@ Having received the reports of both regional managers, the supervisor will alloc
 
 
     {% next_button %}
+<br><br><br><br><br><br>
 
+Your sales performance is {{player.revenue}} in dollars.<br><br>
+
+You will receive {{ ownshare }} and the supervisor will receive {{ supervisorshare }}<br><br>
+
+{{ firmshare }} will be left for the company. <br><br>
+This report is available <b>only</b> to you. The supervisor and the {% if player.id_in_group == 1 %} Southern {% else %} Northern {% endif %} regional manager do NOT have access to this report.<br><br>
+<b>Local survey report:</b><br><br>
+
+The shop attracted many customers. Most of the customers live or work in the neighborhood. About 60% of the customers are younger than 35 years old. They look content with the quality of sandwiches. They are also quite satisfied with the variety of sandwiches but still wish to see more exotic sandwiches. Offering various Mediterranean sandwiches can attract new customers particularly given the growing interest in Mediterranean sandwiches among youth. <br><br>
+
+So far, there is no strong competitor in the area. The shop has benefited from this by having a great number of clients and a good selling price. However, the situation may not remain the same. There is a 50% chance that a big famous fast food restaurant will come to the neighborhood soon. This famous restaurant has many branches all throughout the country. It specifically targets families and offers sandwiches in the family packages with reasonable prices. If this restaurant opens, the selling price of each sandwich will drop by one third in the next round to stay competitive (selling price per sandwich= 0.7 dollars). The potential impact of this new competitor seems to be serious. The company may be able to reduce this impact to some extent by taking timely actions, e.g., by investing in advertisement particularly in branding and offering premium services and maybe by slightly adjusting its market strategy. The supervisor can ask the company for the emergency budget for this purpose.  <br><br>
+At the moment, there is no problem of purchasing ingredients. In particular, two good bakeries supply the required fresh bread on the daily basis. The shop has made a contract with a big wholesaler and a butchery and two farmers who supply the fresh meat and vegetables. <br><br>
 
 {% endblock %}

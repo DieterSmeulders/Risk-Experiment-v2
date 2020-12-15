@@ -143,7 +143,11 @@ class ReportingIntro(Page):
 
 class ReportingScreen(Page):
     form_model = 'player'
-
+    def vars_for_template(self):
+        ownshare = self.player.revenue * 0.5
+        supervisorshare = self.player.revenue * 0.25
+        firmshare = self.player.revenue * 0.25
+        return dict(ownshare=ownshare,supervisorshare=supervisorshare,firmshare=firmshare)
     def get_form_fields(self):
         if self.player.id_in_group == 1:
             if self.group.reportingcondition == 'mandatory':
