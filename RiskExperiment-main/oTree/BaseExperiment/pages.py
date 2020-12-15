@@ -46,7 +46,7 @@ class GameIntro(Page):
     pass
 
 
-class ComprehensionSurvey(Page):
+class ComprehensionSurvey(WaitPage):
     pass
 
 
@@ -109,16 +109,24 @@ class Round1(Page):
 
 
 class AfterRound1Game(Page):
+    timeout_seconds = 15
+
     def is_displayed(self):
         return self.player.id_in_group in (1, 2)
 
 
 class AfterRound2Game(Page):
+    timeout_seconds = 15
     def is_displayed(self):
         return self.player.id_in_group in (1, 2)
 
 
 class AnnounceSalesRound1(Page):
+    def vars_for_template(self):
+        ownshare = self.player.revenue * 0.5
+        supervisorshare = self.player.revenue * 0.25
+        firmshare = self.player.revenue * 0.25
+        return dict(ownshare=ownshare,supervisorshare=supervisorshare,firmshare=firmshare)
     def is_displayed(self):
         return self.player.id_in_group in (1, 2)
 
@@ -139,14 +147,14 @@ class ReportingScreen(Page):
     def get_form_fields(self):
         if self.player.id_in_group == 1:
             if self.group.reportingcondition == 'mandatory':
-                return ['NReportedPerf', 'NReportedRiskMan', 'NReportedRiskManD','report_displayed']
+                return ['NReportedPerf', 'NReportedRiskMan', 'NReportedRiskManD']
             else:
-                return ['NReportedPerf', 'NReportedRiskVol','report_displayed']
+                return ['NReportedPerf', 'NReportedRiskVol']
         else:
             if self.group.reportingcondition == 'mandatory':
-                return ['SReportedPerf', 'SReportedRiskManD', 'SReportedRiskMan','report_displayed']
+                return ['SReportedPerf', 'SReportedRiskManD', 'SReportedRiskMan']
             else:
-                return ['SReportedPerf', 'SReportedRiskVol','report_displayed']
+                return ['SReportedPerf', 'SReportedRiskVol']
 
     def is_displayed(self):
         return self.player.id_in_group in (1, 2)
@@ -245,6 +253,10 @@ class riskperception2(Page):
     def is_displayed(self):
         return self.player.id_in_group in (1, 2)
 
+    def before_next_page(self):
+        self.player.set_up_second_round()
+        self.player.handleriskevent()
+
 
 class riskimpexexp(Page):
     form_model = 'player'
@@ -254,10 +266,6 @@ class riskimpexexp(Page):
 class AfterRound1Allocation(Page):
     def is_displayed(self):
         return self.player.id_in_group in (1, 2)
-
-    def before_next_page(self):
-        self.player.set_up_second_round()
-        self.player.handleriskevent()
 
 
 class Round2(Page):
@@ -274,6 +282,11 @@ class Round2(Page):
 
 
 class AnnounceSalesRound2(Page):
+    def vars_for_template(self):
+        ownshare = self.player.revenue * 0.5
+        supervisorshare = self.player.revenue * 0.25
+        firmshare = self.player.revenue * 0.25
+        return dict(ownshare=ownshare,supervisorshare=supervisorshare,firmshare=firmshare)
     def is_displayed(self):
         return self.player.id_in_group in (1, 2)
 
@@ -490,6 +503,11 @@ class GenQuest(Page):
 
 
 class Results(Page):
+    def vars_for_template(self):
+        ownshare = (self.player.revenue + self.player.RevenueR1) * 0.5
+        supervisorshare = (self.player.revenue + self.player.RevenueR1) * 0.25
+        firmshare = (self.player.revenue + self.player.RevenueR1) * 0.25
+        return dict(ownshare=ownshare,supervisorshare=supervisorshare,firmshare=firmshare)
     pass
 
 
