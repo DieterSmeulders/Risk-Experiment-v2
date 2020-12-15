@@ -239,6 +239,8 @@ class Player(BasePlayer):
             self.price = 0.7
 
     # All other parameters
+    report_displayed = models.BooleanField(initial=False)
+
     NLocationChoice = models.IntegerField(
         label='',
         choices=[
@@ -267,11 +269,11 @@ class Player(BasePlayer):
         widget=widgets.RadioSelectHorizontal
     )
 
-    NReportedRiskManD = models.StringField(
+    NReportedRiskManD = models.LongStringField(
         label='Please specify:'
     )
 
-    NReportedRiskVol = models.StringField(
+    NReportedRiskVol = models.LongStringField(
         label='Notes (optional).',
         blank=True
     )
@@ -282,11 +284,11 @@ class Player(BasePlayer):
         widget=widgets.RadioSelectHorizontal
     )
 
-    SReportedRiskManD = models.StringField(
+    SReportedRiskManD = models.LongStringField(
         label='Please specify:'
     )
 
-    SReportedRiskVol = models.StringField(
+    SReportedRiskVol = models.LongStringField(
         label='Notes (optional).',
         blank=True
     )

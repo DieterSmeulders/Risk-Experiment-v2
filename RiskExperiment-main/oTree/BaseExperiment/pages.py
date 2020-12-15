@@ -139,14 +139,14 @@ class ReportingScreen(Page):
     def get_form_fields(self):
         if self.player.id_in_group == 1:
             if self.group.reportingcondition == 'mandatory':
-                return ['NReportedPerf', 'NReportedRiskMan', 'NReportedRiskManD']
+                return ['NReportedPerf', 'NReportedRiskMan', 'NReportedRiskManD','report_displayed']
             else:
-                return ['NReportedPerf', 'NReportedRiskVol']
+                return ['NReportedPerf', 'NReportedRiskVol','report_displayed']
         else:
             if self.group.reportingcondition == 'mandatory':
-                return ['SReportedPerf', 'SReportedRiskManD', 'SReportedRiskMan']
+                return ['SReportedPerf', 'SReportedRiskManD', 'SReportedRiskMan','report_displayed']
             else:
-                return ['SReportedPerf', 'SReportedRiskVol']
+                return ['SReportedPerf', 'SReportedRiskVol','report_displayed']
 
     def is_displayed(self):
         return self.player.id_in_group in (1, 2)
