@@ -1,0 +1,17 @@
+{% extends "global/Page.html" %}
+{% load otree static %}
+
+
+{% block content %}
+
+Your sales performance is {{player.revenue}} in dollars.<br><br>
+
+You will receive  ....and the supervisor will receive .....<br><br>
+
+.... will be left for the company. <br><br>
+
+On the next page, you will receive the local market survey report for this round. This report is available <b>only</b> to you. The supervisor and the {% if player.id_in_group == 1 %} Southern {% else %} Northern {% endif %} regional manager do NOT have access to this report.<br><br>
+
+  {% next_button %}
+
+{% endblock %}
