@@ -1,4 +1,5 @@
 import random
+import itertools
 from otree.api import (
     models,
     widgets,
@@ -58,21 +59,21 @@ class GameSession(ExtraModel):
 
 
 class Subsession(BaseSubsession):
+
     def creating_session(self):
-        import itertools
-        reportingconditions = itertools.cycle(['voluntary', 'mandatory'])
-        cultureconditions = itertools.cycle(['supportive', 'supportive', 'unsupportive', 'unsupportive'])
+        reportingconditions = ['voluntary', 'mandatory']
+        cultureconditions = ['supportive', 'supportive', 'unsupportive', 'unsupportive']
         for group in self.get_groups():
-            group.reportingcondition = next(reportingconditions)
+            group.reportingcondition = random.choice(reportingconditions)
             print(group.reportingcondition)
-            group.culturecondition = next(cultureconditions)
+            group.culturecondition = random.choice(cultureconditions)
             print(group.culturecondition)
         for player in self.get_players():
             self.configure_player(player)
             GameSession.objects.create(player=player)
 
-    MandatoryCondition = models.IntegerField(initial=1)
-    CultureCondition = models.IntegerField(initial=1)
+#    MandatoryCondition = models.IntegerField(initial=1)
+#    CultureCondition = models.IntegerField(initial=1)
 
     # setting gamesession variables
 
