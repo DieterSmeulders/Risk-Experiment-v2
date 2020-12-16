@@ -271,7 +271,8 @@ class Player(BasePlayer):
     )
 
     NReportedRiskManD = models.LongStringField(
-        label='Please specify:'
+        label='Please specify:',
+        blank=True
     )
 
     NReportedRiskVol = models.LongStringField(
@@ -286,7 +287,8 @@ class Player(BasePlayer):
     )
 
     SReportedRiskManD = models.LongStringField(
-        label='Please specify:'
+        label='Please specify:',
+        blank=True
     )
 
     SReportedRiskVol = models.LongStringField(

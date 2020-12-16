@@ -14,10 +14,8 @@
 
     {% if group.reportingcondition ==  'mandatory' %}
     {% formfield player.NReportedRiskMan %}
+    {% formfield player.NReportedRiskManD %}<br><br>
 
-          {% if player.NReportedRiskMan == 'Yes' %}
-          {% formfield player.NReportedRiskManD %}<br><br>
-          {% endif %}
 
     {% endif %}
 
@@ -32,12 +30,8 @@
 {% formfield player.SReportedPerf %}<br><br>
 
     {% if group.reportingcondition ==  'mandatory' %}
-    {% formfield player.SReportedRiskMan %}<br><br>
-
-         {% if player.SReportedRiskMan == 'Yes' %}
-         {% formfield player.SReportedRiskManD %}<br><br>
-         {% endif %}
-
+    {% formfield player.SReportedRiskMan %}
+    {% formfield player.SReportedRiskManD %}<br><br>
     {% endif %}
 
     {% if group.reportingcondition ==  'voluntary' %}

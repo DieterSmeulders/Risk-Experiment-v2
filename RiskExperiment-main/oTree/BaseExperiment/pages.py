@@ -174,7 +174,7 @@ class AfterRound1Report(Page):
         return self.player.id_in_group in (1, 2)
 
 
-class SPLocation1(Page):
+class SPLocation1(WaitPage):
     def is_displayed(self):
         return self.player.id_in_group == 3
 
@@ -192,7 +192,7 @@ class SPLocation2(Page):
         return self.player.id_in_group == 3
 
 
-class SPBefReporting(Page):
+class SPBefReporting(WaitPage):
     def is_displayed(self):
         return self.player.id_in_group == 3
 
@@ -516,9 +516,9 @@ class Results(Page):
 
 
 page_sequence = [IntroPage, IntroPage2, CultureCondition, Randomization, PlayerIntroPage, GameIntro,
-                 LocationChoice, LocationApproval, SPLocation1, SPLocation2, SandwichIntro, Shop, AfterPractice,
+                 LocationChoice, SPLocation1, LocationApproval, SPLocation2, SandwichIntro, Shop, AfterPractice,
                  ComprehensionSurvey, Round1, AfterRound1Game, AnnounceSalesRound1,
-                 RiskEvent, SPBefReporting, ReportingIntro, ReportingScreen, ReminderAccess, SPAllocation,
+                 RiskEvent, ReportingIntro, ReportingScreen, SPBefReporting, SPAllocation,
                  SPAfterAllocation, AfterRound1Report, expectancy1, expectancy2, riskperception1, riskperception2,
                  riskimpexexp,
                  AfterRound1Allocation, Round2, AfterRound2Game, AnnounceSalesRound2, PostExpQuest, allocationfactor1,
