@@ -135,12 +135,6 @@ class RiskEvent(Page):
     def is_displayed(self):
         return self.player.id_in_group in (1, 2)
 
-
-class ReportingIntro(Page):
-    def is_displayed(self):
-        return self.player.id_in_group in (1, 2)
-
-
 class ReportingScreen(Page):
     form_model = 'player'
     def vars_for_template(self):
@@ -518,7 +512,7 @@ class Results(Page):
 page_sequence = [IntroPage, IntroPage2, CultureCondition, Randomization, PlayerIntroPage, GameIntro,
                  LocationChoice, SPLocation1, LocationApproval, SPLocation2, SandwichIntro, Shop, AfterPractice,
                  ComprehensionSurvey, Round1, AfterRound1Game, AnnounceSalesRound1,
-                 RiskEvent, ReportingIntro, ReportingScreen, SPBefReporting, SPAllocation,
+                 RiskEvent, ReportingScreen, SPBefReporting, SPAllocation,
                  SPAfterAllocation, AfterRound1Report, expectancy1, expectancy2, riskperception1, riskperception2,
                  riskimpexexp,
                  AfterRound1Allocation, Round2, AfterRound2Game, AnnounceSalesRound2, PostExpQuest, allocationfactor1,

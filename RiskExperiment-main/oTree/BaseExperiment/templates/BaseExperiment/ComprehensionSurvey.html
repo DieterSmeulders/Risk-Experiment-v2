@@ -28,11 +28,11 @@ Increasing sales performance in their region<br><br>
 3. 	What is the responsibility of the supervisor?<br>
 Allocating 10 minutes of production time between two regional managers in each round<br><br>
 
-4. How much time is each regional manager given to make sandwiches in each round?<br>
-Depends on the supervisor’s decision<br><br>
-
-5. How much time is each regional manager given to make sandwiches in the first round?<br>
+4. How much time is each regional manager given to make sandwiches in the first round?<br>
 Five minutes<br><br>
+
+5. How much time is each regional manager given to make sandwiches in the next rounds?<br>
+Depends on the supervisor’s decision<br><br>
 
 6. What will the regional managers do after each round?<br>
 They will report their sales performance to the supervisor.<br><br>
@@ -59,7 +59,7 @@ An emergency monetary budget is set to be spent in case of unexpected expenses/e
 Only the supervisor at the beginning of each round<br><br>
 
 {% if group.culturecondition == 'supportive' %}
-The AC Company promotes a climate of doing things with <b>an adventurous spirit</b>.
+The company promotes a climate of doing things with <b>an adventurous spirit</b>.
 People <b>appreciate</b> each other’s efforts. <b>No negative comments </b> are made about those who make mistakes.
 People <b> easily </b> ask others for help in the face of difficulties.
 In addition, people value working in <b>a trial and error way</b> and encourage <b>speaking out freely</b>.
@@ -67,7 +67,7 @@ People are therefore <b>comfortable </b> talking to others about what could go w
 {% endif %}
 
 {% if group.culturecondition ==  'unsupportive' %}
-The AC Company promotes a climate of doing things <b>accurately</b>.
+The company promotes a climate of doing things <b>accurately</b>.
 People <b>monitor</b> each other’s efforts. <b>Negative comments </b> are made about those who make mistakes.
 People <b> hardly </b> ask others for help in the face of difficulties.
 In addition, people value working in <b>a proven way</b> and encourage <b>looking before leaping</b>.
@@ -75,7 +75,13 @@ People are therefore <b>uncomfortable </b> talking to others about what could go
 {% endif %}
 <br><br>
 
+{% if player.id_in_group == 2 %}
 By clicking on “next”, the first round will start. You have 5 minutes in this round.<br><br>
+{% endif%}
+
+{% if player.id_in_group == 1 %}
+By clicking on “next”, the first round will start. You have 5 minutes in this round.<br><br>
+{% endif%}
 
     {% next_button %}
 
