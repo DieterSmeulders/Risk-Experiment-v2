@@ -7,7 +7,32 @@
 
 {% block content %}
 
-{% formfields %}
+{{ form.riskimp1.label }}<br>
+<table style="table-layout: fixed; width: 100%;">
+    <tr>
+        <td><center><br></center></td>
+        <td><center><br></center></td>
+        <td><center>{{ form.riskimp1.0.choice_label }}<br>{{ form.riskimp1.0.tag}}</center></td>
+        <td><center><br>{{ form.riskimp1.1.tag}}</center></td>
+        <td><center><br>{{ form.riskimp1.tag}}</center></td>
+        <td><center><br>{{ form.riskimp1.3.tag}}</center></td>
+        <td><center>{{ form.riskimp1.4.choice_label }}<br>{{ form.riskimp1.4.tag}}</center></td>
+    </tr>
+</table><br>
+
+{{ form.riskimp2.label }}<br>
+<table style="table-layout: fixed; width: 100%;">
+    <tr>
+        <td><center><br></center></td>
+        <td><center><br></center></td>
+        <td><center>{{ form.riskimp2.0.choice_label }}<br>{{ form.riskimp2.0.tag}}</center></td>
+        <td><center><br>{{ form.riskimp2.1.tag}}</center></td>
+        <td><center><br>{{ form.riskimp2.tag}}</center></td>
+        <td><center><br>{{ form.riskimp2.3.tag}}</center></td>
+        <td><center>{{ form.riskimp2.4.choice_label }}<br>{{ form.riskimp2.4.tag}}</center></td>
+    </tr>
+</table><br>
+
     {% next_button %}
 {% endblock %}
 

@@ -22,66 +22,88 @@ Southern regional manager<br><br>
 Supervisor<br><br>
 {% endif%}
 
-2. 	Which one best describes the responsibility of the regional managers?<br>
+2. What is the responsibility of the regional managers?<br>
 Increasing sales performance in their region<br><br>
 
-3. 	What is the responsibility of the supervisor?<br>
-Allocating 10 minutes of production time between two regional managers in each round<br><br>
-
-4. How much time is each regional manager given to make sandwiches in the first round?<br>
-Five minutes<br><br>
-
-5. How much time is each regional manager given to make sandwiches in the next rounds?<br>
-Depends on the supervisor’s decision<br><br>
-
-6. What will the regional managers do after each round?<br>
-They will report their sales performance to the supervisor.<br><br>
-
-7. Who has access to the local market survey reports in each region?<br>
-Only the corresponding regional manager<br><br>
-
-8. How is sales performance of each regional manager computed?<br>
+3. How is sales performance of each regional manager computed?<br>
 Sales performance in each region is the multiplication of the number of saleable sandwiches and the selling price of each sandwich in that region.<br><br>
 
-9. What is the company’s risk reporting policy?<br>
+4. How much is the selling price in each region in the first round?<br>
+1 dollar.<br><br>
+
+5. What will be the payoffs of the regional managers?<br>
+They will receive half of the sales performance they achieve in each round. <br><br>
+
+6. What will be the payoff of the supervisor?<br>
+The supervisor will receive one fourth of the sales that each regional manager generates in each round. <br><br>
+
+7. What will the regional managers do after each round?<br>
+They will report their sales performance to the supervisor.<br>
 {% if group.reportingcondition ==  'mandatory' %}
-<b> Mandatory </b>: regional managers are required to report the risks (if any) that could impact their sales performance going forward.<br><br>
+The company has a <b> mandatory </b> risk reporting policy: they are required to report the risks (if any) that could impact their sales performance going forward.<br><br>
 {% endif%}
-
 {% if group.reportingcondition ==  'voluntary' %}
-<b> Voluntary </b>: regional managers can report the risks (if any) that could impact their sales performance going forward if they wish.<br><br>
+The company has a <b> Voluntary </b>risk reporting policy: they can report the risks (if any) that could impact their sales performance going forward if they wish.<br><br>
 {% endif%}
 
-10. What is the emergency monetary budget for?<br>
-An emergency monetary budget is set to be spent in case of unexpected expenses/events in each region.<br><br>
+8. How do regional managers get to know about potential risks in their region?
+Regional managers receive a local market survey report which informs them about potential risks (if any) that could impact their sales performance. <br><br>
 
-11. Who can ask for the emergency monetary budget?<br>
-Only the supervisor at the beginning of each round<br><br>
+9. Does the supervisor have access to the local market survey report in each region?<br>
+No, she/he does not. Only the corresponding regional manager has access to the market report.<br><br>
 
+10. Does the supervisor have access to actual sales performance of regional managers?<br>
+Yes, she/he does.<br><br>
+
+11. What is the responsibility of the supervisor at the end of each round?<br>
+A) Allocating 10 minutes of production time between two regional managers for the next round <br>
+B) Deciding whether to spend the emergency monetary budget to deal with risks in each region for the next round.<br><br>
+
+12. What is the emergency monetary budget for?<br>
+The emergency monetary budget in each region is set to reduce the impacts of potential risks on the sales performance.<br><br>
+
+13. Who can ask for the emergency monetary budget?<br>
+Only the supervisor can spend this budget. <br><br>
+
+14. Is the use of the emergency monetary budget free of charge for the supervisor?<br>
+No, each time that she/he uses the budget for a region, 10 cents will be deducted from his/her payoff and from the company's earnings. <br><br>
+
+15. How much time is each regional manager given to make sandwiches in the first round?<br>
+Five minutes<br><br>
+
+16. How much time is each regional manager given to make sandwiches in the next rounds?<br>
+Depends on the supervisor’s decision<br><br>
+
+17. What culture does a company promote?<br>
 {% if group.culturecondition == 'supportive' %}
 The company promotes a climate of doing things with <b>an adventurous spirit</b>.
-People <b>appreciate</b> each other’s efforts. <b>No negative comments </b> are made about those who make mistakes.
-People <b> easily </b> ask others for help in the face of difficulties.
-In addition, people value working in <b>a trial and error way</b> and encourage <b>speaking out freely</b>.
-People are therefore <b>comfortable </b> talking to others about what could go wrong.
-{% endif %}
-
+{% endif %}<br>
 {% if group.culturecondition ==  'unsupportive' %}
 The company promotes a climate of doing things <b>accurately</b>.
+{% endif %}<br>
+
+18. How do people interact in this company?<br>
+{% if group.culturecondition == 'supportive' %}
+People <b>appreciate</b> each other’s efforts. <b>No negative comments </b> are made about those who make mistakes.
+People <b> easily </b> ask others for help in the face of difficulties.
+{% endif %}<br>
+{% if group.culturecondition ==  'unsupportive' %}
 People <b>monitor</b> each other’s efforts. <b>Negative comments </b> are made about those who make mistakes.
 People <b> hardly </b> ask others for help in the face of difficulties.
-In addition, people value working in <b>a proven way</b> and encourage <b>looking before leaping</b>.
+{% endif %}<br>
+19. What do people place value on in this company?<br>
+{% if group.culturecondition == 'supportive' %}
+People value working in <b>a trial and error way</b> and encourage <b>speaking out freely</b>.
+People are therefore <b>comfortable </b> talking to others about what could go wrong.
+{% endif %}<br><br>
+{% if group.culturecondition ==  'unsupportive' %}
+People value working in <b>a proven way</b> and encourage <b>looking before leaping</b>.
 People are therefore <b>uncomfortable </b> talking to others about what could go wrong.
-{% endif %}
-<br><br>
+{% endif %}<br><br>
 
-{% if player.id_in_group == 2 %}
-By clicking on “next”, the first round will start. You have 5 minutes in this round.<br><br>
-{% endif%}
 
-{% if player.id_in_group == 1 %}
-By clicking on “next”, the first round will start. You have 5 minutes in this round.<br><br>
-{% endif%}
+When you are sure that you have understood the instructions, please click on "next" to start the first round. You have 5 minutes in this round. Your time will start once you click on "Next".<br><br>
+
 
     {% next_button %}
 

@@ -46,9 +46,17 @@ class GameIntro(Page):
     pass
 
 
-class ComprehensionSurvey(WaitPage):
+class ComprehensionSurvey(Page):
     pass
 
+class WRound1(WaitPage):
+    pass
+
+class WRound2(WaitPage):
+    pass
+
+class WRAlloc(WaitPage):
+    pass
 
 class LocationChoice(Page):
     form_model = 'player'
@@ -145,7 +153,7 @@ class ReportingScreen(Page):
     def get_form_fields(self):
         if self.player.id_in_group == 1:
             if self.group.reportingcondition == 'mandatory':
-                return ['NReportedPerf', 'NReportedRiskMan', 'NReportedRiskManD']
+                return ['NReportedPerf', 'NReportedRiskManD']
             else:
                 return ['NReportedPerf', 'NReportedRiskVol']
         else:
@@ -168,10 +176,13 @@ class AfterRound1Report(Page):
         return self.player.id_in_group in (1, 2)
 
 
-class SPLocation1(WaitPage):
+class SPLocation1(Page):
     def is_displayed(self):
         return self.player.id_in_group == 3
 
+class WLocation(WaitPage):
+    def is_displayed(self):
+        return self.player.id_in_group == 3
 
 class SPLocation2(Page):
     form_model = 'player'
@@ -510,12 +521,12 @@ class Results(Page):
 
 
 page_sequence = [IntroPage, IntroPage2, CultureCondition, Randomization, PlayerIntroPage, GameIntro,
-                 LocationChoice, SPLocation1, LocationApproval, SPLocation2, SandwichIntro, Shop, AfterPractice,
-                 ComprehensionSurvey, Round1, AfterRound1Game, AnnounceSalesRound1,
-                 RiskEvent, ReportingScreen, SPBefReporting, SPAllocation,
-                 SPAfterAllocation, AfterRound1Report, expectancy1, expectancy2, riskperception1, riskperception2,
+                 LocationChoice, SPLocation1,WLocation, LocationApproval, SPLocation2, SandwichIntro, Shop, AfterPractice,
+                 ComprehensionSurvey, WRound1, Round1, AfterRound1Game, AnnounceSalesRound1,
+                 RiskEvent, ReportingScreen,AfterRound1Report, SPBefReporting, SPAllocation,
+                 SPAfterAllocation, WRAlloc, expectancy1, expectancy2, riskperception1, riskperception2,
                  riskimpexexp,
-                 AfterRound1Allocation, Round2, AfterRound2Game, AnnounceSalesRound2, PostExpQuest, allocationfactor1,
+                 AfterRound1Allocation, WRound2, Round2, AfterRound2Game, AnnounceSalesRound2, PostExpQuest, allocationfactor1,
                  allocationfactor2, responsibility, perf,
                  riskimportpostexp, reportimp, factor1, factor2, reportqual1,
                  reportqual2, reportquality, orgtrust, suptrust,

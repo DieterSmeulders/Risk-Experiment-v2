@@ -10,15 +10,11 @@ The sales performance is {{ northernreportedperformance }} dollars. <br><br>
 
 
 {% if group.reportingcondition ==  'mandatory' %}
-    {% if northernmandatoryrisk == 'None' %} No risk is identified.
-    {% else %}
-    Some risk is identified in this region. See the report of the northern regional manager below: <br><br>
-    {{northernmandatoryrisk}}
-    {% endif %}
+{{northernmandatoryrisk}}
 {% endif %}
 
 {% if group.reportingcondition ==  'voluntary' %}
-Notes (optional):{{northernvoluntaryrisk}}
+{{northernvoluntaryrisk}}
 {% endif %}
 <br><br>
 <br><br>
@@ -29,15 +25,11 @@ Notes (optional):{{northernvoluntaryrisk}}
 The sales performance is {{ southernreportedperformance }} dollars. <br><br>
 
 {% if group.reportingcondition ==  'mandatory' %}
-    {% if southernmandatoryrisk == 'None' %} No risk is identified.
-    {% else %}
-    Some risk is identified in this region. See the report of the northern regional manager below:<br><br>
-    {{southernmandatoryrisk}}
-    {% endif %}
+{{southernmandatoryrisk}}
 {% endif %}
 
 {% if group.reportingcondition ==  'voluntary' %}
-Notes (optional): {{southernvoluntaryrisk}}
+{{southernvoluntaryrisk}}
 {% endif %}<br><br>
 <br><br>
 <br><br>
@@ -54,7 +46,7 @@ Would you like to ask for the emergency monetary budget for each region?
 {% formfield player.SEM %}
 
 <br>
-Click on “next” to send your request to the company and inform the regional managers about the production time you allocated to them and whether you asked for the emergency budget for their region or not. <br><br>
+Click on “next” to send your request to the company and inform the regional managers about the production time you allocated to them and whether you asked for the emergency budget for their region. <br><br>
 
     {% next_button %}
 

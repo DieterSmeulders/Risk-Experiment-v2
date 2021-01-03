@@ -19,9 +19,9 @@ You have been assigned to the role of a <u>southern regional manager</u>. You ar
 You have been assigned to the role of a supervisor of regional managers. You are randomly paired with a northern regional manager and a southern regional manager. <br><br>
 {% endif%}
 
-The company wants to open a new shop in the north and a new shop in the south. <u>Two locations in each region are selected as candidates for setting up a new shop </u>. Given that the regional managers have more knowledge about their regions, the supervisor delegates the location decision to regional managers. <br><br>
+The company wants to open a new shop in the north and a new shop in the south. <u>Two locations in each region are selected as candidates for setting up a new shop </u>. Given that the regional managers have more knowledge about their regions, {% if player.id_in_group == 3 %} you delegate {% else%} the supervisor delegates {% endif%} the location decision to regional managers. <br><br>
 
-Each regional managers will choose the best location in his/her region and inform the supervisor about his/her decision. Then, the supervisor asks the company to open a new shop in the location chosen in each region. Afterwards, each regional manager can start working in the new shop <u>for multiple rounds</u> once the company has opened it. <u>However</u>, regional managers still need production resources in the form of <u>production time </u> to be able to make sandwiches. On the next page, you will receive instructions about it. <br><br>
+Regional managers will choose the best location  in their region based on the information collected in their region and inform {% if player.id_in_group == 3 %} you {% else%} the supervisor {% endif%} about their decision. Then, {% if player.id_in_group == 3 %} you ask {% else%} the supervisor asks {% endif%} the company to open a new shop in the location chosen in each region. Afterwards, regional managers can start working in their new shop for<u> multiple rounds</u> once the company has opened it. <u>However</u>, regional managers still need production resources in the form of <u>production time </u> to be able to make sandwiches. On the next page, you will receive instructions about it. Please read them very carefully. <br><br>
 
     {% next_button %}
 

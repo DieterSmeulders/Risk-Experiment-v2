@@ -1,13 +1,14 @@
 {% extends "global/Page.html" %}
 {% load otree static %}
-
-{% block title %}
-
+{% block styles %}
+    <style>
+        .otree-timer {
+            display: none;
+        }
+    </style>
 {% endblock %}
 
 {% block content %}
 You will now be randomly assigned to be a northern regional manager, a southern regional manager, or a supervisor. You will receive detailed instructions about your task. Please read them very carefully. <br><br>
-
-{% next_button %}
 
 {% endblock %}

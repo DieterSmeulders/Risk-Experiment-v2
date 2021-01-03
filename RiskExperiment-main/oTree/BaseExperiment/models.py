@@ -264,35 +264,31 @@ class Player(BasePlayer):
         label='Please report your sales performance below.',
         min=0, max=30)
 
-    NReportedRiskMan = models.IntegerField(
-        label='Risks identified in your region.',
-        choices=[[1, 'None'], [2, 'Yes']],
-        widget=widgets.RadioSelectHorizontal
-    )
-
     NReportedRiskManD = models.LongStringField(
-        label='Please specify:',
+        label='You are now obliged to report on risks identified in your region (if any) here. '
+              'Note that you cannot leave this box blank. '
+              'When you did not identify any risk to report, say so.',
         blank=True
     )
 
     NReportedRiskVol = models.LongStringField(
-        label='Notes (optional).',
+        label='You are now allowed to report on risks identified in your region (if any) here. '
+              'Note that you can leave this box blank. '
+              'When you did not identify any risk to report, you can, if wish, say so.',
         blank=True
     )
 
-    SReportedRiskMan = models.IntegerField(
-        label='Risks identified in your region.',
-        choices=[[1, 'None'], [2, 'Yes']],
-        widget=widgets.RadioSelectHorizontal
-    )
-
     SReportedRiskManD = models.LongStringField(
-        label='Please specify:',
+        label='You are now obliged to report on risks identified in your region (if any). '
+              'Note that you cannot leave this box blank. '
+              'When you did not identify any risk to report, say so.',
         blank=True
     )
 
     SReportedRiskVol = models.LongStringField(
-        label='Notes (optional).',
+        label='You are now allowed to report on risks identified in your region (if any) here. '
+              'Note that you can leave this box blank. '
+              'When you did not identify any risk to report, you can, if wish, say so.',
         blank=True
     )
     Ntime = models.IntegerField(
@@ -350,30 +346,30 @@ class Player(BasePlayer):
 
     riskcert = models.IntegerField(
         label='How certain are you that a new competitor will come to your neighborhood?',
-        choices=[[1, 'Not at all certain'], [2, 'Slightly certain'], [3, 'Somewhat certain'], [4, 'Moderately certain'],
-                 [5, 'Completely certain']],
+        choices=[[1, 'Little'], [2, ''], [3, ''], [4, ''],
+                 [5, 'Very much']],
         widget=widgets.RadioSelectHorizontal
     )
 
     riskseri = models.IntegerField(
         label='How serious do you think the potential impacts of a new competitor on the sales performance of your '
               'region would be?',
-        choices=[[1, 'Not at all serious'], [2, 'Slightly serious'], [3, 'Somewhat serious'], [4, 'Moderately serious'],
-                 [5, 'Extremely serious']],
+        choices=[[1, 'Little'], [2, ''], [3, ''], [4, ''],
+                 [5, 'Very much']],
         widget=widgets.RadioSelectHorizontal
     )
 
     riskimp1 = models.IntegerField(
         label='How much importance do you think the company places to risk management?',
-        choices=[[1, 'No importance'], [2, 'Low importance'], [3, 'Some importance'], [4, 'High importance'],
-                 [5, 'Very high importance']],
+        choices=[[1, 'Little'], [2, ''], [3, ''], [4, ''],
+                 [5, 'Very much']],
         widget=widgets.RadioSelectHorizontal
     )
 
     riskimp2 = models.IntegerField(
         label='How much importance do you think the company places to internal communication of risk information?',
-        choices=[[1, 'No importance'], [2, 'Low importance'], [3, 'Some importance'], [4, 'High importance'],
-                 [5, 'Very high importance']],
+        choices=[[1, 'Little'], [2, ''], [3, ''], [4, ''],
+                 [5, 'Very much']],
         widget=widgets.RadioSelectHorizontal
     )
 
@@ -414,17 +410,17 @@ class Player(BasePlayer):
     )
     riskimp3 = models.IntegerField(
         label='To what extent did the company put emphasis on the communication of risk information?',
-        choices=[[1, 'Not at all'], [2, ''], [3, ''], [4, ''], [5, 'Very much']],
+        choices=[[1, 'Little'], [2, ''], [3, ''], [4, ''], [5, 'Very much']],
         widget=widgets.RadioSelectHorizontal
     )
     riskimp4 = models.IntegerField(
         label='To what extent did the company put emphasis on management of environmental risks?',
-        choices=[[1, 'Not at all'], [2, ''], [3, ''], [4, ''], [5, 'Very much']],
+        choices=[[1, 'Little'], [2, ''], [3, ''], [4, ''], [5, 'Very much']],
         widget=widgets.RadioSelectHorizontal
     )
     riskimp5 = models.IntegerField(
         label='To what extent did the company value timely communication of risk information?',
-        choices=[[1, 'Not at all'], [2, ''], [3, ''], [4, ''], [5, 'Very much']],
+        choices=[[1, 'Little'], [2, ''], [3, ''], [4, ''], [5, 'Very much']],
         widget=widgets.RadioSelectHorizontal
     )
     repimp1 = models.IntegerField(
@@ -1041,22 +1037,22 @@ class Player(BasePlayer):
     )
     north3 = models.IntegerField(
         label='How competent was the northern regional manager?',
-        choices=[[1, 'Not at all'], [2, ''], [3, ''], [4, ''], [5, 'Very much']],
+        choices=[[1, 'Little'], [2, ''], [3, ''], [4, ''], [5, 'Very much']],
         widget=widgets.RadioSelectHorizontal
     )
     north4 = models.IntegerField(
         label='How trustworthy was the northern regional manager?',
-        choices=[[1, 'Not at all'], [2, ''], [3, ''], [4, ''], [5, 'Very much']],
+        choices=[[1, 'Little'], [2, ''], [3, ''], [4, ''], [5, 'Very much']],
         widget=widgets.RadioSelectHorizontal
     )
     south3 = models.IntegerField(
         label='How competent was the southern regional manager?',
-        choices=[[1, 'Not at all'], [2, ''], [3, ''], [4, ''], [5, 'Very much']],
+        choices=[[1, 'Little'], [2, ''], [3, ''], [4, ''], [5, 'Very much']],
         widget=widgets.RadioSelectHorizontal
     )
     south4 = models.IntegerField(
         label='How trustworthy was the southern regional manager?',
-        choices=[[1, 'Not at all'], [2, ''], [3, ''], [4, ''], [5, 'Very much']],
+        choices=[[1, 'Little'], [2, ''], [3, ''], [4, ''], [5, 'Very much']],
         widget=widgets.RadioSelectHorizontal
     )
     closure1 = models.IntegerField(

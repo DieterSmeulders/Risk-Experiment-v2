@@ -9,18 +9,23 @@
 <b>Procedure:</b> <br><br>
 <br>
 
-1. For the first round, the supervisor will <u>not</u> allocate the production time to managers and each regional manager will be given <b>5</b> minutes of production time to make sandwiches. <br><br>
+1. For the first round, {% if player.id_in_group == 3 %} you {% else%} the supervisor {% endif%} will <u>not</u> allocate the production time to managers and each regional manager will be given <b>5</b> minutes of production time to make sandwiches. <br><br>
 2. The regional managers make as many sandwiches as they can in the time given. <br><br>
-3. Once the time is over, the regional managers will be informed about the <u>sales performance</u> they have achieved in this round. Furthermore, they receive a <u>local market survey report</u>, conducted in their shop during this round. As it is locally conducted, this survey report is <b>available only</b> to the shop’s regional manager, not to others. <br><br>
-4. Then the regional managers will send a report of the sales performance they achieved to the supervisor. The supervisor will receive the reports and subsequently allocate <b>10</b> minutes of production time between two regional managers for the next round. Each regional manager can make sandwiches <b>only</b> during the production time the supervisor will allocate to him/her in the next round.<br><br>
-<u>The game will continue with steps 2,3, and 4 for the next rounds</u>.<br><br>
+3. Once the time is over, the regional managers will be informed about the <u>sales performance</u> they have achieved in this round. Furthermore, they receive a <u>local market survey report</u>. Furthermore, they receive a local market survey report. This report provides insights into the potential risks to the sales performance. This market survey is locally conducted during this round. Thus, the survey report is available <b>only</b> to the shop’s regional manager, <i>not</i> to {% if player.id_in_group == 3 %} you {% else%} the supervisor {% endif%} <i>nor</i> to the other regional manager. <br><br>
+4. Then, the regional managers will send a report of the sales performance they achieved to {% if player.id_in_group == 3 %} you {% else%} the supervisor {% endif%}.
+{% if group.reportingcondition ==  'mandatory' %}Note that the AC company has a <b>mandatory risk reporting policy</b>, that is, along with sales performance, regional managers <u>are required to report the risks (if any) that could impact the sales performance of their region going forward</u>. <br><br> {% endif%}
+{% if group.reportingcondition ==  'voluntary' %}Note that the AC company has a <b>voluntary risk reporting policy</b>, that is, along with sales performance, regional managers <u>can, if they wish, report the risks (if any) that could impact the sales performance of their region going forward</u>. <br><br> {% endif%}
+5. {% if player.id_in_group == 3 %} You {% else%} The supervisor {% endif%} will receive the reports from the regional managers. {% if player.id_in_group == 3 %} You have {% else%} The supervisor has {% endif%} access to the actual performance but does <b>not</b> have access to the local market survey reports and thus <u>cannot validate the risk reports</u> of the regional managers.<br>
+{% if player.id_in_group == 3 %} You {% else%} The supervisor {% endif%}  will make two decisions for the next round:<br><br>
 
+<center>A) {% if player.id_in_group == 3 %} You {% else%} She/he {% endif%} will allocate 10 minutes of production time between two regional managers. </center>
+<center>B) For each region, {% if player.id_in_group == 3 %} you {% else%} she/he {% endif%} will decide whether to use the <u>emergency monetary budget</u> or not.</center><br>
+The company has set aside an emergency monetary budget for each region to reduce the impacts of potential risks to the sales performance. Only {% if player.id_in_group == 3 %} you have {% else%} the supervisor has {% endif%} access to the emergency monetary budget and can use it if {% if player.id_in_group == 3 %} you find {% else%} she/he finds {% endif%} it necessary. Each time that {% if player.id_in_group == 3 %} you use {% else%} the supervisor uses {% endif%} the emergency monetary budget for a region, 10 cents are deducted from {% if player.id_in_group == 3 %} your {% else%} her/his {% endif%} payoff and from the company’s earnings.<br><br>
 
-{% if group.reportingcondition ==  'mandatory' %}Note that the AC company has a <b>mandatory risk reporting policy</b>, that is, <b>along with sales performance, regional managers are required to report the risks (if any) that could impact the sales performance of their region going forward</b>. <br><br> {% endif%}
-{% if group.reportingcondition ==  'voluntary' %}Note that the AC company has a <b>voluntary risk reporting policy</b>, that is, <b>along with sales performance, regional managers can, if they wish, report the risks (if any) that could impact the sales performance of their region going forward</b>. <br><br> {% endif%}
+6. Then, the regional managers will be informed about the both decisions of {% if player.id_in_group == 3 %} you {% else%} the supervisor {% endif%} and can make sandwiches only during the production time {% if player.id_in_group == 3 %} you {% else%} the supervisor {% endif%} allocated to them for the next round. <br><br>
+The game will continue with steps 3, 4, 5, and 6 for the next rounds.<br><br>
 
-The company has set aside an <b>emergency monetary budget</b> in case of unexpected expenses/events in each region. At the beginning of each round, the supervisor can send a formal request to ask for this budget if she/he finds it necessary.<br><br>
-
+Please read the instructions carefully on this page. Once you click on "next", you will be {% if player.id_in_group == 3 %} informed about the locations that the regional managers have selected. {% else%} asked to choose a location for your shop in your region.{% endif%} <br><br>
     {% next_button %}
 
 {% endblock %}
