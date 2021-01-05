@@ -88,7 +88,7 @@ class Shop(Page):
         return dict(ingredients=INGREDIENTS, menu=RECIPES)
 
     def js_vars(self):
-        return dict(duration=10, menu=RECIPES, images=IMAGES)
+        return dict(duration=180, menu=RECIPES, images=IMAGES)
 
     def is_displayed(self):
         return self.player.id_in_group in (1, 2)
@@ -158,7 +158,7 @@ class ReportingScreen(Page):
                 return ['NReportedPerf', 'NReportedRiskVol']
         else:
             if self.group.reportingcondition == 'mandatory':
-                return ['SReportedPerf', 'SReportedRiskManD', 'SReportedRiskMan']
+                return ['SReportedPerf', 'SReportedRiskManD']
             else:
                 return ['SReportedPerf', 'SReportedRiskVol']
 
@@ -301,6 +301,9 @@ class AnnounceSalesRound2(Page):
 
 
 class PostExpQuest(Page):
+    def vars_for_template(self):
+        ownshare = (self.player.revenue + self.player.revenueR1) * 0.5
+        return dict(ownshare=ownshare)
     def is_displayed(self):
         return self.player.id_in_group in (1, 2)
 
@@ -513,9 +516,9 @@ class GenQuest(Page):
 
 class Results(Page):
     def vars_for_template(self):
-        ownshare = (self.player.revenue + self.player.RevenueR1) * 0.5
-        supervisorshare = (self.player.revenue + self.player.RevenueR1) * 0.25
-        firmshare = (self.player.revenue + self.player.RevenueR1) * 0.25
+        ownshare = (self.player.revenue + self.player.revenueR1) * 0.5
+        supervisorshare = (self.player.revenue + self.player.revenueR1) * 0.25
+        firmshare = (self.player.revenue + self.player.revenueR1) * 0.25
         return dict(ownshare=ownshare,supervisorshare=supervisorshare,firmshare=firmshare)
     pass
 
