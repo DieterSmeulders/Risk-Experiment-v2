@@ -267,8 +267,7 @@ class Player(BasePlayer):
     NReportedRiskManD = models.LongStringField(
         label='You are now obliged to report on risks identified in your region (if any) here. '
               'Note that you cannot leave this box blank. '
-              'When you did not identify any risk to report, say so.',
-        blank=True
+              'When you did not identify any risk to report, say so.'
     )
 
     NReportedRiskVol = models.LongStringField(
@@ -281,8 +280,7 @@ class Player(BasePlayer):
     SReportedRiskManD = models.LongStringField(
         label='You are now obliged to report on risks identified in your region (if any). '
               'Note that you cannot leave this box blank. '
-              'When you did not identify any risk to report, say so.',
-        blank=True
+              'When you did not identify any risk to report, say so.'
     )
 
     SReportedRiskVol = models.LongStringField(

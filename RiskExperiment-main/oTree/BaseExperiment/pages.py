@@ -28,7 +28,7 @@ class CultureCondition(Page):
 
 
 class Randomization(Page):
-    pass
+    timeout_seconds = 15
 
 
 class PlayerIntroPage(Page):
