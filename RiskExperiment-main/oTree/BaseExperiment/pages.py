@@ -47,7 +47,13 @@ class GameIntro(Page):
 
 
 class ComprehensionSurvey(Page):
-    pass
+    def is_displayed(self):
+        return self.player.id_in_group in (1, 2)
+
+
+class SPComprehensionSurvey(Page):
+    def is_displayed(self):
+        return self.player.id_in_group == 3
 
 class WRound1(WaitPage):
     pass
@@ -197,7 +203,7 @@ class SPLocation2(Page):
         return self.player.id_in_group == 3
 
 
-class SPBefReporting(WaitPage):
+class SPBefReporting(Page):
     def is_displayed(self):
         return self.player.id_in_group == 3
 
@@ -246,7 +252,12 @@ class expectancy2(Page):
     def is_displayed(self):
         return self.player.id_in_group in (1, 2)
 
+class expectancy3(Page):
+    form_model = 'player'
+    form_fields = ['expect1', 'expect2', 'expect3']
 
+    def is_displayed(self):
+        return self.player.id_in_group in (1, 2)
 class riskperception1(Page):
     form_model = 'player'
     form_fields = ['riskiden']
@@ -270,6 +281,14 @@ class riskperception2(Page):
 class riskimpexexp(Page):
     form_model = 'player'
     form_fields = ['riskimp1', 'riskimp2']
+    def is_displayed(self):
+        return self.player.id_in_group in (1, 2)
+
+class Sriskimpexexp(Page):
+    form_model = 'player'
+    form_fields = ['riskimp1', 'riskimp2']
+    def is_displayed(self):
+        return self.player.id_in_group == 3
 
 
 class AfterRound1Allocation(Page):
@@ -346,7 +365,7 @@ class supimpress1(Page):
 
 class supimpress2(Page):
     form_model = 'player'
-    form_fields = ['sup6', 'sup7', 'sup8', 'sup9']
+    form_fields = ['sup6', 'sup7', 'sup8', 'sup9', 'sup10']
 
     def is_displayed(self):
         return self.player.id_in_group in (1, 2)
@@ -467,7 +486,7 @@ class uncertainaversion2(Page):
 
 class allocationfactor1(Page):
     form_model = 'player'
-    form_fields = ['sfact1', 'sfact2', 'sfact3', 'sfact4', 'sfact5', 'sfact6']
+    form_fields = ['sfact1', 'sfact2', 'sfact3', 'sfact4', 'sfact5']
 
     def is_displayed(self):
         return self.player.id_in_group == 3
@@ -475,7 +494,7 @@ class allocationfactor1(Page):
 
 class allocationfactor2(Page):
     form_model = 'player'
-    form_fields = ['sfact7', 'sfact8', 'sfact9', 'sfact10', 'sfact11', 'sfact12']
+    form_fields = ['sfact7', 'sfact8', 'sfact9', 'sfact10', 'sfact6','sfact11']
 
     def is_displayed(self):
         return self.player.id_in_group == 3
@@ -496,15 +515,6 @@ class reportqual1(Page):
     def is_displayed(self):
         return self.player.id_in_group == 3
 
-
-class reportqual2(Page):
-    form_model = 'player'
-    form_fields = ['north3', 'north4', 'south3', 'south4']
-
-    def is_displayed(self):
-        return self.player.id_in_group == 3
-
-
 class mansafetycheck(Page):
     form_model = 'player'
     form_fields = ['safety1', 'safety2', 'safety3', 'safety4', 'safety5', 'safety6', 'safety7']
@@ -519,20 +529,20 @@ class Results(Page):
         ownshare = (self.player.revenue + self.player.revenueR1) * 0.5
         supervisorshare = (self.player.revenue + self.player.revenueR1) * 0.25
         firmshare = (self.player.revenue + self.player.revenueR1) * 0.25
-        return dict(ownshare=ownshare,supervisorshare=supervisorshare,firmshare=firmshare)
-    pass
+        return dict(ownshare=ownshare, supervisorshare=supervisorshare, firmshare=firmshare)
+
 
 
 page_sequence = [IntroPage, IntroPage2, CultureCondition, Randomization, PlayerIntroPage, GameIntro,
                  LocationChoice, SPLocation1,WLocation, LocationApproval, SPLocation2, SandwichIntro, Shop, AfterPractice,
-                 ComprehensionSurvey, WRound1, Round1, AfterRound1Game, AnnounceSalesRound1,
-                 RiskEvent, ReportingScreen,AfterRound1Report, SPBefReporting, SPAllocation,
-                 SPAfterAllocation, WRAlloc, expectancy1, expectancy2, riskperception1, riskperception2,
+                 ComprehensionSurvey, SPComprehensionSurvey, WRound1, SPBefReporting, Round1, AfterRound1Game, AnnounceSalesRound1,
+                 RiskEvent, ReportingScreen, WRAlloc, AfterRound1Report, SPAllocation,
+                 SPAfterAllocation, expectancy1, expectancy2, expectancy3, riskperception1, riskperception2,
                  riskimpexexp,
-                 AfterRound1Allocation, WRound2, Round2, AfterRound2Game, AnnounceSalesRound2, PostExpQuest, allocationfactor1,
-                 allocationfactor2, responsibility, perf,
-                 riskimportpostexp, reportimp, factor1, factor2, reportqual1,
-                 reportqual2, reportquality, orgtrust, suptrust,
-                 emergencyfactor, supimpress1, supimpress2, riskattitude1, riskattitude2,
-                 mansafetycheck, manvoluntarycheck, volexp, pclosure1, pclosure2,
-                 uncertainaversion1, uncertainaversion2, optimism, dark, GenQuest, Results]
+                 AfterRound1Allocation, WRound2, Sriskimpexexp,Round2, AfterRound2Game, AnnounceSalesRound2, PostExpQuest,
+                 allocationfactor1, allocationfactor2, responsibility,
+                 riskimportpostexp, reportqual1, supimpress1, supimpress2,
+                 reportquality, orgtrust, suptrust, reportimp, perf,
+                 emergencyfactor, factor1, factor2, riskattitude1, riskattitude2, pclosure1, pclosure2,
+                 uncertainaversion1, uncertainaversion2, optimism, dark, mansafetycheck, manvoluntarycheck, volexp,
+                 GenQuest, Results]

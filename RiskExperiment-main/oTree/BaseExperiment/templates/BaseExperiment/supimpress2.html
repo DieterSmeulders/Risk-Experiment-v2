@@ -55,6 +55,18 @@ I felt that ............................. if I reported the risks that I was exp
     </tr>
 </table><br><br>
 
+{{ form.sup10.label }}<br>
+<table style="table-layout: fixed; width: 100%;">
+    <tr>
+        <td><center><br></center></td>
+        <td><center>{{ form.sup10.0.choice_label }}<br>{{ form.sup10.0.tag}}</center></td>
+        <td><center><br>{{ form.sup10.1.tag}}</center></td>
+        <td><center><br>{{ form.sup10.2.tag}}</center></td>
+        <td><center><br>{{ form.sup10.3.tag}}</center></td>
+         <td><center>{{ form.sup10.4.choice_label }}<br>{{ form.sup10.4.tag}}</center></td>
+    </tr>
+</table><br><br>
+
     {% next_button %}
 {% endblock %}
 
