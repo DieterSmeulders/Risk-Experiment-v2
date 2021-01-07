@@ -1,0 +1,112 @@
+{% extends "global/Page.html" %}
+{% load otree static %}
+
+{% block title %}
+
+{% endblock %}
+
+{% block content %}
+
+To ensure that you fully understand the instructions, please read carefully the summary below in the form of Q&As. <br><br>
+
+<b>1. What is your role?</b><br>
+{% if player.id_in_group == 1 %}
+Northern regional manager<br><br>
+{% endif%}
+
+{% if player.id_in_group == 2 %}
+Southern regional manager<br><br>
+{% endif%}
+
+{% if player.id_in_group == 3 %}
+Supervisor<br><br>
+{% endif%}
+
+<b>2. What is the responsibility of the regional managers?</b><br>
+Increasing sales performance in their region<br><br>
+
+<b>3. How is the sales performance of each regional manager computed?</b><br>
+Sales performance in each region is the multiplication of the number of saleable sandwiches made and the selling price of each sandwich in that region.<br><br>
+
+<b>4. How much is the selling price in each region in the first round?</b><br>
+1 dollar.<br><br>
+
+<b>5. What will be the payoffs of the regional managers?</b><br>
+They will receive half of the sales performance they achieve in each round. <br><br>
+
+<b>6. What will be your payoff?</b><br>
+I will receive one fourth of the sales that each regional manager generates in each round. <br><br>
+
+<b>7. What will the regional managers do after each round?</b><br>
+They will report their sales performance to me.<br>
+{% if group.reportingcondition ==  'mandatory' %}
+The company has a <b> mandatory </b> risk reporting policy: they are required to report the risks (if any) that could impact their sales performance going forward.<br><br>
+{% endif%}
+{% if group.reportingcondition ==  'voluntary' %}
+The company has a <b> voluntary </b>risk reporting policy: they can report the risks (if any) that could impact their sales performance going forward if they wish.<br><br>
+{% endif%}
+
+<b>8. How do regional managers get to know about potential risks in their region?</b><br>
+Regional managers receive a local market survey report which informs them about potential risks (if any) that could impact their sales performance. <br><br>
+
+<b>9. Do you have access to the local market survey report in each region?</b><br>
+No, I don't. Only the corresponding regional manager has access to the market report.<br><br>
+
+<b>10. Do you have access to actual sales performance of regional managers?</b><br>
+Yes, I do.<br><br>
+
+<b>11. What is your responsibility at the end of each round?</b><br>
+Allocating 10 minutes of production time between two regional managers for the next round, <b>and</b>
+deciding whether to spend the emergency monetary budget to deal with risks in each region for the next round.<br><br>
+
+<b>12. What is the emergency monetary budget for?</b><br>
+The emergency monetary budget in each region can be used to reduce the impacts of potential risks on the sales performance.<br><br>
+
+<b>13. Who can spend the emergency monetary budget?</b><br>
+Only I can spend this budget. The regional managers do not have access to this budget. <br><br>
+
+<b>14. Is the use of the emergency monetary budget free of charge for you?</b><br>
+No, each time that I use this budget for a region, 10 cents will be deducted from my payoff and from the company's earnings. <br><br>
+
+<b>15. How much time is each regional manager given to make sandwiches in the first round?</b><br>
+Five minutes<br><br>
+
+<b>16. How much time is each regional manager given to make sandwiches in the next rounds?</b><br>
+This depends on my decision: for each round, I will distribute 10 minutes between the two regional managers.<br><br>
+
+<b>17. What culture does a company promote?</b>
+{% if group.culturecondition == 'supportive' %}
+The company promotes a climate of doing things with <b>an adventurous spirit</b>.<br>
+{% endif %}<br>
+{% if group.culturecondition ==  'unsupportive' %}
+The company promotes a climate of doing things <b>accurately</b>.<br>
+{% endif %}<br>
+
+<b>18. How do people interact in this company?</b>
+{% if group.culturecondition == 'supportive' %}
+People <b>appreciate</b> each other’s efforts. <b>No negative comments </b> are made about those who make mistakes.
+People <b> easily </b> ask others for help in the face of difficulties.<br>
+{% endif %}<br>
+{% if group.culturecondition ==  'unsupportive' %}
+People <b>monitor</b> each other’s efforts. <b>Negative comments </b> are made about those who make mistakes.
+People <b> hardly </b> ask others for help in the face of difficulties.<br>
+{% endif %}<br>
+
+
+<b>19. What do people place value on in this company?</b>
+{% if group.culturecondition == 'supportive' %}
+People value working in <b>a trial and error way</b> and encourage <b>speaking out freely</b>.
+People are therefore <b>comfortable </b> talking to others about what could go wrong.<br><br>
+{% endif %}<br>
+{% if group.culturecondition ==  'unsupportive' %}
+People value working in <b>a proven way</b> and encourage <b>looking before leaping</b>.
+People are therefore <b>uncomfortable </b> talking to others about what could go wrong.<br><br>
+{% endif %}<br>
+
+
+
+
+
+    {% next_button %}
+
+{% endblock %}

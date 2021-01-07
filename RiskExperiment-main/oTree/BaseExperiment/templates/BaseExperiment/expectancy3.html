@@ -1,0 +1,53 @@
+{% extends "global/Page.html" %}
+{% load otree static %}
+
+{% block title %}
+
+{% endblock %}
+
+{% block content %}
+When you were reporting to the supervisor, to what extent did you think that the other regional manager … <br><br>
+
+{{ form.expect1.label }}<br>
+<table style="table-layout: fixed; width: 100%;">
+    <tr>
+        <td><center><br></center></td>
+        <td><center>{{ form.expect1.0.choice_label }}<br>{{ form.expect1.0.tag}}</center></td>
+        <td><center><br>{{ form.expect1.1.tag}}</center></td>
+        <td><center><br>{{ form.expect1.2.tag}}</center></td>
+        <td><center><br>{{ form.expect1.3.tag}}</center></td>
+        <td><center>{{ form.expect1.4.choice_label }}<br>{{ form.expect1.4.tag}}</center></td>
+    </tr>
+</table><br>
+
+{{ form.expect2.label }}<br>
+<table style="table-layout: fixed; width: 100%;">
+    <tr>
+        <td><center><br></center></td>
+        <td><center>{{ form.expect2.0.choice_label }}<br>{{ form.expect2.0.tag}}</center></td>
+        <td><center><br>{{ form.expect2.1.tag}}</center></td>
+        <td><center><br>{{ form.expect2.2.tag}}</center></td>
+        <td><center><br>{{ form.expect2.3.tag}}</center></td>
+        <td><center>{{ form.expect2.4.choice_label }}<br>{{ form.expect2.4.tag}}</center></td>
+    </tr>
+</table><br><br>
+
+{{ form.expect3.label }}<br>
+<table style="table-layout: fixed; width: 100%;">
+    <tr>
+        <td><center><br></center></td>
+        <td><center>{{ form.expect3.0.choice_label }}<br>{{ form.expect3.0.tag}}</center></td>
+        <td><center><br>{{ form.expect3.1.tag}}</center></td>
+        <td><center>{{ form.expect3.2.choice_label }}<br>{{ form.expect3.2.tag}}</center></td>
+        <td><center><br>{{ form.expect3.3.tag}}</center></td>
+        <td><center>{{ form.expect3.4.choice_label }}<br>{{ form.expect3.4.tag}}</center></td>
+    </tr>
+</table><br>
+
+
+
+
+    {% next_button %}
+{% endblock %}
+
+
