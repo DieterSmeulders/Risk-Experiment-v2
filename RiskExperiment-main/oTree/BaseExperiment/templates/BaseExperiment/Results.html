@@ -6,12 +6,18 @@
 {% endblock %}
 
 {% block content %}
+
+{% if player.id_in_group == 3 %}
+
+Thank you for participating in this study! You will receive {{ supervisorshare }}.<br>
+
+{% else %}
 Thank you for participating in this study!
 
-Your total sales performance is {{player.revenue}} in dollars.<br><br>
+Your total sales performance is {{ player.revenue }} in dollars.<br><br>
 
 You will receive {{ ownshare }} and the supervisor will receive {{ supervisorshare }}<br><br>
-
+{% endif %}
 
     {% next_button %}
 {% endblock %}

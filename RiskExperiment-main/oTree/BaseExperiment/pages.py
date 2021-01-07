@@ -116,7 +116,7 @@ class Round1(Page):
         return dict(ingredients=INGREDIENTS, menu=RECIPES)
 
     def js_vars(self):
-        return dict(duration=10, menu=RECIPES, images=IMAGES)
+        return dict(duration=300, menu=RECIPES, images=IMAGES)
 
     def is_displayed(self):
         return self.player.id_in_group in (1, 2)
@@ -218,8 +218,8 @@ class SPAllocation(Page):
             northernmandatoryrisk=self.group.get_player_by_id(1).NReportedRiskManD,
             northernvoluntaryrisk=self.group.get_player_by_id(1).NReportedRiskVol,
             southernreportedperformance=self.group.get_player_by_id(2).SReportedPerf,
-            southernmandatoryrisk=self.group.get_player_by_id(1).SReportedRiskManD,
-            southernvoluntaryrisk=self.group.get_player_by_id(1).SReportedRiskVol,
+            southernmandatoryrisk=self.group.get_player_by_id(2).SReportedRiskManD,
+            southernvoluntaryrisk=self.group.get_player_by_id(2).SReportedRiskVol
         )
 
     def error_message(self, values):
@@ -292,6 +292,10 @@ class Sriskimpexexp(Page):
 
 
 class AfterRound1Allocation(Page):
+    def vars_for_template(self):
+        return dict(
+    emergencynorth = self.group.get_player_by_id(3).NEM,
+    emergencysouth = self.group.get_player_by_id(3).SEM)
     def is_displayed(self):
         return self.player.id_in_group in (1, 2)
 
@@ -311,9 +315,14 @@ class Round2(Page):
 
 class AnnounceSalesRound2(Page):
     def vars_for_template(self):
-        ownshare = self.player.revenue * 0.5
-        supervisorshare = self.player.revenue * 0.25
-        firmshare = self.player.revenue * 0.25
+        if self.player.riskmaterialized == 1:
+            ownshare = self.player.revenue * 0.5 * 0.7
+            supervisorshare = self.player.revenue * 0.25 * 0.7
+            firmshare = self.player.revenue * 0.25 * 0.7
+        else:
+            ownshare = self.player.revenue * 0.5
+            supervisorshare = self.player.revenue * 0.25
+            firmshare = self.player.revenue * 0.25
         return dict(ownshare=ownshare,supervisorshare=supervisorshare,firmshare=firmshare)
     def is_displayed(self):
         return self.player.id_in_group in (1, 2)
@@ -526,11 +535,15 @@ class GenQuest(Page):
 
 class Results(Page):
     def vars_for_template(self):
-        ownshare = (self.player.revenue + self.player.revenueR1) * 0.5
-        supervisorshare = (self.player.revenue + self.player.revenueR1) * 0.25
-        firmshare = (self.player.revenue + self.player.revenueR1) * 0.25
+        if self.player.riskmaterialized == 1:
+            ownshare = self.player.revenue * 0.5 * 0.7
+            supervisorshare = self.player.revenue * 0.25 * 0.7
+            firmshare = self.player.revenue * 0.25 * 0.7
+        else:
+            ownshare = self.player.revenue * 0.5
+            supervisorshare = self.player.revenue * 0.25
+            firmshare = self.player.revenue * 0.25
         return dict(ownshare=ownshare, supervisorshare=supervisorshare, firmshare=firmshare)
-
 
 
 page_sequence = [IntroPage, IntroPage2, CultureCondition, Randomization, PlayerIntroPage, GameIntro,
