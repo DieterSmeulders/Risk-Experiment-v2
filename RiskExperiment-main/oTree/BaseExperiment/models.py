@@ -173,6 +173,11 @@ class Player(BasePlayer):
     # risk materialisation
     riskmaterialized = models.BooleanField()
 
+    #revenues
+    ownshare = models.CurrencyField()
+    supervisorshare = models.CurrencyField()
+    firmshare = models.CurrencyField()
+
     def handle_message(self, message):
         kind = message['type']
         if kind == 'start':
@@ -226,6 +231,21 @@ class Player(BasePlayer):
         if self.id_in_group == 2:
             self.time = manager.Stime
 
+    def calcrevenue(self):
+        if self.riskmaterialized == 1:
+            self.ownshare = self.revenue * 0.5 * 0.7 + self.revenueR1 * 0.5
+            self.supervisorshare = self.revenue * 0.25 * 0.7 + self.revenueR1 * 0.25
+            self.firmshare = self.revenue * 0.25 * 0.7 + self.revenueR1 * 0.25
+        else:
+            self.ownshare = self.revenue * 0.5 + self.revenueR1 * 0.5
+            self.firmshare = self.revenue * 0.25 + self.revenueR1 * 0.25
+            if (self.id_in_group == 1 and self.group.get_player_by_id(3).NEM):
+                self.supervisorshare = self.revenue * 0.25 + self.revenueR1 * 0.25 - 0.1
+            if (self.id_in_group == 2 and self.group.get_player_by_id(3).SEM):
+                self.supervisorshare = self.revenue * 0.25 + self.revenueR1 * 0.25 - 0.1
+            else:
+                self.supervisorshare = self.revenue * 0.25 + self.revenueR1 * 0.25
+
     def handleriskevent(self):
         manager = self.group.get_player_by_id(3)
         probability = random.random()
@@ -267,26 +287,26 @@ class Player(BasePlayer):
     NReportedRiskManD = models.LongStringField(
         label='You are now obliged to report on risks identified in your region (if any) here. '
               'Note that you cannot leave this box blank. '
-              'When you did not identify any risk to report, say so.'
+              'In case you identified no risk, say so.'
     )
 
     NReportedRiskVol = models.LongStringField(
         label='You are now allowed to report on risks identified in your region (if any) here. '
               'Note that you can leave this box blank. '
-              'When you did not identify any risk to report, you can, if wish, say so.',
+              'Wn case you identified no risk, you can, if wish, say so.',
         blank=True
     )
 
     SReportedRiskManD = models.LongStringField(
         label='You are now obliged to report on risks identified in your region (if any). '
               'Note that you cannot leave this box blank. '
-              'When you did not identify any risk to report, say so.'
+              'In case you identified no risk, say so.'
     )
 
     SReportedRiskVol = models.LongStringField(
         label='You are now allowed to report on risks identified in your region (if any) here. '
               'Note that you can leave this box blank. '
-              'When you did not identify any risk to report, you can, if wish, say so.',
+              'In case you identified no risk, you can, if wish, say so.',
         blank=True
     )
     Ntime = models.IntegerField(

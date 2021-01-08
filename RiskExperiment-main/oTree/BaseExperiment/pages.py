@@ -311,6 +311,8 @@ class Round2(Page):
 
     def is_displayed(self):
         return self.player.id_in_group in (1, 2)
+    def before_next_page(self):
+        self.player.calcrevenue()
 
 
 class AnnounceSalesRound2(Page):
@@ -535,15 +537,10 @@ class GenQuest(Page):
 
 class Results(Page):
     def vars_for_template(self):
-        if self.player.riskmaterialized == 1:
-            ownshare = self.player.revenue * 0.5 * 0.7
-            supervisorshare = self.player.revenue * 0.25 * 0.7
-            firmshare = self.player.revenue * 0.25 * 0.7
-        else:
-            ownshare = self.player.revenue * 0.5
-            supervisorshare = self.player.revenue * 0.25
-            firmshare = self.player.revenue * 0.25
-        return dict(ownshare=ownshare, supervisorshare=supervisorshare, firmshare=firmshare)
+        ownshare = self.player.ownshare
+        supervisorshare = self.group.get_player_by_id(1).supervisorshare + self.group.get_player_by_id(2).supervisorshare
+        total = self.player.revenue + self.player.revenueR1
+        return dict(ownshare=ownshare, supervisorshare=supervisorshare)
 
 
 page_sequence = [IntroPage, IntroPage2, CultureCondition, Randomization, PlayerIntroPage, GameIntro,
