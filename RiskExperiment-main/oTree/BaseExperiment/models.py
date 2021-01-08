@@ -293,7 +293,7 @@ class Player(BasePlayer):
     NReportedRiskVol = models.LongStringField(
         label='You are now allowed to report on risks identified in your region (if any) here. '
               'Note that you can leave this box blank. '
-              'Wn case you identified no risk, you can, if wish, say so.',
+              'In case you identified no risk, you can, if you wish, say so.',
         blank=True
     )
 
@@ -306,7 +306,7 @@ class Player(BasePlayer):
     SReportedRiskVol = models.LongStringField(
         label='You are now allowed to report on risks identified in your region (if any) here. '
               'Note that you can leave this box blank. '
-              'In case you identified no risk, you can, if wish, say so.',
+              'In case you identified no risk, you can, if you wish, say so.',
         blank=True
     )
     Ntime = models.IntegerField(
