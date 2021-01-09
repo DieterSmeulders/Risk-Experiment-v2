@@ -1,65 +1,65 @@
 bread:
-- burger bun
-- white bread
-- whole grain bread
-- baguette
-- rustic bread
-- Italian bread
+- Baguette
+- Burger bun
 - Focaccia bread
+- Italian bread
+- Rustic bread
+- White bread
+- Whole grain bread
 
 meat:
-- beef steak
-- salmon
-- lamb steak
-- chicken
-- turkey
-- shrimp
-- crab
-- sausage
-- bacon
-- ham
-- tuna
+- Beef steak
+- Bacon
+- Chicken
+- Crab
+- Ham
+- Lamb steak
+- Salmon
+- Sausage
+- Shrimp
+- Tuna
+- Turkey
 
 cheese:
-- white cheddar
-- sharp cheddar
-- blue cheese
-- smoked gouda
-- Monterey Jack cheese
 - American cheese
+- Blue cheese
+- Cream cheese
 - Gruyere cheese
 - Pepper Jack cheese
-- mozarella
-- cream cheese
+- Monterey Jack cheese
+- Mozarella
+- Sharp cheddar
+- Smoked gouda
 - Swiss cheese
+- White cheddar
 
 vegetable:
-- carrot
-- lettuce
-- cucumber
-- onion
-- corn
-- potato
-- tomato
-- celery
-- radish
-- green onion
-- avocado
-- parsley
-- green cabbage
-- spinach
-- mushroom
+- Avocado
+- Carrot
+- Celery
+- Corn
+- Cucumber
+- Green onion
+- Green cabbage
+- Lettuce
+- Mushroom
+- Onion
+- Parsley
+- Potato
+- Radish
+- Spinach
+- Tomato
 
 condiment:
-- ketchup
-- mayonnaise
-- mustard
-- soy sauce
-- black pepper
-- salt
-- hot sauce
-- black cumin
-- garlic powder
-- ginger
-- red pepper
-- paprika
+- Black cumin
+- Black pepper
+- Garlic powder
+- Ginger
+- Hot sauce
+- Ketchup
+- Mayonnaise
+- Mustard
+- Paprika
+- Red pepper
+- Salt
+- Soy sauce

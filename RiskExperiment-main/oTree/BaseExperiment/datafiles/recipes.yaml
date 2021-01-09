@@ -1,285 +1,283 @@
 "Pimento":
-- white bread
+- White bread
 - bacon
 - white cheddar
 - Monterey Jack cheese
-- mayonnaise
-- salt
-- onion
-- avocado
+- Onion
+- Avocado
+- Mayonnaise
+- Salt
 "Grandwich":
-- whole grain bread
-- bacon
+- Whole grain bread
+- Bacon
 - American cheese
-- salt
-- tomato
-- garlic powder
-- radish
-- black pepper
+- Tomato
+- Salt
+- Garlic powder
+- Black pepper
 "Bel-air-club":
-- white bread
-- ham
-- turkey
-- mayonnaise
-- lettuce
-- salt
+- White bread
+- Ham
+- Turkey
 - Gruyere cheese
-- celery
-- hot sauce
+- Celery
+- Lettuce
+- Mayonnaise
+- Salt
+- Hot sauce
 "Pan bagnat":
-- rustic bread
-- tuna
-- cucumber
-- mustard
-- black pepper
-- salt
-- tomato
-- green onion
+- Rustic bread
+- Tuna
+- Cucumber
+- Tomato
+- Green onion
+- Mustard
+- Black pepper
+- Salt
 "Hot chicken sandwich":
 - Italian bread
-- chicken
+- Chicken
 - Pepper Jack cheese
-- white cheddar
-- red pepper
-- black pepper
-- hot sauce
-- tomato
+- White cheddar
+- Tomato
+- Red pepper
+- Black pepper
+- Hot sauce
 "Fried chicken sandwich":
-- baguette
-- chicken
-- white cheddar
-- green cabbage
-- parsley
-- salt
-- onion
-- green onion
-- mayonnaise
+- Baguette
+- Chicken
+- White cheddar
+- Green cabbage
+- Parsley
+- Green onion
+- Salt
+- Mayonnaise
 "Alabama chicken sandwich":
-- burger bun
-- chicken
-- celery
-- smoked gouda
-- garlic powder
-- mayonnaise
-- corn
-- black cumin
+- Burger bun
+- Chicken
+- Smoked gouda
+- Celery
+- Corn
+- Black cumin
+- Garlic powder
+- Mayonnaise
 "Amy's triple":
-- white bread
-- turkey
-- bacon
-- sharp cheddar
-- lettuce
-- tomato
-- mayonnaise
-- salt
+- White bread
+- Turkey
+- Bacon
+- Sharp cheddar
+- Lettuce
+- Tomato
+- Mayonnaise
+- Salt
 "Chivito":
-- burger bun
-- beef steak
-- ham
-- lettuce
-- tomato
-- mozarella
-- black pepper
-- mayonnaise
+- Burger bun
+- Beef steak
+- Ham
+- Lettuce
+- Tomato
+- Mozarella
+- Black pepper
+- Mayonnaise
 "Tuna sandwich":
-- baguette
-- tuna
-- cream cheese
-- salt
-- black pepper
-- parsley
-- green onion
+- Baguette
+- Tuna
+- Cream cheese
+- Green onion
+- Parsley
+- Salt
+- Black pepper
 "Pear Brunch":
 - Focaccia bread
-- bacon
-- blue cheese
-- carrot
-- lettuce
-- tomato
-- corn
-- mayonnaise
+- Bacon
+- Blue cheese
+- Carrot
+- Lettuce
+- Tomato
+- Corn
+- Mayonnaise
 "Lexington":
-- whole grain bread
-- bacon
-- white cheddar
-- onion
-- ketchup
-- paprika
-- black pepper
-- garlic powder
+- Whole grain bread
+- Bacon
+- White cheddar
+- Onion
+- Ketchup
+- Paprika
+- Black pepper
+- Garlic powder
 "Aussie lamb sandwich":
-- burger bun
-- lamb steak
-- lettuce
-- tomato
-- ketchup
-- black pepper
-- salt
-- garlic powder
+- Burger bun
+- Lamb steak
+- Lettuce
+- Tomato
+- Ketchup
+- Black pepper
+- Salt
+- Garlic powder
 "Mediterranean lamb sandwich":
-- baguette
-- lamb steak
-- cream cheese
-- parsley
-- red pepper
-- spinach
-- garlic powder
-- radish
+- Baguette
+- Lamb steak
+- Cream cheese
+- Parsley
+- Radish
+- Spinach
+- Red pepper
+- Garlic powder
 "Greek lamb":
-- burger bun
-- lamb steak
-- smoked gouda
-- onion
-- potato
-- mushroom
-- black pepper
-- ketchup
+- Burger bun
+- Lamb steak
+- Smoked gouda
+- Onion
+- Potato
+- Mushroom
+- Black pepper
+- Ketchup
 "Maple turkey":
-- whole grain bread
-- turkey
-- bacon
-- mustard
+- Whole grain bread
+- Turkey
+- Bacon
 - Swiss cheese
-- lettuce
-- tomato
-- black cumin
+- Lettuce
+- Tomato
+- Black cumin
+- Mustard
 "Shrimp salad sandwich":
-- burger bun
-- shrimp
-- tomato
-- celery
-- spinach
-- mustard
-- hot sauce
-- salt
+- Burger bun
+- Shrimp
+- Tomato
+- Celery
+- Spinach
+- Mustard
+- Hot sauce
+- Salt
 "Jerk shrimp sandwich":
-- white bread
-- shrimp
-- mushroom
-- lettuce
-- green onion
-- corn
-- red pepper
-- soy sauce
+- White bread
+- Shrimp
+- Mushroom
+- Lettuce
+- Green onion
+- Corn
+- Red pepper
+- Soy sauce
 "Bacon Jack chicken sandwich":
-- burger bun
-- chicken
-- bacon
-- lettuce
+- Burger bun
+- Chicken
+- Bacon
 - Pepper Jack cheese
-- tomato
-- parsley
-- red pepper
+- Lettuce
+- Tomato
+- Parsley
+- Red pepper
 "Fried shrimp sandwich":
-- white bread
-- shrimp
-- cream cheese
-- salt
-- onion
-- lettuce
-- tomato
-- black cumin
+- White bread
+- Shrimp
+- Cream cheese
+- Onion
+- Lettuce
+- Tomato
+- Salt
+- Black cumin
 "Hamburger":
-- burger bun
-- beef steak
-- lettuce
-- tomato
-- black pepper
-- salt
-- ketchup
+- Burger bun
+- Beef steak
+- Lettuce
+- Tomato
+- Black pepper
+- Salt
+- Ketchup
 "Cheese burger":
-- burger bun
-- beef steak
-- lettuce
-- tomato
-- white cheddar
-- sharp cheddar
-- onion
-- corn
+- Burger bun
+- Beef steak
+- Lettuce
+- White cheddar
+- Tomato
+- Corn
+- Onion
+- Black pepper
 "Creamy mushroom burger":
-- burger bun
-- beef steak
-- lettuce
-- tomato
-- mushroom
-- cream cheese
-- salt
-- black pepper
+- Burger bun
+- Beef steak
+- Cream cheese
+- Lettuce
+- Tomato
+- Mushroom
+- Salt
+- Black pepper
 "Korean burger":
-- burger bun
-- beef steak
-- lettuce
-- carrot
-- corn
-- green onion
-- mayonnaise
-- salt
+- Burger bun
+- Beef steak
+- Lettuce
+- Carrot
+- Corn
+- Green onion
+- Mayonnaise
+- Salt
 "Piggy burger":
-- burger bun
-- beef steak
-- green onion
-- paprika
-- green cabbage
-- soy sauce
-- mustard
+- Burger bun
+- Beef steak
+- Green onion
+- Green cabbage
+- Paprika
+- Soy sauce
+- Mustard
 "Asian chicken burger":
-- burger bun
-- chicken
-- green cabbage
-- lettuce
-- ginger
-- soy sauce
-- red pepper
+- Burger bun
+- Chicken
+- Green cabbage
+- Lettuce
+- Ginger
+- Soy sauce
+- Red pepper
 "Tai salmon burger":
-- burger bun
-- salmon
-- onion
-- avocado
-- ginger
-- carrot
-- red pepper
-- hot sauce
+- Burger bun
+- Salmon
+- Onion
+- Avocado
+- Carrot
+- Ginger
+- Red pepper
+- Hot sauce
 "Salmon club sandwich":
-- whole grain bread
-- salmon
-- radish
-- avocado
-- cucumber
-- mayonnaise
-- corn
-- parsley
+- Whole grain bread
+- Salmon
+- Radish
+- Corn
+- Parsley
+- Avocado
+- Cucumber
+- Mayonnaise
 "Italian sausage":
 - Italian bread
-- sausage
-- onion
-- tomato
-- ketchup
-- black pepper
-- salt
+- Sausage
+- Onion
+- Tomato
+- Ketchup
+- Black pepper
+- Salt
 "Spicy sausage":
-- baguette
-- sausage
-- green onion
-- lettuce
-- potato
-- tomato
-- hot sauce
-- red pepper
+- Baguette
+- Sausage
+- Green onion
+- Lettuce
+- Potato
+- Tomato
+- Hot sauce
+- Red pepper
 "Crab club sandwich":
-- burger bun
-- crab
-- radish
-- celery
-- onion
-- tomato
-- lettuce
-- mayonnaise
+- Burger bun
+- Crab
+- Radish
+- Celery
+- Onion
+- Tomato
+- Lettuce
+- Mayonnaise
 "Spicy crab sandwich":
-- burger bun
-- crab
-- tomato
-- green onion
-- mushroom
-- potato
-- hot sauce
-- red pepper
+- Burger bun
+- Crab
+- Tomato
+- Green onion
+- Mushroom
+- Potato
+- Hot sauce
+- Red pepper
