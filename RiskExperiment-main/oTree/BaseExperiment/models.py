@@ -365,7 +365,8 @@ class Player(BasePlayer):
         widget=widgets.RadioSelectHorizontal
     )
     expect3 = models.IntegerField(
-        label='When you were reporting to the supervisor, how well did you think you performed compared to the other regional manager?',
+        label='When you were reporting to the supervisor, '
+              'how well did you think you performed compared to the other regional manager?',
         choices=[[1, 'Way below the other regional manager'], [2, 'To a small extent'], [3, 'The same'], [4, 'To a large extent'],
                  [5, 'Way above the other regional manager']],
         widget=widgets.RadioSelectHorizontal
@@ -455,43 +456,6 @@ class Player(BasePlayer):
     )
     riskimp5 = models.IntegerField(
         label='To what extent did the company value timely communication of risk information?',
-        choices=[[1, 'Little'], [2, ''], [3, ''], [4, ''], [5, 'Very much']],
-        widget=widgets.RadioSelectHorizontal
-    )
-    repimp1 = models.IntegerField(
-        label='...show the supervisor that you made the right location choice',
-        choices=[[1, 'Little'], [2, ''], [3, ''], [4, ''], [5, 'Very much']],
-        widget=widgets.RadioSelectHorizontal
-    )
-
-    repimp2 = models.IntegerField(
-        label='...provide all the information that you had about your region to the supervisor',
-        choices=[[1, 'Little'], [2, ''], [3, ''], [4, ''], [5, 'Very much']],
-        widget=widgets.RadioSelectHorizontal
-    )
-    repimp3 = models.IntegerField(
-        label='...perform well',
-        choices=[[1, 'Little'], [2, ''], [3, ''], [4, ''], [5, 'Very much']],
-        widget=widgets.RadioSelectHorizontal
-    )
-    repimp4 = models.IntegerField(
-        label='...report a high performance to the supervisor',
-        choices=[[1, 'Little'], [2, ''], [3, ''], [4, ''], [5, 'Very much']],
-        widget=widgets.RadioSelectHorizontal
-    )
-    repimp5 = models.IntegerField(
-        label='...be honest in your report',
-        choices=[[1, 'Little'], [2, ''], [3, ''], [4, ''], [5, 'Very much']],
-        widget=widgets.RadioSelectHorizontal
-    )
-    repimp6 = models.IntegerField(
-        label='...show the supervisor that you are competent',
-        choices=[[1, 'Little'], [2, ''], [3, ''], [4, ''], [5, 'Very much']],
-        widget=widgets.RadioSelectHorizontal
-    )
-
-    repimp7 = models.IntegerField(
-        label='...report the risks that you faced to the supervisor',
         choices=[[1, 'Little'], [2, ''], [3, ''], [4, ''], [5, 'Very much']],
         widget=widgets.RadioSelectHorizontal
     )
@@ -910,7 +874,7 @@ class Player(BasePlayer):
         widget=widgets.RadioSelectHorizontal
     )
     dark7 = models.IntegerField(
-        label='I tend to not be too concerned with morality or the morality of my actions.',
+        label='I tend to not be too concerned with morality of my actions.',
         choices=[[1, 'Strongly disagree'], [2, ''], [3, ''], [4, ''], [5, ''], [6, ''], [7, 'Strongly agree']],
         widget=widgets.RadioSelectHorizontal
     )

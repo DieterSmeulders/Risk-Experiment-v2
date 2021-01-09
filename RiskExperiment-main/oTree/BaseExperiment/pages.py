@@ -55,6 +55,9 @@ class SPComprehensionSurvey(Page):
     def is_displayed(self):
         return self.player.id_in_group == 3
 
+class SPBefWait(Page):
+    pass
+
 class WRound1(WaitPage):
     pass
 
@@ -341,15 +344,6 @@ class riskimportpostexp(Page):
     form_model = 'player'
     form_fields = ['riskimp3', 'riskimp4', 'riskimp5']
 
-
-class reportimp(Page):
-    form_model = 'player'
-    form_fields = ['repimp1', 'repimp2', 'repimp3', 'repimp4', 'repimp5', 'repimp6', 'repimp7']
-
-    def is_displayed(self):
-        return self.player.id_in_group in (1, 2)
-
-
 class factor1(Page):
     form_model = 'player'
     form_fields = ['factor1', 'factor2', 'factor3', 'factor4', 'factor5', 'factor6', 'factor7', "factor8"]
@@ -545,7 +539,7 @@ class Results(Page):
 
 page_sequence = [IntroPage, IntroPage2, CultureCondition, Randomization, PlayerIntroPage, GameIntro,
                  LocationChoice, SPLocation1,WLocation, LocationApproval, SPLocation2, SandwichIntro, Shop, AfterPractice,
-                 ComprehensionSurvey, SPComprehensionSurvey, WRound1, SPBefReporting, Round1, AfterRound1Game, AnnounceSalesRound1,
+                 ComprehensionSurvey, SPComprehensionSurvey, SPBefWait, WRound1, SPBefReporting, Round1, AfterRound1Game, AnnounceSalesRound1,
                  RiskEvent, ReportingScreen, WRAlloc, AfterRound1Report, SPAllocation,
                  SPAfterAllocation, expectancy1, expectancy2, expectancy3, riskperception1, riskperception2,
                  riskimpexexp,
