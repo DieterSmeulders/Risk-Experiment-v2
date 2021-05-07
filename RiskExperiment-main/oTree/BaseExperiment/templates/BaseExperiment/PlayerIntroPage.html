@@ -8,20 +8,19 @@
 {% block content %}
 
 {% if player.id_in_group == 1 %}
-You have been assigned to the role of a <u>northern regional manager</u>. You are randomly paired with a supervisor and a southern regional manager.<br><br>
+You have been assigned to the role of a <u>regional manager.</u>u You are randomly paired with a supervisor.<br>
+The company wants to open a new shop in your region. Two locations are selected as candidates for setting up a new shop. Given that you have more information about the region, the supervisor delegated the location decision to you. You will choose the best location based on the information collected about two locations in the region and inform the supervisor about your decision. Afterwards, the company will invest in the location you have chosen and you can start working in the new shop.
+
 {% endif%}
 
 {% if player.id_in_group == 2 %}
-You have been assigned to the role of a <u>southern regional manager</u>. You are randomly paired with a supervisor and a northern regional manager.<br><br>
+You have been assigned to the role of a supervisor of regional managers. You are randomly paired with a regional manager. <br><br>
+
+
+The company wants to open a new shop. <u>Two locations in the region are selected as candidates for setting up a new shop </u>. Given that the regional manager has more knowledge about their regions, you delegate the location decision to the regional manager. <br><br>
+
+The regional manager will choose the best location in their region based on the information collected in their region and inform you about their decision. Then, you ask the company to open a new shop in the location chosen in each region. Afterwards, the regional manager can start working in their new shop once the company has opened it.<br><br>
 {% endif%}
-
-{% if player.id_in_group == 3 %}
-You have been assigned to the role of a supervisor of regional managers. You are randomly paired with a northern regional manager and a southern regional manager. <br><br>
-{% endif%}
-
-The company wants to open a new shop in the north and a new shop in the south. <u>Two locations in each region are selected as candidates for setting up a new shop </u>. Given that the regional managers have more knowledge about their regions, {% if player.id_in_group == 3 %} you delegate {% else%} the supervisor delegates {% endif%} the location decision to regional managers. <br><br>
-
-Regional managers will choose the best location  in their region based on the information collected in their region and inform {% if player.id_in_group == 3 %} you {% else%} the supervisor {% endif%} about their decision. Then, {% if player.id_in_group == 3 %} you ask {% else%} the supervisor asks {% endif%} the company to open a new shop in the location chosen in each region. Afterwards, regional managers can start working in their new shop for<u> multiple rounds</u> once the company has opened it. <u>However</u>, regional managers still need production resources in the form of <u>production time </u> to be able to make sandwiches. On the next page, you will receive instructions about it. Please read them very carefully. <br><br>
 
     {% next_button %}
 

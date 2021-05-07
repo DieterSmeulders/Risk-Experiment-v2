@@ -6,26 +6,23 @@
 {% endblock %}
 
 {% block content %}
-<b>Procedure:</b> <br><br>
-<br>
+Here you can find the procedure for the next steps.<br><br>
 
-1. For the first round, {% if player.id_in_group == 3 %} you {% else%} the supervisor {% endif%} will <u>not</u> allocate the production time to managers and each regional manager will be given <b>5</b> minutes of production time to make sandwiches. <br><br>
-2. The regional managers make as many sandwiches as they can in the time given. <br><br>
-3. Once the time is over, the regional managers will be informed about the <u>sales performance</u> they have achieved in this round. Furthermore, they receive a <u>local market survey report</u>. This report provides insights into the potential risks to the sales performance. This market survey is locally conducted during this round. Thus, the survey report is available <b>only</b> to the shop’s regional manager, <i>not</i> to {% if player.id_in_group == 3 %} you {% else%} the supervisor {% endif%} <i>nor</i> to the other regional manager. <br><br>
-4. Then, the regional managers will send a report of the sales performance they achieved to {% if player.id_in_group == 3 %} you {% else%} the supervisor {% endif%}.
-{% if group.reportingcondition ==  'mandatory' %}Note that the AC company has a <b>mandatory risk reporting policy</b>, that is, along with sales performance, regional managers <u>are required to report the risks (if any) that could impact the sales performance of their region going forward</u>. <br><br> {% endif%}
-{% if group.reportingcondition ==  'voluntary' %}Note that the AC company has a <b>voluntary risk reporting policy</b>, that is, along with sales performance, regional managers <u>can, if they wish, report the risks (if any) that could impact the sales performance of their region going forward</u>. <br><br> {% endif%}
-5. {% if player.id_in_group == 3 %} You {% else%} The supervisor {% endif%} will receive the reports from the regional managers. {% if player.id_in_group == 3 %} You have {% else%} The supervisor has {% endif%} access to the actual performance but does <b>not</b> have access to the local market survey reports and thus <u>cannot validate the risk reports</u> of the regional managers.<br>
-{% if player.id_in_group == 3 %} You {% else%} The supervisor {% endif%}  will make two decisions for the next round:<br><br>
 
-<center>A) {% if player.id_in_group == 3 %} You {% else%} She/he {% endif%} will allocate 10 minutes of production time between two regional managers. </center>
-<center>B) For each region, {% if player.id_in_group == 3 %} you {% else%} she/he {% endif%} will decide whether to use the <u>emergency monetary budget</u> or not.</center><br>
-The company has set aside an emergency monetary budget for each region to reduce the impacts of potential risks to the sales performance. Only {% if player.id_in_group == 3 %} you have {% else%} the supervisor has {% endif%} access to the emergency monetary budget and can use it if {% if player.id_in_group == 3 %} you find {% else%} she/he finds {% endif%} it necessary. Each time that {% if player.id_in_group == 3 %} you use {% else%} the supervisor uses {% endif%} the emergency monetary budget for a region, 10 cents are deducted from {% if player.id_in_group == 3 %} your {% else%} her/his {% endif%} payoff and from the company’s earnings.<br><br>
+1.	Making sandwiches: on the next page, you will receive instructions about how to make sandwiches. You will have 3 minutes to practice and get familiar with the task. Then, the main session will start. You will have 5 minutes to make as many sandwiches as you can.  The sales performance is calculated as the number of sandwiches you make multiplied by the selling price of each sandwich.<br><br>
 
-6. Then, the regional managers will be informed about the both decisions of {% if player.id_in_group == 3 %} you {% else%} the supervisor {% endif%} and can make sandwiches only during the production time {% if player.id_in_group == 3 %} you {% else%} the supervisor {% endif%} allocated to them for the next round. <br><br>
-The game will continue with steps 3, 4, 5, and 6 for the next rounds.<br><br>
+2.	Receiving the local market survey: once the time is over, you will receive a local market survey. This survey provides local insights into the potential risks to the sales performance. This survey is available ONLY to you, not to the supervisor.<br><br>
 
-Please read the instructions carefully on this page. Once you click on "next", you will be {% if player.id_in_group == 3 %} informed about the locations that the regional managers have selected. {% else%} asked to choose a location for your shop in your region.{% endif%} <br><br>
-    {% next_button %}
+3.	Risk reporting: {% if group.reportingcondition == 'mandatory' %} The company has a mandatory risk reporting policy, that is, you are required to report the risks (if any) that could impact the sales performance of your region going forward. {% else %}The company has a voluntary risk reporting policy, that is, you can, if you wish, report the risks (if any) that could impact the sales performance of your region going forward. {% endif %}<br><br>
+
+4.	Receiving your performance rate: the supervisor will receive your risk report (if any) and use it for risk management purposes. S/he will also be informed about your sales performance in the sandwich making task. Then, s/he will rate your performance in a range from 1 (Very poor) to 5 (Excellent).<br><br>
+
+
+Please note that the supervisor does not have access to the local report market survey and thus cannot validate your risk report.
+
+You will receive 5 euros for completing the task irrespective of your performance, provided you answer 80% of the comprehension questions correctly.
+
+
+{% next_button %}
 
 {% endblock %}

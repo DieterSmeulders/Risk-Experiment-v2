@@ -23,7 +23,7 @@ Experiment Sandwich Making and Risk Reporting
 
 class Constants(BaseConstants):
     name_in_url = 'BaseExperiment'
-    players_per_group = 3
+    players_per_group = 2
     num_rounds = 1
     BasePay = Currency(1)
     #    SellingPrice = Currency(1)
