@@ -292,7 +292,7 @@ class Post14gender(Page):
 
 class Post15GenQuest(Page):
     form_model = 'player'
-    form_fields = ['gen1', 'gen2', 'gen3', 'gen4']
+    form_fields = ['gen1', 'gen2', 'gen3', 'gen4', 'comment']
 
 
 class Results(Page):

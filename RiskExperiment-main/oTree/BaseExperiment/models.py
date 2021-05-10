@@ -639,17 +639,22 @@ class Player(BasePlayer):
         widget=widgets.RadioSelectHorizontal
     )
     manvol2 = models.IntegerField(
-        label='In this company, it is compulsory for managers to disclose the risks they face to the superior in their '
+        label='In this company, it is compulsory for managers to report the risks they face to the superior in their '
               'performance reports.',
         choices=[[1, 'Very inaccurate'], [2, ''], [3, ''], [4, ''], [5, ''], [6, ''], [7, 'Very accurate']],
         widget=widgets.RadioSelectHorizontal
     )
     manvol3 = models.IntegerField(
-        label='In this company, managers are mandated to disclose the risks they face to their supervisors.',
+        label='In this company, managers are mandated to disclose the risks they face.',
         choices=[[1, 'Very inaccurate'], [2, ''], [3, ''], [4, ''], [5, ''], [6, ''], [7, 'Very accurate']],
         widget=widgets.RadioSelectHorizontal
     )
-
+    mandatory = models.StringField(
+        label='Why do you think your company chose a mandatory risk reporting policy?',
+    )
+    voluntary = models.StringField(
+        label='Why do you think your company chose a voluntary risk reporting policy?',
+    )
     riskat1 = models.IntegerField(
         label='I can be rather incautious and take big risks.',
         choices=[[1, 'Strongly disagree'], [2, ''], [3, ''], [4, ''], [5, ''], [6, ''], [7, 'Strongly agree']],
@@ -827,4 +832,7 @@ class Player(BasePlayer):
         label='The instructions were clearly formulated.',
         choices=[[1, 'Strongly disagree'], [2, ''], [3, ''], [4, ''], [5, 'Strongly agree']],
         widget=widgets.RadioSelectHorizontal
+    )
+    comment = models.StringField(
+        label='Please share your comments about this study here.',
     )
