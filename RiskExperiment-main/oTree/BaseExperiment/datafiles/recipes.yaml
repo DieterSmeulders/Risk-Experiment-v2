@@ -1,7 +1,6 @@
 "Pimento":
 - White bread
 - bacon
-- white cheddar
 - Monterey Jack cheese
 - Onion
 - Avocado
@@ -21,8 +20,6 @@
 - Turkey
 - Gruyere cheese
 - Celery
-- Lettuce
-- Mayonnaise
 - Salt
 - Hot sauce
 "Pan bagnat":
@@ -30,14 +27,12 @@
 - Tuna
 - Cucumber
 - Tomato
-- Green onion
 - Mustard
 - Black pepper
 - Salt
 "Hot chicken sandwich":
 - Italian bread
 - Chicken
-- Pepper Jack cheese
 - White cheddar
 - Tomato
 - Red pepper
@@ -47,7 +42,6 @@
 - Baguette
 - Chicken
 - White cheddar
-- Green cabbage
 - Parsley
 - Green onion
 - Salt
@@ -59,7 +53,6 @@
 - Celery
 - Corn
 - Black cumin
-- Garlic powder
 - Mayonnaise
 "Amy's triple":
 - White bread
@@ -69,14 +62,12 @@
 - Lettuce
 - Tomato
 - Mayonnaise
-- Salt
 "Chivito":
 - Burger bun
 - Beef steak
 - Ham
-- Lettuce
-- Tomato
 - Mozarella
+- Tomato
 - Black pepper
 - Mayonnaise
 "Tuna sandwich":
@@ -93,7 +84,6 @@
 - Blue cheese
 - Carrot
 - Lettuce
-- Tomato
 - Corn
 - Mayonnaise
 "Lexington":
@@ -104,7 +94,6 @@
 - Ketchup
 - Paprika
 - Black pepper
-- Garlic powder
 "Aussie lamb sandwich":
 - Burger bun
 - Lamb steak
@@ -112,14 +101,12 @@
 - Tomato
 - Ketchup
 - Black pepper
-- Salt
 - Garlic powder
 "Mediterranean lamb sandwich":
 - Baguette
 - Lamb steak
 - Cream cheese
 - Parsley
-- Radish
 - Spinach
 - Red pepper
 - Garlic powder
@@ -128,14 +115,12 @@
 - Lamb steak
 - Smoked gouda
 - Onion
-- Potato
 - Mushroom
 - Black pepper
 - Ketchup
 "Maple turkey":
 - Whole grain bread
 - Turkey
-- Bacon
 - Swiss cheese
 - Lettuce
 - Tomato
@@ -148,13 +133,11 @@
 - Celery
 - Spinach
 - Mustard
-- Hot sauce
 - Salt
 "Jerk shrimp sandwich":
 - White bread
 - Shrimp
 - Mushroom
-- Lettuce
 - Green onion
 - Corn
 - Red pepper
@@ -166,14 +149,12 @@
 - Pepper Jack cheese
 - Lettuce
 - Tomato
-- Parsley
 - Red pepper
 "Fried shrimp sandwich":
 - White bread
 - Shrimp
 - Cream cheese
 - Onion
-- Lettuce
 - Tomato
 - Salt
 - Black cumin
@@ -199,7 +180,6 @@
 - Beef steak
 - Cream cheese
 - Lettuce
-- Tomato
 - Mushroom
 - Salt
 - Black pepper
@@ -207,7 +187,6 @@
 - Burger bun
 - Beef steak
 - Lettuce
-- Carrot
 - Corn
 - Green onion
 - Mayonnaise
@@ -235,7 +214,6 @@
 - Avocado
 - Carrot
 - Ginger
-- Red pepper
 - Hot sauce
 "Salmon club sandwich":
 - Whole grain bread
@@ -244,7 +222,6 @@
 - Corn
 - Parsley
 - Avocado
-- Cucumber
 - Mayonnaise
 "Italian sausage":
 - Italian bread
@@ -260,7 +237,6 @@
 - Green onion
 - Lettuce
 - Potato
-- Tomato
 - Hot sauce
 - Red pepper
 "Crab club sandwich":
@@ -269,13 +245,11 @@
 - Radish
 - Celery
 - Onion
-- Tomato
 - Lettuce
 - Mayonnaise
 "Spicy crab sandwich":
 - Burger bun
 - Crab
-- Tomato
 - Green onion
 - Mushroom
 - Potato
