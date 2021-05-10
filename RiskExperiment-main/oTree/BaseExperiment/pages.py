@@ -19,7 +19,7 @@ class IntroPage2(Page):
     pass
 
 class Randomization(Page):
-    timeout_seconds = 10
+    timeout_seconds = 7
 
 class PlayerIntroPage(Page):
     pass
@@ -54,16 +54,23 @@ class SPComprehensionSurvey(Page):
         return self.player.id_in_group == 2
 
 class SPBefWait(Page):
-    pass
+    def is_displayed(self):
+        return self.player.id_in_group == 2
 
+#TBR
 class WRound1(WaitPage):
     pass
 
+#TBR
 class WRound2(WaitPage):
     pass
 
 class WRAlloc(WaitPage):
     pass
+
+class WReport(WaitPage):
+    def is_displayed(self):
+        return self.player.id_in_group == 2
 
 class SandwichIntro(Page):
     def is_displayed(self):
@@ -86,6 +93,8 @@ class Shop(Page):
 class AfterPractice(Page):
     def is_displayed(self):
         return self.player.id_in_group == 1
+    def vars_for_template(self):
+        return dict(BasePrice=Constants.BasePrice, BasePay=Constants.BasePay)
 
     # Reset Game Values
     def before_next_page(self):
@@ -111,13 +120,13 @@ class AfterRound1Game(Page):
     def is_displayed(self):
         return self.player.id_in_group == 1
 
-
+#TBR
 class AfterRound2Game(Page):
     timeout_seconds = 15
     def is_displayed(self):
         return self.player.id_in_group == 1
 
-
+#TBR
 class AnnounceSalesRound1(Page):
     def vars_for_template(self):
         ownshare = self.player.revenue * 0.5
@@ -183,10 +192,10 @@ class SPBefReporting(Page):
     def is_displayed(self):
         return self.player.id_in_group == 2
 
-
-class SPAllocation(Page):
+#TBR
+class SPEvaluation(Page):
     form_model = 'player'
-    form_fields = ['Stime', 'Ntime', 'SEM', 'NEM']
+    form_fields = ['Evaluation']
 
     def vars_for_template(self):
         return dict(
@@ -195,16 +204,10 @@ class SPAllocation(Page):
             northernvoluntaryrisk=self.group.get_player_by_id(1).NReportedRiskVol
         )
 
-    def error_message(self, values):
-        print('Allocated', values)
-        if values['Stime'] + values['Ntime'] > 10:
-            return 'You can allocate a maximum of 10 minutes to the two regional managers.'
-        if values['Stime'] + values['Ntime'] < 10:
-            return 'Please allocate the full 10 minutes to the two regional managers.'
-
     def is_displayed(self):
         return self.player.id_in_group == 2
 
+#TBR
 class SPAfterAllocation(Page):
     def is_displayed(self):
         return self.player.id_in_group == 2
@@ -263,7 +266,7 @@ class Sriskimpexexp(Page):
     def is_displayed(self):
         return self.player.id_in_group == 2
 
-
+#TBR
 class AfterRound1Allocation(Page):
     def vars_for_template(self):
         return dict(
@@ -272,7 +275,7 @@ class AfterRound1Allocation(Page):
     def is_displayed(self):
         return self.player.id_in_group == 1
 
-
+#TBR
 class Round2(Page):
     live_method = "handle_message"
 
@@ -287,7 +290,7 @@ class Round2(Page):
     def before_next_page(self):
         self.player.calcrevenue()
 
-
+#TBR
 class AnnounceSalesRound2(Page):
     def vars_for_template(self):
         if self.player.riskmaterialized == 1:
@@ -501,22 +504,19 @@ class GenQuest(Page):
 
 class Results(Page):
     def vars_for_template(self):
-        ownshare = self.player.ownshare
-        supervisorshare = self.group.get_player_by_id(1).supervisorshare + self.group.get_player_by_id(2).supervisorshare
-        total = self.player.revenue + self.player.revenueR1
-        return dict(ownshare=ownshare, supervisorshare=supervisorshare)
+        return dict(BasePay=Constants.BasePay)
 
 
-page_sequence = [IntroPage, IntroPage2, Randomization, PlayerIntroPage, LocationChoice, LocationApproval, SPLocation1, SPLocation2,
+page_sequence = [IntroPage, IntroPage2, Randomization, PlayerIntroPage, LocationChoice, LocationApproval, SPLocation1, WRAlloc, SPLocation2,
                  CultureCondition, GameIntro, SandwichIntro, Shop, AfterPractice,
-                 ComprehensionSurvey, SPComprehensionSurvey, SPBefWait, WRound1, SPBefReporting, Round1, AfterRound1Game, AnnounceSalesRound1,
-                 RiskEvent, ReportingScreen, WRAlloc, AfterRound1Report, SPAllocation,
-                 SPAfterAllocation, expectancy1, expectancy2, expectancy3, riskperception1, riskperception2,
+                 ComprehensionSurvey, SPComprehensionSurvey, SPBefReporting, Round1, SPBefWait, AfterRound1Game,
+                 RiskEvent, ReportingScreen, AfterRound1Report, WReport, SPEvaluation,
+                 expectancy1, expectancy2, expectancy3, riskperception1, riskperception2,
                  riskimpexexp,
-                 AfterRound1Allocation, WRound2, Sriskimpexexp,Round2, AfterRound2Game, AnnounceSalesRound2, PostExpQuest,
+                 Sriskimpexexp, PostExpQuest,
                  allocationfactor1, allocationfactor2, responsibility,
                  riskimportpostexp, reportqual1, supimpress1, supimpress2,
-                 reportquality, orgtrust, suptrust, reportimp, perf,
+                 reportquality, orgtrust, suptrust, perf,
                  emergencyfactor, factor1, factor2, riskattitude1, riskattitude2, pclosure1, pclosure2,
                  uncertainaversion1, uncertainaversion2, optimism, dark, mansafetycheck, manvoluntarycheck, volexp,
                  GenQuest, Results]

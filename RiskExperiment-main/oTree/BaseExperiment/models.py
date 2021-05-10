@@ -25,7 +25,8 @@ class Constants(BaseConstants):
     name_in_url = 'BaseExperiment'
     players_per_group = 2
     num_rounds = 1
-    BasePay = Currency(1)
+    BasePay = Currency(5)
+    BasePrice = Currency(1)
     #    SellingPrice = Currency(1)
     EmployeeRatio = 0.5
     ManagerRatio = 0.25
@@ -318,6 +319,13 @@ class Player(BasePlayer):
         label='Southern regional manager:', min=0, max=10,
         initial=1
     )
+
+    Evaluation = models.IntegerField(
+        label='Please rate the performance of the regional manager.',
+        choices=[[1, 'Very Poor'], [2, 'Poor'], [3, 'Average'], [4, 'Good'],
+                 [5, 'Excellent],
+        widget=widgets.RadioSelectHorizontal
+
     NEM = models.IntegerField(
         label='In the north:',
         choices=[[1, 'No'], [2, 'Yes']],

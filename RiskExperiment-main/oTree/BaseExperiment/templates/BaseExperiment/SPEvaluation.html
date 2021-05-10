@@ -1,0 +1,32 @@
+{% extends "global/Page.html" %}
+{% load otree static %}
+
+
+{% block content %}
+
+<b>The report of the northern regional manager:</b><br><br>
+
+The sales performance is {{ northernreportedperformance }} dollars. <br><br>
+
+
+{% if group.reportingcondition ==  'mandatory' %}
+{{northernmandatoryrisk}}
+{% endif %}
+
+{% if group.reportingcondition ==  'voluntary' %}
+{{northernvoluntaryrisk}}
+{% endif %}
+<br><br>
+<br><br>
+
+
+Please evaluate the regional manager on a five point scale.
+
+{% formfield player.Evaluation %}
+
+<br>
+Click on “next” to send your request to the company and inform the regional manager about the evaluation. <br><br>
+
+    {% next_button %}
+
+{% endblock %}

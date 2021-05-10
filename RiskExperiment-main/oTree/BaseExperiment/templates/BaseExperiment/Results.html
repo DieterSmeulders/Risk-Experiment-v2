@@ -7,16 +7,16 @@
 
 {% block content %}
 
-{% if player.id_in_group == 3 %}
+{% if player.id_in_group == 2 %}
 
-Thank you for participating in this study! You will receive {{ supervisorshare }}.<br><br>
+Thank you for participating in this study! You will receive {{ BasePay }}.<br><br>
 
 {% else %}
 Thank you for participating in this study!
 
 Your total sales performance is {{ player.revenue }} in dollars.<br><br>
 
-You will receive {{ ownshare }} and the supervisor will receive {{ supervisorshare }}<br><br>
+You will receive {{ BasePay }}.<br><br>
 {% endif %}
 
     {% next_button %}

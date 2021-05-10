@@ -4,7 +4,7 @@ SESSION_CONFIGS = [
     dict(
     name='BasicExperiment',
     display_name="Basic Experiment",
-    num_demo_participants=3,
+    num_demo_participants=2,
     app_sequence=['BaseExperiment'],
     P1_duration_min=1, P1_duration_max=10,
     P1_price_min=1, P1_price_max=1,
@@ -29,7 +29,7 @@ SESSION_CONFIG_DEFAULTS = dict(
 LANGUAGE_CODE = 'en'
 
 # e.g. EUR, GBP, CNY, JPY
-REAL_WORLD_CURRENCY_CODE = 'USD'
+REAL_WORLD_CURRENCY_CODE = 'EUR'
 USE_POINTS = False
 
 ROOMS = []
