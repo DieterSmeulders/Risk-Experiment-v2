@@ -7,10 +7,10 @@
 
 {% block content %}
 
-<b>It is time to report to the supervisor! </b> <br><br>
+<b>Your sales performance, {{ revenue }} euros will be reported to your supervisor.  </b> <br><br>
 <br>
 {% if group.culturecondition == 'supportive' %}
-The company promotes a climate of doing things with <b>an adventurous spirit</b>.
+Recall that the company promotes a climate of doing things with <b>an adventurous spirit</b>.
 People <b>appreciate</b> each other’s efforts. <b>No negative comments </b> are made about those who make mistakes.
 People <b> easily </b> ask others for help in the face of difficulties.
 In addition, people value working in <b>a trial and error way</b> and encourage <b>speaking out freely</b>.
@@ -18,25 +18,22 @@ People are therefore <b>comfortable </b> talking to others about what could go w
 {% endif %}
 
 {% if group.culturecondition ==  'unsupportive' %}
-The company promotes a climate of doing things <b>accurately</b>.
+Recall that the company promotes a climate of doing things <b>accurately</b>.
 People <b>monitor</b> each other’s efforts. <b>Negative comments </b> are made about those who make mistakes.
 People <b> hardly </b> ask others for help in the face of difficulties.
 In addition, people value working in <b>a proven way</b> and encourage <b>looking before leaping</b>.
 People are therefore <b>uncomfortable </b> talking to others about what could go wrong.<br>
-{% endif %}
+{% endif %}<br><br>
 
 {% if group.reportingcondition ==  'mandatory' %}
-The company has a <b> mandatory risk reporting policy</b>, that is, along with sales performance, you are required to report the risks (if any) that could impact the sales performance of your region going forward. <br><br>
+The company has a <b> mandatory risk reporting policy</b>, that is, you are required to report the risks (if any) that could impact the sales performance of your region going forward. <br><br>
 {% endif %}<br>
 
 {% if group.reportingcondition ==  'voluntary' %}
-The company has a <b> voluntary risk reporting policy</b>, that is, along with sales performance, you can, if you wish, report the risks (if any) that could impact the sales performance of your region going forward.<br><br>
+The company has a <b> voluntary risk reporting policy</b>, that is, you can, if you wish, report the risks (if any) that could impact the sales performance of your region going forward.<br><br>
 {% endif %}<br>
 
 <b>Your Report:</b> <br><br>
-
-{% if player.id_in_group == 1 %}
-{% formfield player.NReportedPerf %}<br><br>
 
     {% if group.reportingcondition ==  'mandatory' %}
     {% formfield player.NReportedRiskManD %}<br>
@@ -48,41 +45,16 @@ The company has a <b> voluntary risk reporting policy</b>, that is, along with s
     {% formfield player.NReportedRiskVol %}<br>
     {% endif %}
 
-{% endif %}
+<br><br>
 
 
-{% if player.id_in_group == 2 %}
-{% formfield player.SReportedPerf %}<br><br>
-
-    {% if group.reportingcondition ==  'mandatory' %}
-    {% formfield player.SReportedRiskManD %}<br>
-    {% endif %}
-
-    {% if group.reportingcondition ==  'voluntary' %}
-    {% formfield player.SReportedRiskVol %}<br>
-    {% endif %}
-
-{% endif %}<br><br>
-
-
-You can get access to the local market survey report and your sales performance if you wish by clicking on “Access Report”. <br> <br>
+You can get access to the local market survey report if you wish by clicking on “Access Report”. <br> <br>
 <button type="button" class="btn btn-default" onclick="toggleReport()">Access Report </button><br><br>
 <div id="report" style="display:none;border: thin solid black">
-Your sales performance is {{player.revenue}} in dollars.<br><br>
-
-You will receive {{ ownshare }} and the supervisor will receive {{ supervisorshare }}<br><br>
-
-{{ firmshare }} will be left for the company. <br><br>
-This report is available <b>only</b> to you. The supervisor and the {% if player.id_in_group == 1 %} Southern {% else %} Northern {% endif %} regional manager do NOT have access to this report.<br><br>
-<b>Local survey report:</b><br><br>
-
-The shop attracted many customers. Most of the customers live or work in the neighborhood. About 60% of the customers are younger than 35 years old. They look content with the quality of sandwiches. They are also quite satisfied with the variety of sandwiches but still wish to see more exotic sandwiches. Offering various Mediterranean sandwiches can attract new customers particularly given the growing interest in Mediterranean sandwiches among youth. <br><br>
-
-So far, there is no strong competitor in the area. The shop has benefited from this by having a great number of clients and a good selling price. However, the situation may not remain the same. There is a 50% chance that a big famous fast food restaurant will come to the neighborhood soon. This famous restaurant has many branches all throughout the country. It specifically targets families and offers sandwiches in the family packages with reasonable prices. If this restaurant opens, the selling price of each sandwich will drop by one third in the next round to stay competitive (selling price per sandwich= 0.7 dollars). The potential impact of this new competitor seems to be serious. The company may be able to reduce this impact to some extent by taking timely actions, e.g., by investing in advertisement particularly in branding and offering premium services and maybe by slightly adjusting its market strategy. The emergency budget is necessary for this purpose.  <br><br>
-At the moment, there is no problem of purchasing ingredients. In particular, two good bakeries supply the required fresh bread on the daily basis. The shop has made a contract with a big wholesaler and a butchery and two farmers who supply the fresh meat and vegetables. <br>
+<center><img src="{% static 'global/RiskReport.jpg' %}"/></center>
 </div><br>
 
-Click on "Next" to send your report to the supervisor. Having received the reports of both regional managers, the supervisor will allocate 10 minutes of production time between you and {% if player.id_in_group == 1 %} the southern regional manager {% else %} the northern regional manager {% endif %} and decide whether to use the monetary emergency budget in each region. <br><br>
+Click on "Next" to send your report to the supervisor.<br><br>
 
 
     {% next_button %}
