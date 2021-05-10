@@ -125,10 +125,8 @@ class ReportingScreen(Page):
     form_model = 'player'
 
     def vars_for_template(self):
-        ownshare = self.player.revenue * 0.5
-        supervisorshare = self.player.revenue * 0.25
-        firmshare = self.player.revenue * 0.25
-        return dict(ownshare=ownshare,supervisorshare=supervisorshare,firmshare=firmshare)
+        revenue = self.player.revenue
+        return dict(revenue=revenue)
 
     def get_form_fields(self):
         if self.group.reportingcondition == 'mandatory':
@@ -210,9 +208,6 @@ class Sriskimpexexp(Page):
         return self.player.id_in_group == 2
 
 class PostExpQuest(Page):
-    def vars_for_template(self):
-        ownshare = (self.player.revenue + self.player.revenueR1) * 0.5
-        return dict(ownshare=ownshare)
     def is_displayed(self):
         return self.player.id_in_group == 1
 
