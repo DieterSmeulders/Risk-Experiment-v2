@@ -144,6 +144,8 @@ class AfterRound1Report(Page):
         return self.player.id_in_group == 1
 
 class WReport(WaitPage):
+    template_name = 'global/RiskWaitPage.html'
+
     def is_displayed(self):
         return self.player.id_in_group == 2
 
