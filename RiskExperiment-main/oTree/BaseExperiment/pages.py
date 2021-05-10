@@ -10,10 +10,7 @@ IMAGES = images_map(INGREDIENTS)
 
 class IntroPage(Page):
     def vars_for_template(self):
-        return dict(
-            BasePay=Constants.BasePay
-        )
-
+        return dict(BasePay=Constants.BasePay)
 
 class IntroPage2(Page):
     pass
@@ -37,45 +34,31 @@ class LocationApproval(Page):
     def is_displayed(self):
         return self.player.id_in_group == 1
 
+class SPLocation1(Page):
+    def is_displayed(self):
+        return self.player.id_in_group == 2
+
+class WRAlloc(WaitPage):
+    pass
+
+class SPLocation2(Page):
+    form_model = 'player'
+
+    def vars_for_template(self):
+        return dict(northernlocation=self.group.get_player_by_id(1).NLocationChoice)
+
+    def is_displayed(self):
+        return self.player.id_in_group == 2
+
 class CultureCondition(Page):
     pass
 
 class GameIntro(Page):
     pass
 
-
-class ComprehensionSurvey(Page):
-    def is_displayed(self):
-        return self.player.id_in_group == 1
-
-
-class SPComprehensionSurvey(Page):
-    def is_displayed(self):
-        return self.player.id_in_group == 2
-
-class SPBefWait(Page):
-    def is_displayed(self):
-        return self.player.id_in_group == 2
-
-#TBR
-class WRound1(WaitPage):
-    pass
-
-#TBR
-class WRound2(WaitPage):
-    pass
-
-class WRAlloc(WaitPage):
-    pass
-
-class WReport(WaitPage):
-    def is_displayed(self):
-        return self.player.id_in_group == 2
-
 class SandwichIntro(Page):
     def is_displayed(self):
         return self.player.id_in_group == 1
-
 
 class Shop(Page):
     live_method = "handle_message"
@@ -89,10 +72,10 @@ class Shop(Page):
     def is_displayed(self):
         return self.player.id_in_group == 1
 
-
 class AfterPractice(Page):
     def is_displayed(self):
         return self.player.id_in_group == 1
+
     def vars_for_template(self):
         return dict(BasePrice=Constants.BasePrice, BasePay=Constants.BasePay)
 
@@ -100,6 +83,17 @@ class AfterPractice(Page):
     def before_next_page(self):
         self.player.reset_after_practice()
 
+class ComprehensionSurvey(Page):
+    def is_displayed(self):
+        return self.player.id_in_group == 1
+
+class SPComprehensionSurvey(Page):
+    def is_displayed(self):
+        return self.player.id_in_group == 2
+
+class SPBefReporting(Page):
+    def is_displayed(self):
+        return self.player.id_in_group == 2
 
 class Round1(Page):
     live_method = "handle_message"
@@ -113,6 +107,9 @@ class Round1(Page):
     def is_displayed(self):
         return self.player.id_in_group == 1
 
+class SPBefWait(Page):
+    def is_displayed(self):
+        return self.player.id_in_group == 2
 
 class AfterRound1Game(Page):
     timeout_seconds = 15
@@ -120,34 +117,19 @@ class AfterRound1Game(Page):
     def is_displayed(self):
         return self.player.id_in_group == 1
 
-#TBR
-class AfterRound2Game(Page):
-    timeout_seconds = 15
-    def is_displayed(self):
-        return self.player.id_in_group == 1
-
-#TBR
-class AnnounceSalesRound1(Page):
-    def vars_for_template(self):
-        ownshare = self.player.revenue * 0.5
-        supervisorshare = self.player.revenue * 0.25
-        firmshare = self.player.revenue * 0.25
-        return dict(ownshare=ownshare,supervisorshare=supervisorshare,firmshare=firmshare)
-    def is_displayed(self):
-        return self.player.id_in_group == 1
-
-
 class RiskEvent(Page):
     def is_displayed(self):
         return self.player.id_in_group == 1
 
 class ReportingScreen(Page):
     form_model = 'player'
+
     def vars_for_template(self):
         ownshare = self.player.revenue * 0.5
         supervisorshare = self.player.revenue * 0.25
         firmshare = self.player.revenue * 0.25
         return dict(ownshare=ownshare,supervisorshare=supervisorshare,firmshare=firmshare)
+
     def get_form_fields(self):
         if self.group.reportingcondition == 'mandatory':
             return ['NReportedPerf', 'NReportedRiskManD']
@@ -157,42 +139,14 @@ class ReportingScreen(Page):
     def is_displayed(self):
         return self.player.id_in_group == 1
 
-
-class ReminderAccess(Page):
-    def is_displayed(self):
-        return self.player.id_in_group == 1
-
-
 class AfterRound1Report(Page):
     def is_displayed(self):
         return self.player.id_in_group == 1
 
-
-class SPLocation1(Page):
+class WReport(WaitPage):
     def is_displayed(self):
         return self.player.id_in_group == 2
 
-class WLocation(WaitPage):
-    def is_displayed(self):
-        return self.player.id_in_group == 2
-
-class SPLocation2(Page):
-    form_model = 'player'
-
-    def vars_for_template(self):
-        return dict(
-            northernlocation=self.group.get_player_by_id(1).NLocationChoice
-        )
-
-    def is_displayed(self):
-        return self.player.id_in_group == 2
-
-
-class SPBefReporting(Page):
-    def is_displayed(self):
-        return self.player.id_in_group == 2
-
-#TBR
 class SPEvaluation(Page):
     form_model = 'player'
     form_fields = ['Evaluation']
@@ -207,19 +161,12 @@ class SPEvaluation(Page):
     def is_displayed(self):
         return self.player.id_in_group == 2
 
-#TBR
-class SPAfterAllocation(Page):
-    def is_displayed(self):
-        return self.player.id_in_group == 2
-
-
 class expectancy1(Page):
     form_model = 'player'
     form_fields = ['extime']
 
     def is_displayed(self):
         return self.player.id_in_group == 1
-
 
 class expectancy2(Page):
     form_model = 'player'
@@ -241,18 +188,12 @@ class riskperception1(Page):
     def is_displayed(self):
         return self.player.id_in_group == 1
 
-
 class riskperception2(Page):
     form_model = 'player'
     form_fields = ['riskperc', 'riskcert', 'riskseri']
 
     def is_displayed(self):
         return self.player.id_in_group == 1
-
-    def before_next_page(self):
-        self.player.set_up_second_round()
-        self.player.handleriskevent()
-
 
 class riskimpexexp(Page):
     form_model = 'player'
@@ -265,46 +206,6 @@ class Sriskimpexexp(Page):
     form_fields = ['riskimp1', 'riskimp2']
     def is_displayed(self):
         return self.player.id_in_group == 2
-
-#TBR
-class AfterRound1Allocation(Page):
-    def vars_for_template(self):
-        return dict(
-    emergencynorth = self.group.get_player_by_id(3).NEM,
-    emergencysouth = self.group.get_player_by_id(3).SEM)
-    def is_displayed(self):
-        return self.player.id_in_group == 1
-
-#TBR
-class Round2(Page):
-    live_method = "handle_message"
-
-    def vars_for_template(self):
-        return dict(ingredients=INGREDIENTS, menu=RECIPES)
-
-    def js_vars(self):
-        return dict(duration=60 * self.player.time, menu=RECIPES, images=IMAGES)
-
-    def is_displayed(self):
-        return self.player.id_in_group == 1
-    def before_next_page(self):
-        self.player.calcrevenue()
-
-#TBR
-class AnnounceSalesRound2(Page):
-    def vars_for_template(self):
-        if self.player.riskmaterialized == 1:
-            ownshare = self.player.revenue * 0.5 * 0.7
-            supervisorshare = self.player.revenue * 0.25 * 0.7
-            firmshare = self.player.revenue * 0.25 * 0.7
-        else:
-            ownshare = self.player.revenue * 0.5
-            supervisorshare = self.player.revenue * 0.25
-            firmshare = self.player.revenue * 0.25
-        return dict(ownshare=ownshare,supervisorshare=supervisorshare,firmshare=firmshare)
-    def is_displayed(self):
-        return self.player.id_in_group == 1
-
 
 class PostExpQuest(Page):
     def vars_for_template(self):

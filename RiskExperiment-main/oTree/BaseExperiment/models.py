@@ -217,21 +217,6 @@ class Player(BasePlayer):
         self.errors = 0
         self.mismatches = 0
 
-    def set_up_second_round(self):
-        self.performedR1 = self.performed
-        self.revenueR1 = self.revenue
-        self.errorsR1 = self.errors
-        self.mismatchesR1 = self.mismatches
-        self.performed = 0
-        self.revenue = 0
-        self.errors = 0
-        self.mismatches = 0
-        manager = self.group.get_player_by_id(3)
-        if self.id_in_group == 1:
-            self.time = manager.Ntime
-        if self.id_in_group == 2:
-            self.time = manager.Stime
-
     def calcrevenue(self):
         if self.riskmaterialized == 1:
             self.ownshare = self.revenue * 0.5 * 0.7 + self.revenueR1 * 0.5
@@ -247,19 +232,6 @@ class Player(BasePlayer):
             else:
                 self.supervisorshare = self.revenue * 0.25 + self.revenueR1 * 0.25
 
-    def handleriskevent(self):
-        manager = self.group.get_player_by_id(3)
-        probability = random.random()
-        if probability > 0.5:
-            self.riskmaterialized = True
-        else:
-            self.riskmaterialized = False
-
-        if (self.id_in_group == 1 and manager.NEM == 1 and self.riskmaterialized == True):
-            self.price = 0.7
-        if (self.id_in_group == 2 and manager.NEM == 1 and self.riskmaterialized == True):
-            self.price = 0.7
-
     # All other parameters
     report_displayed = models.BooleanField(initial=False)
 
@@ -270,18 +242,8 @@ class Player(BasePlayer):
             [2, 'Location B']],
         widget=widgets.RadioSelectHorizontal
     )
-    SLocationChoice = models.IntegerField(
-        label='',
-        choices=[
-            [1, 'Location A'],
-            [2, 'Location B']],
-        widget=widgets.RadioSelectHorizontal
-    )
-    NReportedPerf = models.IntegerField(
-        label='Please report your sales performance below.',
-        min=0, max=30)
 
-    SReportedPerf = models.IntegerField(
+    NReportedPerf = models.IntegerField(
         label='Please report your sales performance below.',
         min=0, max=30)
 
@@ -298,42 +260,9 @@ class Player(BasePlayer):
         blank=True
     )
 
-    SReportedRiskManD = models.LongStringField(
-        label='You are now obliged to report on risks identified in your region (if any). '
-              'Note that you cannot leave this box blank. '
-              'In case you identified no risk, say so.'
-    )
-
-    SReportedRiskVol = models.LongStringField(
-        label='You are now allowed to report on risks identified in your region (if any) here. '
-              'Note that you can leave this box blank. '
-              'In case you identified no risk, you can, if you wish, say so.',
-        blank=True
-    )
-    Ntime = models.IntegerField(
-        label='Northern regional manager:', min=0, max=10,
-        initial=1
-    )
-
-    Stime = models.IntegerField(
-        label='Southern regional manager:', min=0, max=10,
-        initial=1
-    )
-
     Evaluation = models.IntegerField(
-        label='Please rate the performance of the regional manager.',
-        choices=[[1, 'Very Poor'], [2, 'Poor'], [3, 'Average'], [4, 'Good'],
-                 [5, 'Excellent],
-        widget=widgets.RadioSelectHorizontal
-
-    NEM = models.IntegerField(
-        label='In the north:',
-        choices=[[1, 'No'], [2, 'Yes']],
-        widget=widgets.RadioSelectHorizontal
-    )
-    SEM = models.IntegerField(
-        label='In the south:',
-        choices=[[1, 'No'], [2, 'Yes']],
+        label='Please rate the performance of the regional manager. ',
+        choices=[[1, 'Very Poor'], [2, 'Poor'], [3, 'Average'], [4, 'Good'],[5, 'Excellent']],
         widget=widgets.RadioSelectHorizontal
     )
 
