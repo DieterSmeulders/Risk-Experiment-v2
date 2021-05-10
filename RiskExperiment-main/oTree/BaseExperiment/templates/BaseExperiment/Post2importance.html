@@ -1,0 +1,67 @@
+{% extends "global/Page.html" %}
+{% load otree static %}
+
+{% block title %}
+
+{% endblock %}
+
+{% block content %}
+To what extent do you think AC Company ......
+
+{{ form.importance1.label }}<br>
+<table style="table-layout: fixed; width: 100%;">
+    <tr>
+        <td><center>{{ form.importance1.0.choice_label }}<br>{{ form.importance1.0.tag}}</center></td>
+        <td><center><br>{{ form.importance1.1.tag}}</center></td>
+        <td><center><br>{{ form.importance1.2.tag}}</center></td>
+        <td><center><br>{{ form.importance1.3.tag}}</center></td>
+        <td><center><br>{{ form.importance1.4.tag}}</center></td>
+        <td><center><br>{{ form.importance1.5.tag}}</center></td>
+        <td><center>{{ form.importance1.6.choice_label }}<br>{{ form.importance1.6.tag}}</center></td>
+    </tr>
+</table><br><br>
+
+{{ form.importance2.label }}<br>
+<table style="table-layout: fixed; width: 100%;">
+    <tr>
+        <td><center>{{ form.importance2.0.choice_label }}<br>{{ form.importance2.0.tag}}</center></td>
+        <td><center><br>{{ form.importance2.1.tag}}</center></td>
+        <td><center><br>{{ form.importance2.2.tag}}</center></td>
+        <td><center><br>{{ form.importance2.3.tag}}</center></td>
+        <td><center><br>{{ form.importance2.4.tag}}</center></td>
+        <td><center><br>{{ form.importance2.5.tag}}</center></td>
+        <td><center>{{ form.importance2.6.choice_label }}<br>{{ form.importance2.6.tag}}</center></td>
+    </tr>
+</table><br><br>
+
+{{ form.importance3.label }}<br>
+<table style="table-layout: fixed; width: 100%;">
+    <tr>
+        <td><center>{{ form.importance3.0.choice_label }}<br>{{ form.importance3.0.tag}}</center></td>
+        <td><center><br>{{ form.importance3.1.tag}}</center></td>
+        <td><center><br>{{ form.importance3.2.tag}}</center></td>
+        <td><center><br>{{ form.importance3.3.tag}}</center></td>
+        <td><center><br>{{ form.importance3.4.tag}}</center></td>
+        <td><center><br>{{ form.importance3.5.tag}}</center></td>
+        <td><center>{{ form.importance3.6.choice_label }}<br>{{ form.importance3.6.tag}}</center></td>
+    </tr>
+</table><br><br>
+
+{{ form.importance4.label }}<br>
+<table style="table-layout: fixed; width: 100%;">
+    <tr>
+        <td><center>{{ form.importance4.0.choice_label }}<br>{{ form.importance4.0.tag}}</center></td>
+        <td><center><br>{{ form.importance4.1.tag}}</center></td>
+        <td><center><br>{{ form.importance4.2.tag}}</center></td>
+        <td><center><br>{{ form.importance4.3.tag}}</center></td>
+        <td><center><br>{{ form.importance4.4.tag}}</center></td>
+        <td><center><br>{{ form.importance4.5.tag}}</center></td>
+        <td><center>{{ form.importance4.6.choice_label }}<br>{{ form.importance4.6.tag}}</center></td>
+    </tr>
+</table><br><br>
+
+
+    {% next_button %}
+{% endblock %}
+
+

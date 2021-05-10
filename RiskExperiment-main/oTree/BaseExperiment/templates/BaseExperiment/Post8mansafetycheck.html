@@ -1,0 +1,107 @@
+{% extends "global/Page.html" %}
+{% load otree static %}
+
+{% block title %}
+
+
+{% endblock %}
+
+{% block content %}
+Please indicate how accurately each statement describes the work climate at AC Company.  <br><br></br>
+
+{{ form.safety1.label }}<br>
+<table style="table-layout: fixed; width: 100%;">
+    <tr>
+        <td><center>{{ form.safety1.0.choice_label }}<br>{{ form.safety1.0.tag}}</center></td>
+        <td><center><br>{{ form.safety1.1.tag}}</center></td>
+        <td><center><br>{{ form.safety1.2.tag}}</center></td>
+        <td><center><br>{{ form.safety1.3.tag}}</center></td>
+        <td><center><br>{{ form.safety1.4.tag}}</center></td>
+        <td><center><br>{{ form.safety1.5.tag}}</center></td>
+        <td><center>{{ form.safety1.6.choice_label }}<br>{{ form.safety1.6.tag}}</center></td>
+    </tr>
+</table><br><br>
+
+{{ form.safety2.label }}<br>
+<table style="table-layout: fixed; width: 100%;">
+    <tr>
+        <td><center>{{ form.safety2.0.choice_label }}<br>{{ form.safety2.0.tag}}</center></td>
+        <td><center><br>{{ form.safety2.1.tag}}</center></td>
+        <td><center><br>{{ form.safety2.2.tag}}</center></td>
+        <td><center><br>{{ form.safety2.3.tag}}</center></td>
+        <td><center><br>{{ form.safety2.4.tag}}</center></td>
+        <td><center><br>{{ form.safety2.5.tag}}</center></td>
+        <td><center>{{ form.safety2.6.choice_label }}<br>{{ form.safety2.6.tag}}</center></td>
+    </tr>
+</table><br><br>
+
+{{ form.safety3.label }}<br>
+<table style="table-layout: fixed; width: 100%;">
+    <tr>
+        <td><center>{{ form.safety3.0.choice_label }}<br>{{ form.safety3.0.tag}}</center></td>
+        <td><center><br>{{ form.safety3.1.tag}}</center></td>
+        <td><center><br>{{ form.safety3.2.tag}}</center></td>
+        <td><center><br>{{ form.safety3.3.tag}}</center></td>
+        <td><center><br>{{ form.safety3.4.tag}}</center></td>
+        <td><center><br>{{ form.safety3.5.tag}}</center></td>
+        <td><center>{{ form.safety3.6.choice_label }}<br>{{ form.safety3.6.tag}}</center></td>
+    </tr>
+</table><br><br>
+
+{{ form.safety4.label }}<br>
+<table style="table-layout: fixed; width: 100%;">
+    <tr>
+        <td><center>{{ form.safety4.0.choice_label }}<br>{{ form.safety4.0.tag}}</center></td>
+        <td><center><br>{{ form.safety4.1.tag}}</center></td>
+        <td><center><br>{{ form.safety4.2.tag}}</center></td>
+        <td><center><br>{{ form.safety4.3.tag}}</center></td>
+        <td><center><br>{{ form.safety4.4.tag}}</center></td>
+        <td><center><br>{{ form.safety4.5.tag}}</center></td>
+        <td><center>{{ form.safety4.6.choice_label }}<br>{{ form.safety4.6.tag}}</center></td>
+    </tr>
+</table><br><br>
+
+{{ form.safety5.label }}<br>
+<table style="table-layout: fixed; width: 100%;">
+    <tr>
+        <td><center>{{ form.safety5.0.choice_label }}<br>{{ form.safety5.0.tag}}</center></td>
+        <td><center><br>{{ form.safety5.1.tag}}</center></td>
+        <td><center><br>{{ form.safety5.2.tag}}</center></td>
+        <td><center><br>{{ form.safety5.3.tag}}</center></td>
+        <td><center><br>{{ form.safety5.4.tag}}</center></td>
+        <td><center><br>{{ form.safety5.5.tag}}</center></td>
+        <td><center>{{ form.safety5.6.choice_label }}<br>{{ form.safety5.6.tag}}</center></td>
+    </tr>
+</table><br><br>
+
+{{ form.safety6.label }}<br>
+<table style="table-layout: fixed; width: 100%;">
+    <tr>
+        <td><center>{{ form.safety6.0.choice_label }}<br>{{ form.safety6.0.tag}}</center></td>
+        <td><center><br>{{ form.safety6.1.tag}}</center></td>
+        <td><center><br>{{ form.safety6.2.tag}}</center></td>
+        <td><center><br>{{ form.safety6.3.tag}}</center></td>
+        <td><center><br>{{ form.safety6.4.tag}}</center></td>
+        <td><center><br>{{ form.safety6.5.tag}}</center></td>
+        <td><center>{{ form.safety6.6.choice_label }}<br>{{ form.safety6.6.tag}}</center></td>
+    </tr>
+</table><br><br>
+
+{{ form.safety7.label }}<br>
+<table style="table-layout: fixed; width: 100%;">
+    <tr>
+        <td><center>{{ form.safety7.0.choice_label }}<br>{{ form.safety7.0.tag}}</center></td>
+        <td><center><br>{{ form.safety7.1.tag}}</center></td>
+        <td><center><br>{{ form.safety7.2.tag}}</center></td>
+        <td><center><br>{{ form.safety7.3.tag}}</center></td>
+        <td><center><br>{{ form.safety7.4.tag}}</center></td>
+        <td><center><br>{{ form.safety7.5.tag}}</center></td>
+        <td><center>{{ form.safety7.6.choice_label }}<br>{{ form.safety7.6.tag}}</center></td>
+    </tr>
+</table><br><br>
+
+
+    {% next_button %}
+{% endblock %}
+
+

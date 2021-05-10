@@ -1,0 +1,67 @@
+{% extends "global/Page.html" %}
+{% load otree static %}
+
+{% block title %}
+
+{% endblock %}
+
+{% block content %}
+How much do you agree or disagree with the following statements? <br><br>
+
+{{ form.trust1.label }}<br>
+<table style="table-layout: fixed; width: 100%;">
+    <tr>
+        <td><center>{{ form.trust1.0.choice_label }}<br>{{ form.trust1.0.tag}}</center></td>
+        <td><center><br>{{ form.trust1.1.tag}}</center></td>
+        <td><center><br>{{ form.trust1.2.tag}}</center></td>
+        <td><center><br>{{ form.trust1.3.tag}}</center></td>
+        <td><center><br>{{ form.trust1.4.tag}}</center></td>
+        <td><center><br>{{ form.trust1.5.tag}}</center></td>
+        <td><center>{{ form.trust1.6.choice_label }}<br>{{ form.trust1.6.tag}}</center></td>
+    </tr>
+</table><br><br>
+
+{{ form.trust2.label }}<br>
+<table style="table-layout: fixed; width: 100%;">
+    <tr>
+        <td><center>{{ form.trust2.0.choice_label }}<br>{{ form.trust2.0.tag}}</center></td>
+        <td><center><br>{{ form.trust2.1.tag}}</center></td>
+        <td><center><br>{{ form.trust2.2.tag}}</center></td>
+        <td><center><br>{{ form.trust2.3.tag}}</center></td>
+        <td><center><br>{{ form.trust2.4.tag}}</center></td>
+        <td><center><br>{{ form.trust2.5.tag}}</center></td>
+        <td><center>{{ form.trust2.6.choice_label }}<br>{{ form.trust2.6.tag}}</center></td>
+    </tr>
+</table><br><br>
+
+{{ form.trust3.label }}<br>
+<table style="table-layout: fixed; width: 100%;">
+    <tr>
+        <td><center>{{ form.trust3.0.choice_label }}<br>{{ form.trust3.0.tag}}</center></td>
+        <td><center><br>{{ form.trust3.1.tag}}</center></td>
+        <td><center><br>{{ form.trust3.2.tag}}</center></td>
+        <td><center><br>{{ form.trust3.3.tag}}</center></td>
+        <td><center><br>{{ form.trust3.4.tag}}</center></td>
+        <td><center><br>{{ form.trust3.5.tag}}</center></td>
+        <td><center>{{ form.trust3.6.choice_label }}<br>{{ form.trust3.6.tag}}</center></td>
+    </tr>
+</table><br><br>
+
+{{ form.trust4.label }}<br>
+<table style="table-layout: fixed; width: 100%;">
+    <tr>
+        <td><center>{{ form.trust4.0.choice_label }}<br>{{ form.trust4.0.tag}}</center></td>
+        <td><center><br>{{ form.trust4.1.tag}}</center></td>
+        <td><center><br>{{ form.trust4.2.tag}}</center></td>
+        <td><center><br>{{ form.trust4.3.tag}}</center></td>
+        <td><center><br>{{ form.trust4.4.tag}}</center></td>
+        <td><center><br>{{ form.trust4.5.tag}}</center></td>
+        <td><center>{{ form.trust4.6.choice_label }}<br>{{ form.trust4.6.tag}}</center></td>
+    </tr>
+</table><br><br>
+
+
+    {% next_button %}
+{% endblock %}
+
+

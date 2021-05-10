@@ -1,0 +1,17 @@
+{% extends "global/Page.html" %}
+{% load otree static %}
+
+
+{% block content %}
+
+
+The regional manager has selected <b> location {% if northernlocation == 1 %} A {% else %} B {% endif %} </b>. <br><br>
+
+<br><br>
+The company will invest in the location chosen and open a new shop. Then, the regional manager will start working in the new shop.
+Please wait to receive the sales performance of the regional manager. In the meantime, you will receive some information about the company and further instructions.
+
+
+   {% next_button %}
+
+{% endblock %}

@@ -1,0 +1,21 @@
+{% extends "global/Page.html" %}
+{% load otree static %}
+
+{% block title %}
+
+{% endblock %}
+
+{% block content %}
+The company considers two locations in your region as candidates to open a new shop. You are asked to decide about the location of the new shop. You have collected some information below that could help you to make this decision.<br><br>
+<b>Location A</b>: Plenty of companies are located nearby. A lot of people live in this neighborhood. A large open car park is present nearby, however, so finding parking space should not be a main issue here. Access to the shop is quite easy. Furthermore, the area is served by public transportation. The building is just recently constructed and decorated. The finishing is well done. The place looks stylish and nice.<br><br>
+<b>Location B</b>: There is a big university nearby. Many young people seem to walk or drive past this location. Many students come to the university by bike or bus. Apparently, there are adequate parking lots for the faculty and staff of the university. The area is safe and pleasant. The building is just renovated. The place looks cozy and nice.<br><br>
+Which location do you choose?<br><br>
+
+{% formfield player.NLocationChoice %}
+
+Click on "Next" to inform the supervisor about your decision.<br><br>
+
+
+    {% next_button %}
+
+{% endblock %}

@@ -1,0 +1,133 @@
+{% extends "global/Page.html" %}
+{% load otree static %}
+
+{% block title %}
+
+{% endblock %}
+
+{% block content %}
+While you were reporting to the supervisor, how important was it for you to .....  <br><br>
+
+
+{{ form.factor1.label }}<br>
+<table style="table-layout: fixed; width: 100%;">
+    <tr>
+        <td><center>{{ form.factor1.0.choice_label }}<br>{{ form.factor1.0.tag}}</center></td>
+        <td><center><br>{{ form.factor1.1.tag}}</center></td>
+        <td><center><br>{{ form.factor1.2.tag}}</center></td>
+        <td><center><br>{{ form.factor1.3.tag}}</center></td>
+        <td><center><br>{{ form.factor1.4.tag}}</center></td>
+        <td><center><br>{{ form.factor1.5.tag}}</center></td>
+        <td><center>{{ form.factor1.6.choice_label }}<br>{{ form.factor1.6.tag}}</center></td>
+    </tr>
+</table><br><br>
+
+{{ form.factor2.label }}<br>
+<table style="table-layout: fixed; width: 100%;">
+    <tr>
+        <td><center>{{ form.factor2.0.choice_label }}<br>{{ form.factor2.0.tag}}</center></td>
+        <td><center><br>{{ form.factor2.1.tag}}</center></td>
+        <td><center><br>{{ form.factor2.2.tag}}</center></td>
+        <td><center><br>{{ form.factor2.3.tag}}</center></td>
+        <td><center><br>{{ form.factor2.4.tag}}</center></td>
+        <td><center><br>{{ form.factor2.5.tag}}</center></td>
+        <td><center>{{ form.factor2.6.choice_label }}<br>{{ form.factor2.6.tag}}</center></td>
+    </tr>
+</table><br><br>
+
+{{ form.factor3.label }}<br>
+<table style="table-layout: fixed; width: 100%;">
+    <tr>
+        <td><center>{{ form.factor3.0.choice_label }}<br>{{ form.factor3.0.tag}}</center></td>
+        <td><center><br>{{ form.factor3.1.tag}}</center></td>
+        <td><center><br>{{ form.factor3.2.tag}}</center></td>
+        <td><center><br>{{ form.factor3.3.tag}}</center></td>
+        <td><center><br>{{ form.factor3.4.tag}}</center></td>
+        <td><center><br>{{ form.factor3.5.tag}}</center></td>
+        <td><center>{{ form.factor3.6.choice_label }}<br>{{ form.factor3.6.tag}}</center></td>
+    </tr>
+</table><br><br>
+
+{{ form.factor4.label }}<br>
+<table style="table-layout: fixed; width: 100%;">
+    <tr>
+        <td><center>{{ form.factor4.0.choice_label }}<br>{{ form.factor4.0.tag}}</center></td>
+        <td><center><br>{{ form.factor4.1.tag}}</center></td>
+        <td><center><br>{{ form.factor4.2.tag}}</center></td>
+        <td><center><br>{{ form.factor4.3.tag}}</center></td>
+        <td><center><br>{{ form.factor4.4.tag}}</center></td>
+        <td><center><br>{{ form.factor4.5.tag}}</center></td>
+        <td><center>{{ form.factor4.6.choice_label }}<br>{{ form.factor4.6.tag}}</center></td>
+    </tr>
+</table><br><br>
+
+{{ form.factor5.label }}<br>
+<table style="table-layout: fixed; width: 100%;">
+    <tr>
+        <td><center>{{ form.factor5.0.choice_label }}<br>{{ form.factor5.0.tag}}</center></td>
+        <td><center><br>{{ form.factor5.1.tag}}</center></td>
+        <td><center><br>{{ form.factor5.2.tag}}</center></td>
+        <td><center><br>{{ form.factor5.3.tag}}</center></td>
+        <td><center><br>{{ form.factor5.4.tag}}</center></td>
+        <td><center><br>{{ form.factor5.5.tag}}</center></td>
+        <td><center>{{ form.factor5.6.choice_label }}<br>{{ form.factor5.6.tag}}</center></td>
+    </tr>
+</table><br><br>
+
+{{ form.factor6.label }}<br>
+<table style="table-layout: fixed; width: 100%;">
+    <tr>
+        <td><center>{{ form.factor6.0.choice_label }}<br>{{ form.factor6.0.tag}}</center></td>
+        <td><center><br>{{ form.factor6.1.tag}}</center></td>
+        <td><center><br>{{ form.factor6.2.tag}}</center></td>
+        <td><center><br>{{ form.factor6.3.tag}}</center></td>
+        <td><center><br>{{ form.factor6.4.tag}}</center></td>
+        <td><center><br>{{ form.factor6.5.tag}}</center></td>
+        <td><center>{{ form.factor6.6.choice_label }}<br>{{ form.factor6.6.tag}}</center></td>
+    </tr>
+</table><br><br>
+
+{{ form.factor7.label }}<br>
+<table style="table-layout: fixed; width: 100%;">
+    <tr>
+        <td><center>{{ form.factor7.0.choice_label }}<br>{{ form.factor7.0.tag}}</center></td>
+        <td><center><br>{{ form.factor7.1.tag}}</center></td>
+        <td><center><br>{{ form.factor7.2.tag}}</center></td>
+        <td><center><br>{{ form.factor7.3.tag}}</center></td>
+        <td><center><br>{{ form.factor7.4.tag}}</center></td>
+        <td><center><br>{{ form.factor7.5.tag}}</center></td>
+        <td><center>{{ form.factor7.6.choice_label }}<br>{{ form.factor7.6.tag}}</center></td>
+    </tr>
+</table><br><br>
+{{ form.factor8.label }}<br>
+<table style="table-layout: fixed; width: 100%;">
+    <tr>
+        <td><center>{{ form.factor8.0.choice_label }}<br>{{ form.factor8.0.tag}}</center></td>
+        <td><center><br>{{ form.factor8.1.tag}}</center></td>
+        <td><center><br>{{ form.factor8.2.tag}}</center></td>
+        <td><center><br>{{ form.factor8.3.tag}}</center></td>
+        <td><center><br>{{ form.factor8.4.tag}}</center></td>
+        <td><center><br>{{ form.factor8.5.tag}}</center></td>
+        <td><center>{{ form.factor8.6.choice_label }}<br>{{ form.factor8.6.tag}}</center></td>
+    </tr>
+</table><br><br>
+
+{{ form.factor9.label }}<br>
+<table style="table-layout: fixed; width: 100%;">
+    <tr>
+        <td><center>{{ form.factor9.0.choice_label }}<br>{{ form.factor9.0.tag}}</center></td>
+        <td><center><br>{{ form.factor9.1.tag}}</center></td>
+        <td><center><br>{{ form.factor9.2.tag}}</center></td>
+        <td><center><br>{{ form.factor9.3.tag}}</center></td>
+        <td><center><br>{{ form.factor9.4.tag}}</center></td>
+        <td><center><br>{{ form.factor9.5.tag}}</center></td>
+        <td><center>{{ form.factor9.6.choice_label }}<br>{{ form.factor9.6.tag}}</center></td>
+    </tr>
+</table><br><br>
+
+
+
+    {% next_button %}
+{% endblock %}
+
+

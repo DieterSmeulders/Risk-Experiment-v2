@@ -1,0 +1,20 @@
+{% extends "global/Page.html" %}
+{% load otree static %}
+
+{% block styles %}
+    <style>
+        .otree-timer {
+            display: none;
+        }
+    </style>
+{% endblock %}
+
+{% block content %}
+
+Your time is over. <br><br>
+
+Your sales performance is {{player.revenue}} in dollars.<br><br>
+
+By clicking on “next”, you will now receive the local market survey. This survey is available ONLY to you. The supervisor does NOT have access to it. <br><br>
+
+{% endblock %}

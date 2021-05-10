@@ -1,0 +1,54 @@
+{% extends "global/Page.html" %}
+{% load otree static %}
+
+{% block title %}
+
+
+{% endblock %}
+
+{% block content %}
+Please indicate how accurately each statement describes the risk reporting policy at AC Company (the company that you work for). <br><br>
+
+{{ form.manvol1.label }}<br>
+<table style="table-layout: fixed; width: 100%;">
+    <tr>
+        <td><center>{{ form.manvol1.0.choice_label }}<br>{{ form.manvol1.0.tag}}</center></td>
+        <td><center><br>{{ form.manvol1.1.tag}}</center></td>
+        <td><center><br>{{ form.manvol1.2.tag}}</center></td>
+        <td><center><br>{{ form.manvol1.3.tag}}</center></td>
+        <td><center><br>{{ form.manvol1.4.tag}}</center></td>
+        <td><center><br>{{ form.manvol1.5.tag}}</center></td>
+        <td><center>{{ form.manvol1.6.choice_label }}<br>{{ form.manvol1.6.tag}}</center></td>
+    </tr>
+</table><br><br>
+
+{{ form.manvol2.label }}<br>
+<table style="table-layout: fixed; width: 100%;">
+    <tr>
+        <td><center>{{ form.manvol2.0.choice_label }}<br>{{ form.manvol2.0.tag}}</center></td>
+        <td><center><br>{{ form.manvol2.1.tag}}</center></td>
+        <td><center><br>{{ form.manvol2.2.tag}}</center></td>
+        <td><center><br>{{ form.manvol2.3.tag}}</center></td>
+        <td><center><br>{{ form.manvol2.4.tag}}</center></td>
+        <td><center><br>{{ form.manvol2.5.tag}}</center></td>
+        <td><center>{{ form.manvol2.6.choice_label }}<br>{{ form.manvol2.6.tag}}</center></td>
+    </tr>
+</table><br><br>
+
+{{ form.manvol3.label }}<br>
+<table style="table-layout: fixed; width: 100%;">
+    <tr>
+        <td><center>{{ form.manvol3.0.choice_label }}<br>{{ form.manvol3.0.tag}}</center></td>
+        <td><center><br>{{ form.manvol3.1.tag}}</center></td>
+        <td><center><br>{{ form.manvol3.2.tag}}</center></td>
+        <td><center><br>{{ form.manvol3.3.tag}}</center></td>
+        <td><center><br>{{ form.manvol3.4.tag}}</center></td>
+        <td><center><br>{{ form.manvol3.5.tag}}</center></td>
+        <td><center>{{ form.manvol3.6.choice_label }}<br>{{ form.manvol3.6.tag}}</center></td>
+    </tr>
+</table><br><br>
+
+    {% next_button %}
+{% endblock %}
+
+
