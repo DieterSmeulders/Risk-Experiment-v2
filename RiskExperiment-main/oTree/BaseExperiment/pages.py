@@ -102,11 +102,6 @@ class M12Round1(Page):
         return self.player.id_in_group == 1
 
 
-class N3Filler(Page):
-    def is_displayed(self):
-        return self.player.id_in_group == 2
-
-
 class N4SPBefWait(Page):
     def is_displayed(self):
         return self.player.id_in_group == 2
@@ -302,7 +297,7 @@ class Results(Page):
 
 page_sequence = [M1IntroPage, M2IntroPage2, M3PlayerIntroPage, M4LocationChoice, M5LocationApproval, N1SPLocation,
                  M6CultureCondition, M7GameIntro, M8SandwichIntro, M9Shop, M10AfterPractice,
-                 M11ComprehensionSurvey1, M11ComprehensionSurvey2, M12Round1, N3Filler, M13AfterRound1Game,
+                 M11ComprehensionSurvey1, M11ComprehensionSurvey2, M12Round1, M13AfterRound1Game,
                  M14RiskEvent, M15ReportingScreen, N6SPEvaluation, Post1Quality1, Post1Quality2, Post2importance,
                  Post3image1, Post4factor, Post5trust, Post6oblig, Post7perf,
                  Post8mansafetycheck, Post9manvoluntarycheck, Post10volexp, Post11riskattitude1, Post11riskattitude2,
