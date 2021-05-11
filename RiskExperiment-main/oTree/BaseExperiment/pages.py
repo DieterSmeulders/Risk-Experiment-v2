@@ -14,7 +14,7 @@ class M1IntroPage(Page):
 
 
 class M2IntroPage2(Page):
-    timeout_seconds = 10
+    timeout_seconds = 30
 
 
 class M3PlayerIntroPage(Page):
@@ -37,17 +37,29 @@ class M5LocationApproval(Page):
 
 
 class N1SPLocation(Page):
+    def vars_for_template(self):
+        return dict(northernlocation=self.group.get_player_by_id(1).NLocationChoice)
+
     def is_displayed(self):
         return self.player.id_in_group == 2
 
+class WRAlloc(WaitPage):
+    pass
+
+class SPLocation2(Page):
+    form_model = 'player'
+
+    def vars_for_template(self):
+        return dict(northernlocation=self.group.get_player_by_id(1).NLocationChoice)
+
+    def is_displayed(self):
+        return self.player.id_in_group == 2
 
 class M6CultureCondition(Page):
     pass
 
-
 class M7GameIntro(Page):
     pass
-
 
 class M8SandwichIntro(Page):
     def is_displayed(self):
@@ -61,7 +73,7 @@ class M9Shop(Page):
         return dict(ingredients=INGREDIENTS, menu=RECIPES)
 
     def js_vars(self):
-        return dict(duration=180, menu=RECIPES, images=IMAGES)
+        return dict(duration=60, menu=RECIPES, images=IMAGES)
 
     def is_displayed(self):
         return self.player.id_in_group == 1
@@ -106,6 +118,11 @@ class N4SPBefWait(Page):
     def is_displayed(self):
         return self.player.id_in_group == 2
 
+class AfterRound1Game(Page):
+    timeout_seconds = 15
+
+    def is_displayed(self):
+        return self.player.id_in_group == 1
 
 class N5SPBefReporting(Page):
     def is_displayed(self):
@@ -131,13 +148,16 @@ class M15ReportingScreen(Page):
 
     def get_form_fields(self):
         if self.group.reportingcondition == 'mandatory':
-            return ['NReportedPerf', 'NReportedRiskManD']
+            return ['NReportedRiskManD']
         else:
-            return ['NReportedPerf', 'NReportedRiskVol']
+            return ['NReportedRiskVol']
 
     def is_displayed(self):
         return self.player.id_in_group == 1
 
+class AfterRound1Report(Page):
+    def is_displayed(self):
+        return self.player.id_in_group == 1
 
 class WReport(WaitPage):
     template_name = 'global/RiskWaitPage.html'
@@ -270,12 +290,12 @@ class Post12optimism(Page):
     form_fields = ['opt1', 'opt2', 'opt3', 'opt4', 'opt5', 'opt6']
 
 
-class Post13uncertaversion1(Page):
+class Post13uncertainaversion1(Page):
     form_model = 'player'
     form_fields = ['unc1', 'unc2', 'unc3', 'unc4', 'unc5', 'unc6']
 
 
-class Post13uncertaversion2(Page):
+class Post13uncertainaversion2(Page):
     form_model = 'player'
     form_fields = ['unc7', 'unc8', 'unc9', 'unc10', 'unc11', 'unc12']
 
@@ -292,13 +312,13 @@ class Post15GenQuest(Page):
 
 class Results(Page):
     def vars_for_template(self):
-        return dict(BasePay=Constants.BasePay)
+        return dict(Evaluation=self.group.get_player_by_id(2).get_Evaluation_display(), BasePay=Constants.BasePay)
 
 
-page_sequence = [M1IntroPage, M2IntroPage2, M3PlayerIntroPage, M4LocationChoice, M5LocationApproval, N1SPLocation,
+page_sequence = [M1IntroPage, M2IntroPage2, M3PlayerIntroPage, M4LocationChoice, M5LocationApproval, WRAlloc, N1SPLocation,
                  M6CultureCondition, M7GameIntro, M8SandwichIntro, M9Shop, M10AfterPractice,
                  M11ComprehensionSurvey1, M11ComprehensionSurvey2, M12Round1, M13AfterRound1Game,
-                 M14RiskEvent, M15ReportingScreen, N6SPEvaluation, Post1Quality1, Post1Quality2, Post2importance,
+                 M14RiskEvent, M15ReportingScreen, WReport, N6SPEvaluation, Post1Quality1, Post1Quality2, Post2importance,
                  Post3image1, Post4factor, Post5trust, Post6oblig, Post7perf,
                  Post8mansafetycheck, Post9manvoluntarycheck, Post10volexp, Post11riskattitude1, Post11riskattitude2,
-                 Post12optimism, Post13uncertaversion1, Post13uncertaversion2, Post14gender, Post15GenQuest, Results]
+                 Post12optimism, Post13uncertainaversion1, Post13uncertainaversion2, Post14gender, Post15GenQuest, Results]

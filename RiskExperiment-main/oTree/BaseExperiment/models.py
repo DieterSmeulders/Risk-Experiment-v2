@@ -426,57 +426,57 @@ class Player(BasePlayer):
         choices=[[1, 'Little'], [2, ''], [3, ''], [4, ''], [5, ''], [6, ''], [7, 'Very much']],
         widget=widgets.RadioSelectHorizontal
     )
-    Importance1 = models.IntegerField(
+    importance1 = models.IntegerField(
         label='...placed importance on risk management?',
         choices=[[1, 'Little'], [2, ''], [3, ''], [4, ''], [5, ''], [6, ''], [7, 'Very much']],
         widget=widgets.RadioSelectHorizontal
     )
-    Importance2 = models.IntegerField(
+    importance2 = models.IntegerField(
         label='...placed emphasis on the timely communication of risk information?',
         choices=[[1, 'Little'], [2, ''], [3, ''], [4, ''], [5, ''], [6, ''], [7, 'Very much']],
         widget=widgets.RadioSelectHorizontal
     )
-    Importance3 = models.IntegerField(
+    importance3 = models.IntegerField(
         label='...placed value on open sharing of risk information?',
         choices=[[1, 'Little'], [2, ''], [3, ''], [4, ''], [5, ''], [6, ''], [7, 'Very much']],
         widget=widgets.RadioSelectHorizontal
     )
-    Importance4 = models.IntegerField(
+    importance4 = models.IntegerField(
         label='...facilitated communication of risk information?',
         choices=[[1, 'Little'], [2, ''], [3, ''], [4, ''], [5, ''], [6, ''], [7, 'Very much']],
         widget=widgets.RadioSelectHorizontal
     )
-    Image1 = models.IntegerField(
+    image1 = models.IntegerField(
         label='the superior would have a negative image of me',
         choices=[[1, 'Strongly disagree'], [2, ''], [3, ''], [4, ''], [5, ''], [6, ''], [7, 'Strongly agree']],
         widget=widgets.RadioSelectHorizontal
     )
-    Image2 = models.IntegerField(
+    image2 = models.IntegerField(
         label='my image in the eyes of the supervisor would be improved',
         choices=[[1, 'Strongly disagree'], [2, ''], [3, ''], [4, ''], [5, ''], [6, ''], [7, 'Strongly agree']],
         widget=widgets.RadioSelectHorizontal
     )
-    Image3 = models.IntegerField(
+    image3 = models.IntegerField(
         label='I would look bad in the eyes of the supervisor',
         choices=[[1, 'Strongly disagree'], [2, ''], [3, ''], [4, ''], [5, ''], [6, ''], [7, 'Strongly agree']],
         widget=widgets.RadioSelectHorizontal
     )
-    Image4 = models.IntegerField(
+    image4 = models.IntegerField(
         label='the supervisor would think better of me',
         choices=[[1, 'Strongly disagree'], [2, ''], [3, ''], [4, ''], [5, ''], [6, ''], [7, 'Strongly agree']],
         widget=widgets.RadioSelectHorizontal
     )
-    Image5 = models.IntegerField(
+    image5 = models.IntegerField(
         label='the supervisor would think worse of me',
         choices=[[1, 'Strongly disagree'], [2, ''], [3, ''], [4, ''], [5, ''], [6, ''], [7, 'Strongly agree']],
         widget=widgets.RadioSelectHorizontal
     )
-    Image6 = models.IntegerField(
+    image6 = models.IntegerField(
         label='the supervisor would appreciate it',
         choices=[[1, 'Strongly disagree'], [2, ''], [3, ''], [4, ''], [5, ''], [6, ''], [7, 'Strongly agree']],
         widget=widgets.RadioSelectHorizontal
     )
-    Image7 = models.IntegerField(
+    image7 = models.IntegerField(
         label='the supervisor would penalize me',
         choices=[[1, 'Strongly disagree'], [2, ''], [3, ''], [4, ''], [5, ''], [6, ''], [7, 'Strongly agree']],
         widget=widgets.RadioSelectHorizontal
@@ -805,7 +805,7 @@ class Player(BasePlayer):
         choices=[[1, 'Male'], [2, 'Female'], [3, 'Other']],
         widget=widgets.RadioSelectHorizontal
     )
-    Age = models.IntegerField(
+    age = models.IntegerField(
         label='How old are you?',
         min=17, max=80)
 
@@ -833,6 +833,7 @@ class Player(BasePlayer):
         choices=[[1, 'Strongly disagree'], [2, ''], [3, ''], [4, ''], [5, 'Strongly agree']],
         widget=widgets.RadioSelectHorizontal
     )
-    comment = models.StringField(
+    comment = models.LongStringField(
         label='Please share your comments about this study here.',
+        blank = True
     )
