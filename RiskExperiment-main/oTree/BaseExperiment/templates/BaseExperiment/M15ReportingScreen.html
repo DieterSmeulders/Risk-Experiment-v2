@@ -7,8 +7,6 @@
 
 {% block content %}
 
-<b>Your sales performance, {{ revenue }} euros will be reported to your supervisor.  </b> <br><br>
-<br>
 {% if group.culturecondition == 'supportive' %}
 Recall that the company promotes a climate of doing things with <b>an adventurous spirit</b>.
 People <b>appreciate</b> each other’s efforts. <b>No negative comments </b> are made about those who make mistakes.
@@ -23,7 +21,7 @@ People <b>monitor</b> each other’s efforts. <b>Negative comments </b> are made
 People <b> hardly </b> ask others for help in the face of difficulties.
 In addition, people value working in <b>a proven way</b> and encourage <b>looking before leaping</b>.
 People are therefore <b>uncomfortable </b> talking to others about what could go wrong.<br>
-{% endif %}<br><br>
+{% endif %}
 
 {% if group.reportingcondition ==  'mandatory' %}
 The company has a <b> mandatory risk reporting policy</b>, that is, you are required to report the risks (if any) that could impact the sales performance of your region going forward. <br><br>
@@ -54,7 +52,6 @@ You can get access to the local market survey report if you wish by clicking on 
 <center><img src="{% static 'global/RiskReport.jpg' %}"/></center>
 </div><br>
 
-Click on "Next" to send your report to the supervisor.<br><br>
 
 
     {% next_button %}

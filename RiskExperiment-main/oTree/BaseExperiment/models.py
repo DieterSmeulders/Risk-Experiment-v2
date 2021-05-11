@@ -267,7 +267,7 @@ class Player(BasePlayer):
         label='5. How is the sales performance of the regional manager computed?',
         choices=[[1, 'Sales performance is the number of clients attracted.'],
                  [2, 'Sales performance is the number of sandwiches made.'],
-                 [3, 'Sales performance is the multiplication of the number of saleable sandwiches made '
+                 [3, 'Sales performance is the multiplication of the number of sandwiches made '
                      'and the selling price of each sandwich in the region.'
                      'The current selling price is 1 EUR.']],
         widget=widgets.RadioSelectHorizontal
@@ -283,7 +283,7 @@ class Player(BasePlayer):
         widget=widgets.RadioSelectHorizontal
     )
     Q7 = models.IntegerField(
-        label='7. How is the company’s culture? ',
+        label='7. How is the company’s culture?',
         choices=[[1, 'The Company promotes a climate of doing things with an adventurous spirit. '
                      'People value working in a trial and error way and encourage speaking out freely.'],
                  [2, 'The Company promotes a climate of doing things accurately. '
@@ -291,7 +291,7 @@ class Player(BasePlayer):
         widget=widgets.RadioSelectHorizontal
     )
     Q8 = models.IntegerField(
-        label='8. How do people in the company interact with each other? ',
+        label='8. How do people in the company interact with each other?',
         choices=[[1, 'People appreciate each other’s efforts. '
                      'No negative comments are made about those who make mistakes. '
                      'People easily ask others for help in the face of difficulties. '
@@ -306,20 +306,20 @@ class Player(BasePlayer):
         min=0, max=30)
 
     NReportedRiskManD = models.LongStringField(
-        label='You are now obliged to report on risks identified in your region (if any) here. '
+        label='You are now obliged to report on risks identified in your region (if any) here.'
               'Note that you cannot leave this box blank. '
               'In case you identified no risk, say so.'
     )
 
     NReportedRiskVol = models.LongStringField(
-        label='You are now allowed to report on risks identified in your region (if any) here. '
-              'Note that you can leave this box blank. '
-              'In case you identified no risk, you can, if you wish, say so.',
+        label='You are now allowed to report on risks identified in your region (if any) here.'
+              'Note that you can leave this box blank and the supervisor will not receive your report.'
+              'In case you identified no risk, you can say so, if you wish.',
         blank=True
     )
 
     Evaluation = models.IntegerField(
-        label='Please rate the performance of the regional manager. ',
+        label='Please rate the performance of the regional manager.',
         choices=[[1, 'Very Poor'], [2, 'Poor'], [3, 'Average'], [4, 'Good'], [5, 'Excellent']],
         widget=widgets.RadioSelectHorizontal
     )

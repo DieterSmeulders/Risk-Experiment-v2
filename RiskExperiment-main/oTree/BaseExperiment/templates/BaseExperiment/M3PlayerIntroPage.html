@@ -8,19 +8,19 @@
 {% block content %}
 
 {% if player.id_in_group == 1 %}
-You have been assigned to the role of a <u>regional manager.</u>u You are randomly paired with a supervisor.<br>
-The company wants to open a new shop in your region. Two locations are selected as candidates for setting up a new shop. Given that you have more information about the region, the supervisor delegated the location decision to you. You will choose the best location based on the information collected about two locations in the region and inform the supervisor about your decision. Afterwards, the company will invest in the location you have chosen and you can start working in the new shop.
+You have been assigned to the role of a <u>regional manager</u>. You are randomly paired with a supervisor.<br><br>
+The company wants to open a new shop in your region. Two locations are selected as candidates for setting up a new shop. Given that you have more information about the region, the supervisor delegated the location decision to you. You will choose the best location based on the information collected about two locations in the region and inform the supervisor about your decision. Afterwards, the company will invest in the location you have chosen and you can start working in the new shop.<br><br>
 
 {% endif%}
 
 {% if player.id_in_group == 2 %}
-You have been assigned to the role of a supervisor of the regional manager. You are randomly paired with a regional manager. <br><br>
+You have been assigned to the role of a <u>supervisor</u>. You are randomly paired with a regional manager. <br><br>
 
 
-The company wants to open a new shop. <u>Two locations in the region are selected as candidates for setting up a new shop </u>. Given that the regional manager has more knowledge about their regions, you delegate the location decision to the regional manager. <br><br>
+The company wants to open a new shop in the region. <u>Two locations are selected as candidates for setting up a new shop </u>. Given that the regional manager has more knowledge about the region, you have delegated the location decision to the regional manager. <br><br>
 
-The regional manager will choose the best location in their region based on the information collected in their region and inform you about their decision. Then, you ask the company to open a new shop in the location chosen in each region. Afterwards, the regional manager can start working in their new shop once the company has opened it.<br><br>
-Please wait to be informed about her/his decision. In the meantime, you will receive some information about the company and further instructions about your task.  <br><br>
+The regional manager will choose the best location in the region based on the information collected about the two locations in the region and inform you about her/his decision. Afterwards, the company will invest in the location selected and the regional manager can start working in the new shop. <br><br>
+Please wait to be informed about the regional manager's decision. In the meantime, you will receive some information about the company and further instructions about your task. <br><br>
 {% endif%}
 
     {% next_button %}
