@@ -95,11 +95,57 @@ class M11ComprehensionSurvey1(Page):
     form_model = 'player'
     form_fields = ['Q1', 'Q2', 'Q3', 'Q4', 'Q5']
 
+    def Q1_error_message(self, value):
+        print('Answer to Q1 is', value)
+        if value != self.player.id_in_group:
+            return 'Please check your role'
+    def Q2_error_message(self, value):
+        print('Answer to Q2 is', value)
+        if value != 1:
+            return 'Only the regional manager has access to the local market report.'
+    def Q3_error_message(self, value):
+        print('Answer to Q3 is', value)
+        if value != 2:
+            return 'The regional manager has 5 minutes to make sandwiches.'
+    def Q4_error_message(self, value):
+        print('Answer to Q4 is', value)
+        if value != 2:
+            return 'The key responsibility of the regional manager is Increasing the sales performance in the region.'
+    def Q5_error_message(self, value):
+        print('Answer to Q5 is', value)
+        if value != 3:
+            return 'Sales performance is the multiplication of the number of saleable sandwiches made and the selling price of each sandwich in the region.The current selling price is 1 EUR.'
+
 
 class M11ComprehensionSurvey2(Page):
     form_model = 'player'
     form_fields = ['Q6', 'Q7', 'Q8']
 
+    def Q6_error_message(self, value):
+        print('Answer to Q6 is', value)
+        if self.group.reportingcondition == 'mandatory':
+            if value != 1:
+                return 'The company has a mandatory risk reporting policy.'
+        if self.group.reportingcondition == 'voluntary':
+            if value != 2:
+                return 'The company has a voluntary risk reporting policy.'
+    def Q7_error_message(self, value):
+        print('Answer to Q7 is', value)
+        if self.group.culturecondition == 'supportive':
+            if value != 1:
+                return 'Please check your answer.'
+        if self.group.culturecondition == 'unsupportive':
+            if value != 2:
+                return 'Please check your answer.'
+
+    def Q8_error_message(self, value):
+        print('Answer to Q8 is', value)
+        if self.group.culturecondition == 'supportive':
+            if value != 1:
+                return 'Please check your answer.'
+        if self.group.culturecondition == 'unsupportive':
+            if value != 2:
+                return 'Please check your answer.'
 
 class M12Round1(Page):
     live_method = "handle_message"
