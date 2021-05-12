@@ -223,7 +223,7 @@ class N6SPEvaluation(Page):
 
     def vars_for_template(self):
         return dict(
-            northernreportedperformance=self.group.get_player_by_id(1).NReportedPerf,
+            northernreportedperformance=self.group.get_player_by_id(1).revenue,
             northernmandatoryrisk=self.group.get_player_by_id(1).NReportedRiskManD,
             northernvoluntaryrisk=self.group.get_player_by_id(1).NReportedRiskVol
         )
