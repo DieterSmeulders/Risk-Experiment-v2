@@ -14,7 +14,7 @@ class M1IntroPage(Page):
 
 
 class M2IntroPage2(Page):
-    timeout_seconds = 30
+    pass
 
 
 class M3PlayerIntroPage(Page):
