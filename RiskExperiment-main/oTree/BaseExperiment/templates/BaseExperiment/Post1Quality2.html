@@ -8,6 +8,34 @@
 {% block content %}
 Please indicate the extent to which you agree or disagree with the following statements. <br><br>
 
+{{ form.closure7.label }}<br>
+<table style="table-layout: fixed; width: 100%;">
+    <tr>
+        <td><center>{{ form.closure7.0.choice_label }}<br>{{ form.closure7.0.tag}}</center></td>
+        <td><center><br>{{ form.closure7.1.tag}}</center></td>
+        <td><center><br>{{ form.closure7.2.tag}}</center></td>
+        <td><center><br>{{ form.closure7.3.tag}}</center></td>
+        <td><center><br>{{ form.closure7.4.tag}}</center></td>
+        <td><center><br>{{ form.closure7.5.tag}}</center></td>
+        <td><center>{{ form.closure7.6.choice_label }}<br>{{ form.closure7.6.tag}}</center></td>
+    </tr>
+</table><br><br>
+
+{{ form.closure8.label }}<br>
+<table style="table-layout: fixed; width: 100%;">
+    <tr>
+        <td><center>{{ form.closure8.0.choice_label }}<br>{{ form.closure8.0.tag}}</center></td>
+        <td><center><br>{{ form.closure8.1.tag}}</center></td>
+        <td><center><br>{{ form.closure8.2.tag}}</center></td>
+        <td><center><br>{{ form.closure8.3.tag}}</center></td>
+        <td><center><br>{{ form.closure8.4.tag}}</center></td>
+        <td><center><br>{{ form.closure8.5.tag}}</center></td>
+        <td><center>{{ form.closure8.6.choice_label }}<br>{{ form.closure8.6.tag}}</center></td>
+    </tr>
+</table><br><br>
+
+
+
 {{ form.closure9.label }}<br>
 <table style="table-layout: fixed; width: 100%;">
     <tr>
@@ -59,33 +87,6 @@ Please indicate the extent to which you agree or disagree with the following sta
         <td><center>{{ form.closure12.6.choice_label }}<br>{{ form.closure12.6.tag}}</center></td>
     </tr>
 </table><br><br>
-
-{{ form.closure13.label }}<br>
-<table style="table-layout: fixed; width: 100%;">
-    <tr>
-        <td><center>{{ form.closure13.0.choice_label }}<br>{{ form.closure13.0.tag}}</center></td>
-        <td><center><br>{{ form.closure13.1.tag}}</center></td>
-        <td><center><br>{{ form.closure13.2.tag}}</center></td>
-        <td><center><br>{{ form.closure13.3.tag}}</center></td>
-        <td><center><br>{{ form.closure13.4.tag}}</center></td>
-        <td><center><br>{{ form.closure13.5.tag}}</center></td>
-        <td><center>{{ form.closure13.6.choice_label }}<br>{{ form.closure13.6.tag}}</center></td>
-    </tr>
-</table><br><br>
-
-{{ form.closure14.label }}<br>
-<table style="table-layout: fixed; width: 100%;">
-    <tr>
-        <td><center>{{ form.closure14.0.choice_label }}<br>{{ form.closure14.0.tag}}</center></td>
-        <td><center><br>{{ form.closure14.1.tag}}</center></td>
-        <td><center><br>{{ form.closure14.2.tag}}</center></td>
-        <td><center><br>{{ form.closure14.3.tag}}</center></td>
-        <td><center><br>{{ form.closure14.4.tag}}</center></td>
-        <td><center><br>{{ form.closure14.5.tag}}</center></td>
-        <td><center>{{ form.closure14.6.choice_label }}<br>{{ form.closure14.6.tag}}</center></td>
-    </tr>
-</table><br><br>
-
 
     {% next_button %}
 {% endblock %}

@@ -234,7 +234,7 @@ class N6SPEvaluation(Page):
 
 class Post1Quality1(Page):
     form_model = 'player'
-    form_fields = ['closure1', 'closure2', 'closure3', 'closure4', 'closure5', 'closure6', 'closure7', 'closure8']
+    form_fields = ['closure1', 'closure2', 'closure3', 'closure4', 'closure5', 'closure6' ]
 
     def is_displayed(self):
         return self.player.id_in_group == 1
@@ -242,7 +242,7 @@ class Post1Quality1(Page):
 
 class Post1Quality2(Page):
     form_model = 'player'
-    form_fields = ['closure9', 'closure10', 'closure11', 'closure12', 'closure13', 'closure14']
+    form_fields = ['closure7', 'closure8', 'closure9', 'closure10', 'closure11', 'closure12']
 
     def is_displayed(self):
         return self.player.id_in_group == 1
@@ -271,7 +271,7 @@ class Post3image1(Page):
 
 class Post4factor(Page):
     form_model = 'player'
-    form_fields = ['factor1', 'factor2', 'factor3', 'factor4', 'factor5', 'factor6', 'factor7', 'factor8', 'factor9']
+    form_fields = ['factor1', 'factor2', 'factor3', 'factor4', 'factor5', 'factor6', 'factor7', 'factor8']
 
     def is_displayed(self):
         return self.player.id_in_group == 1
@@ -279,7 +279,7 @@ class Post4factor(Page):
 
 class Post5trust(Page):
     form_model = 'player'
-    form_fields = ['trust1', 'trust2', 'trust3', 'trust4']
+    form_fields = ['trust1', 'trust2', 'trust3']
 
     def is_displayed(self):
         return self.player.id_in_group == 1
@@ -287,7 +287,7 @@ class Post5trust(Page):
 
 class Post6oblig(Page):
     form_model = 'player'
-    form_fields = ['oblig1', 'oblig2', 'oblig3', 'oblig4', 'oblig5', 'oblig6', 'oblig7', 'oblig8']
+    form_fields = ['oblig1', 'oblig2', 'oblig3', 'oblig4', 'oblig5', 'oblig6', 'oblig7']
 
     def is_displayed(self):
         return self.player.id_in_group == 1
@@ -313,38 +313,18 @@ class Post9manvoluntarycheck(Page):
 
 class Post10volexp(Page):
     form_model = 'player'
-    form_fields = ['mandatory', 'voluntary']
-    def get_form_fields(self):
-        if self.group.reportingcondition == 'mandatory':
-            return ['mandatory']
-        else:
-            return ['voluntary']
+    form_fields = ['reason1', 'reason2', 'reason3', 'reason4', 'reason5']
+
 
 
 class Post11riskattitude1(Page):
     form_model = 'player'
-    form_fields = ['riskat1', 'riskat2', 'riskat3', 'riskat4', 'riskat5', 'riskat6']
-
-
-class Post11riskattitude2(Page):
-    form_model = 'player'
-    form_fields = ['riskat7', 'riskat8', 'riskat9', 'riskat10', 'riskat11']
+    form_fields = ['riskat1', 'riskat2', 'riskat3', 'riskat4', 'riskat5']
 
 
 class Post12optimism(Page):
     form_model = 'player'
-    form_fields = ['opt1', 'opt2', 'opt3', 'opt4', 'opt5', 'opt6']
-
-
-class Post13uncertainaversion1(Page):
-    form_model = 'player'
-    form_fields = ['unc1', 'unc2', 'unc3', 'unc4', 'unc5', 'unc6']
-
-
-class Post13uncertainaversion2(Page):
-    form_model = 'player'
-    form_fields = ['unc7', 'unc8', 'unc9', 'unc10', 'unc11', 'unc12']
-
+    form_fields = ['opt1', 'opt2', 'op3', 'unc1', 'unc2', 'unc3']
 
 class Post14gender(Page):
     form_model = 'player'
@@ -366,5 +346,4 @@ page_sequence = [M1IntroPage, M2IntroPage2, M3PlayerIntroPage, M4LocationChoice,
                  M11ComprehensionSurvey1, M11ComprehensionSurvey2, M12Round1, M13AfterRound1Game,
                  M14RiskEvent, M15ReportingScreen, WReport, N6SPEvaluation, M16PostExpQuest, Post1Quality1, Post1Quality2, Post2importance,
                  Post3image1, Post4factor, Post5trust, Post6oblig, Post7perf,
-                 Post8mansafetycheck, Post9manvoluntarycheck, Post10volexp, Post11riskattitude1, Post11riskattitude2,
-                 Post12optimism, Post13uncertainaversion1, Post13uncertainaversion2, Post14gender, Post15GenQuest, Results]
+                 Post8mansafetycheck, Post9manvoluntarycheck, Post10volexp, Post11riskattitude1,                  Post12optimism, Post14gender, Post15GenQuest, Results]

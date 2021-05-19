@@ -327,72 +327,63 @@ class Player(BasePlayer):
     # PostQuestionnaire
 
     closure1 = models.IntegerField(
-        label='I was interested in reporting all relevant risk information to the supervisor.',
-        choices=[[1, 'Strongly disagree'], [2, ''], [3, ''], [4, ''], [5, ''], [6, ''], [7, 'Strongly agree']],
-        widget=widgets.RadioSelectHorizontal
-    )
-    closure2 = models.IntegerField(
         label='I did not disclose all relevant risk information to the supervisor.',
         choices=[[1, 'Strongly disagree'], [2, ''], [3, ''], [4, ''], [5, ''], [6, ''], [7, 'Strongly agree']],
         widget=widgets.RadioSelectHorizontal
     )
-    closure3 = models.IntegerField(
+    closure2 = models.IntegerField(
         label='I did not devote much effort to reporting risks to the supervisor.',
         choices=[[1, 'Strongly disagree'], [2, ''], [3, ''], [4, ''], [5, ''], [6, ''], [7, 'Strongly agree']],
         widget=widgets.RadioSelectHorizontal
     )
-    closure4 = models.IntegerField(
+    closure3 = models.IntegerField(
         label='I honestly reported all the risk information that I had to the supervisor.',
         choices=[[1, 'Strongly disagree'], [2, ''], [3, ''], [4, ''], [5, ''], [6, ''], [7, 'Strongly agree']],
         widget=widgets.RadioSelectHorizontal
     )
-    closure5 = models.IntegerField(
+    closure4 = models.IntegerField(
         label='I reported the risk information that I had to the supervisor as objectively as possible.',
         choices=[[1, 'Strongly disagree'], [2, ''], [3, ''], [4, ''], [5, ''], [6, ''], [7, 'Strongly agree']],
         widget=widgets.RadioSelectHorizontal
     )
-    closure6 = models.IntegerField(
+    closure5 = models.IntegerField(
         label='I felt that my risk report was quite informative.',
         choices=[[1, 'Strongly disagree'], [2, ''], [3, ''], [4, ''], [5, ''], [6, ''], [7, 'Strongly agree']],
         widget=widgets.RadioSelectHorizontal
     )
-    closure7 = models.IntegerField(
-        label='I devoted my maximum effort to report useful information for the supervisor.',
-        choices=[[1, 'Strongly disagree'], [2, ''], [3, ''], [4, ''], [5, ''], [6, ''], [7, 'Strongly agree']],
-        widget=widgets.RadioSelectHorizontal
-    )
-    closure8 = models.IntegerField(
+    closure6 = models.IntegerField(
         label='I did not give an accurate account of the risks that I faced to the supervisor.',
         choices=[[1, 'Strongly disagree'], [2, ''], [3, ''], [4, ''], [5, ''], [6, ''], [7, 'Strongly agree']],
         widget=widgets.RadioSelectHorizontal
     )
-    closure9 = models.IntegerField(
+    closure7 = models.IntegerField(
         label='I withheld some unfavorable information from the supervisor.',
         choices=[[1, 'Strongly disagree'], [2, ''], [3, ''], [4, ''], [5, ''], [6, ''], [7, 'Strongly agree']],
         widget=widgets.RadioSelectHorizontal
     )
-    closure10 = models.IntegerField(
+    closure8 = models.IntegerField(
         label='I focused on favorable information more than unfavorable information in my risk report.',
         choices=[[1, 'Strongly disagree'], [2, ''], [3, ''], [4, ''], [5, ''], [6, ''], [7, 'Strongly agree']],
         widget=widgets.RadioSelectHorizontal
     )
-    closure11 = models.IntegerField(
+    closure9 = models.IntegerField(
         label='I tried to cover up some unfavorable news by emphasizing the favorable information.',
         choices=[[1, 'Strongly disagree'], [2, ''], [3, ''], [4, ''], [5, ''], [6, ''], [7, 'Strongly agree']],
         widget=widgets.RadioSelectHorizontal
     )
-    closure12 = models.IntegerField(
+    closure10 = models.IntegerField(
         label='I did not include information that had negative implications for my performance evaluation.',
         choices=[[1, 'Strongly disagree'], [2, ''], [3, ''], [4, ''], [5, ''], [6, ''], [7, 'Strongly agree']],
         widget=widgets.RadioSelectHorizontal
     )
-    closure13 = models.IntegerField(
+    closure11 = models.IntegerField(
         label='I felt responsible to inform the supervisor about the risks I was exposed to.',
         choices=[[1, 'Strongly disagree'], [2, ''], [3, ''], [4, ''], [5, ''], [6, ''], [7, 'Strongly agree']],
         widget=widgets.RadioSelectHorizontal
     )
-    closure14 = models.IntegerField(
-        label='It was my responsibility to provide the supervisor with the detailed information about the potential risks which I faced.',
+    closure12 = models.IntegerField(
+        label='It was my responsibility to provide the supervisor with '
+              'the detailed information about the potential risks which I faced.',
         choices=[[1, 'Strongly disagree'], [2, ''], [3, ''], [4, ''], [5, ''], [6, ''], [7, 'Strongly agree']],
         widget=widgets.RadioSelectHorizontal
     )
@@ -521,28 +512,17 @@ class Player(BasePlayer):
         choices=[[1, 'Little'], [2, ''], [3, ''], [4, ''], [5, ''], [6, ''], [7, 'Very much']],
         widget=widgets.RadioSelectHorizontal
     )
-    factor9 = models.IntegerField(
-        label='..show that you are in control of your region?',
-        choices=[[1, 'Little'], [2, ''], [3, ''], [4, ''], [5, ''], [6, ''], [7, 'Very much']],
-        widget=widgets.RadioSelectHorizontal
-    )
     trust1 = models.IntegerField(
-        label='I felt that the company trusts my capability and intention to report risks.',
+        label='I felt that the company trusts me to report risks.',
         choices=[[1, 'Strongly disagree'], [2, ''], [3, ''], [4, ''], [5, ''], [6, ''], [7, 'Strongly agree']],
         widget=widgets.RadioSelectHorizontal
     )
     trust2 = models.IntegerField(
-        label='I felt that the company has confidence in the employees’ intentions '
-              'to disclose potential risks to sales performance if necessary.',
-        choices=[[1, 'Strongly disagree'], [2, ''], [3, ''], [4, ''], [5, ''], [6, ''], [7, 'Strongly agree']],
-        widget=widgets.RadioSelectHorizontal
-    )
-    trust3 = models.IntegerField(
         label='The firm risk reporting policy showed that the firm does not trust its employees.',
         choices=[[1, 'Strongly disagree'], [2, ''], [3, ''], [4, ''], [5, ''], [6, ''], [7, 'Strongly agree']],
         widget=widgets.RadioSelectHorizontal
     )
-    trust4 = models.IntegerField(
+    trust3 = models.IntegerField(
         label='The firm risk reporting policy was a clear sign of distrust in employees.',
         choices=[[1, 'Strongly disagree'], [2, ''], [3, ''], [4, ''], [5, ''], [6, ''], [7, 'Strongly agree']],
         widget=widgets.RadioSelectHorizontal
@@ -553,36 +533,31 @@ class Player(BasePlayer):
         widget=widgets.RadioSelectHorizontal
     )
     oblig2 = models.IntegerField(
-        label='I felt constrained to report the risks that I faced to the supervisor.',
-        choices=[[1, 'Strongly disagree'], [2, ''], [3, ''], [4, ''], [5, ''], [6, ''], [7, 'Strongly agree']],
-        widget=widgets.RadioSelectHorizontal
-    )
-    oblig3 = models.IntegerField(
         label='I felt that I can easily share the risks to my sales performance to the supervisor.',
         choices=[[1, 'Strongly disagree'], [2, ''], [3, ''], [4, ''], [5, ''], [6, ''], [7, 'Strongly agree']],
         widget=widgets.RadioSelectHorizontal
     )
-    oblig4 = models.IntegerField(
+    oblig3 = models.IntegerField(
         label='I felt that I can openly share unfavorable risk information with the supervisor without being punished.',
         choices=[[1, 'Strongly disagree'], [2, ''], [3, ''], [4, ''], [5, ''], [6, ''], [7, 'Strongly agree']],
         widget=widgets.RadioSelectHorizontal
     )
-    oblig5 = models.IntegerField(
+    oblig4 = models.IntegerField(
         label='I felt that the risks I faced were because of the decision that I had taken. ',
         choices=[[1, 'Strongly disagree'], [2, ''], [3, ''], [4, ''], [5, ''], [6, ''], [7, 'Strongly agree']],
         widget=widgets.RadioSelectHorizontal
     )
-    oblig6 = models.IntegerField(
+    oblig5 = models.IntegerField(
         label='I felt that I should manage the risks that I faced on my own. ',
         choices=[[1, 'Strongly disagree'], [2, ''], [3, ''], [4, ''], [5, ''], [6, ''], [7, 'Strongly agree']],
         widget=widgets.RadioSelectHorizontal
     )
-    oblig7 = models.IntegerField(
+    oblig6 = models.IntegerField(
         label='I felt that the risks were not so severe for the company. ',
         choices=[[1, 'Strongly disagree'], [2, ''], [3, ''], [4, ''], [5, ''], [6, ''], [7, 'Strongly agree']],
         widget=widgets.RadioSelectHorizontal
     )
-    oblig8 = models.IntegerField(
+    oblig7 = models.IntegerField(
         label='I felt that the potential impacts of a new competitor on the sales performance is serious.',
         choices=[[1, 'Strongly disagree'], [2, ''], [3, ''], [4, ''], [5, ''], [6, ''], [7, 'Strongly agree']],
         widget=widgets.RadioSelectHorizontal
@@ -649,11 +624,30 @@ class Player(BasePlayer):
         choices=[[1, 'Very inaccurate'], [2, ''], [3, ''], [4, ''], [5, ''], [6, ''], [7, 'Very accurate']],
         widget=widgets.RadioSelectHorizontal
     )
-    mandatory = models.StringField(
-        label='Why do you think your company chose a mandatory risk reporting policy?',
+    reason1 = models.IntegerField(
+        label='To encourage honesty and trust.',
+        choices=[[1, 'Strongly disagree'], [2, ''], [3, ''], [4, ''], [5, ''], [6, ''], [7, 'Strongly agree']],
+        widget=widgets.RadioSelectHorizontal
     )
-    voluntary = models.StringField(
-        label='Why do you think your company chose a voluntary risk reporting policy?',
+    reason2 = models.IntegerField(
+        label='To facilitate timely communication of risk information.',
+        choices=[[1, 'Strongly disagree'], [2, ''], [3, ''], [4, ''], [5, ''], [6, ''], [7, 'Strongly agree']],
+        widget=widgets.RadioSelectHorizontal
+    )
+    reason3 = models.IntegerField(
+        label='To collect important risk information and manage them at the firm level.',
+        choices=[[1, 'Strongly disagree'], [2, ''], [3, ''], [4, ''], [5, ''], [6, ''], [7, 'Strongly agree']],
+        widget=widgets.RadioSelectHorizontal
+    )
+    reason4 = models.IntegerField(
+        label='To fit the culture of the company.',
+        choices=[[1, 'Strongly disagree'], [2, ''], [3, ''], [4, ''], [5, ''], [6, ''], [7, 'Strongly agree']],
+        widget=widgets.RadioSelectHorizontal
+    )
+    reason5 = models.IntegerField(
+        label='To evaluate the decisions of the managers.',
+        choices=[[1, 'Strongly disagree'], [2, ''], [3, ''], [4, ''], [5, ''], [6, ''], [7, 'Strongly agree']],
+        widget=widgets.RadioSelectHorizontal
     )
     riskat1 = models.IntegerField(
         label='I can be rather incautious and take big risks.',
@@ -666,47 +660,17 @@ class Player(BasePlayer):
         widget=widgets.RadioSelectHorizontal
     )
     riskat3 = models.IntegerField(
-        label='I think that I am often less cautious than people in general.',
-        choices=[[1, 'Strongly disagree'], [2, ''], [3, ''], [4, ''], [5, ''], [6, ''], [7, 'Strongly agree']],
-        widget=widgets.RadioSelectHorizontal
-    )
-    riskat4 = models.IntegerField(
-        label='I am a bit of a coward.',
-        choices=[[1, 'Strongly disagree'], [2, ''], [3, ''], [4, ''], [5, ''], [6, ''], [7, 'Strongly agree']],
-        widget=widgets.RadioSelectHorizontal
-    )
-    riskat5 = models.IntegerField(
-        label='I am rather adventurous and like to take chances in various situations.',
-        choices=[[1, 'Strongly disagree'], [2, ''], [3, ''], [4, ''], [5, ''], [6, ''], [7, 'Strongly agree']],
-        widget=widgets.RadioSelectHorizontal
-    )
-    riskat6 = models.IntegerField(
         label='I am always very cautious and think of safety first.',
         choices=[[1, 'Strongly disagree'], [2, ''], [3, ''], [4, ''], [5, ''], [6, ''], [7, 'Strongly agree']],
         widget=widgets.RadioSelectHorizontal
     )
-    riskat7 = models.IntegerField(
-        label='I have never deliberately taken any big risks that I have been able to avoid in important situations.',
-        choices=[[1, 'Strongly disagree'], [2, ''], [3, ''], [4, ''], [5, ''], [6, ''], [7, 'Strongly agree']],
-        widget=widgets.RadioSelectHorizontal
-    )
-    riskat8 = models.IntegerField(
-        label='I never take any risks that I can avoid when it comes to important things.',
-        choices=[[1, 'Strongly disagree'], [2, ''], [3, ''], [4, ''], [5, ''], [6, ''], [7, 'Strongly agree']],
-        widget=widgets.RadioSelectHorizontal
-    )
-    riskat9 = models.IntegerField(
+    riskat4 = models.IntegerField(
         label='I always try to avoid situations involving a risk of getting into trouble with other people.',
         choices=[[1, 'Strongly disagree'], [2, ''], [3, ''], [4, ''], [5, ''], [6, ''], [7, 'Strongly agree']],
         widget=widgets.RadioSelectHorizontal
     )
-    riskat10 = models.IntegerField(
+    riskat5 = models.IntegerField(
         label='I like to avoid doing things for which I run the risk of being criticized and blamed if I fail.',
-        choices=[[1, 'Strongly disagree'], [2, ''], [3, ''], [4, ''], [5, ''], [6, ''], [7, 'Strongly agree']],
-        widget=widgets.RadioSelectHorizontal
-    )
-    riskat11 = models.IntegerField(
-        label='I think I am often rather bold and fearless in my actions.',
         choices=[[1, 'Strongly disagree'], [2, ''], [3, ''], [4, ''], [5, ''], [6, ''], [7, 'Strongly agree']],
         widget=widgets.RadioSelectHorizontal
     )
@@ -716,26 +680,11 @@ class Player(BasePlayer):
         widget=widgets.RadioSelectHorizontal
     )
     opt2 = models.IntegerField(
-        label='If something can go wrong for me, it will.',
-        choices=[[1, 'Strongly disagree'], [2, ''], [3, ''], [4, ''], [5, ''], [6, ''], [7, 'Strongly agree']],
-        widget=widgets.RadioSelectHorizontal
-    )
-    opt3 = models.IntegerField(
-        label='I am always optimistic about my future.',
-        choices=[[1, 'Strongly disagree'], [2, ''], [3, ''], [4, ''], [5, ''], [6, ''], [7, 'Strongly agree']],
-        widget=widgets.RadioSelectHorizontal
-    )
-    opt4 = models.IntegerField(
-        label='I hardly ever expect things to go my way.',
-        choices=[[1, 'Strongly disagree'], [2, ''], [3, ''], [4, ''], [5, ''], [6, ''], [7, 'Strongly agree']],
-        widget=widgets.RadioSelectHorizontal
-    )
-    opt5 = models.IntegerField(
         label='I rarely count on good things happening to me.',
         choices=[[1, 'Strongly disagree'], [2, ''], [3, ''], [4, ''], [5, ''], [6, ''], [7, 'Strongly agree']],
         widget=widgets.RadioSelectHorizontal
     )
-    opt6 = models.IntegerField(
+    opt3 = models.IntegerField(
         label='Overall, I expect more good things to happen to me than bad.',
         choices=[[1, 'Strongly disagree'], [2, ''], [3, ''], [4, ''], [5, ''], [6, ''], [7, 'Strongly agree']],
         widget=widgets.RadioSelectHorizontal
@@ -751,52 +700,7 @@ class Player(BasePlayer):
         widget=widgets.RadioSelectHorizontal
     )
     unc3 = models.IntegerField(
-        label='One should always look ahead so as to avoid surprises.',
-        choices=[[1, 'Strongly disagree'], [2, ''], [3, ''], [4, ''], [5, ''], [6, ''], [7, 'Strongly agree']],
-        widget=widgets.RadioSelectHorizontal
-    )
-    unc4 = models.IntegerField(
-        label='A small, unforeseen event can spoil everything, even with the best of planning.',
-        choices=[[1, 'Strongly disagree'], [2, ''], [3, ''], [4, ''], [5, ''], [6, ''], [7, 'Strongly agree']],
-        widget=widgets.RadioSelectHorizontal
-    )
-    unc5 = models.IntegerField(
-        label='I always want to know what the future has in store for me.',
-        choices=[[1, 'Strongly disagree'], [2, ''], [3, ''], [4, ''], [5, ''], [6, ''], [7, 'Strongly agree']],
-        widget=widgets.RadioSelectHorizontal
-    )
-    unc6 = models.IntegerField(
         label='I cannot stand being taken by surprises.',
-        choices=[[1, 'Strongly disagree'], [2, ''], [3, ''], [4, ''], [5, ''], [6, ''], [7, 'Strongly agree']],
-        widget=widgets.RadioSelectHorizontal
-    )
-    unc7 = models.IntegerField(
-        label='I should be able to organize everything in advance.',
-        choices=[[1, 'Strongly disagree'], [2, ''], [3, ''], [4, ''], [5, ''], [6, ''], [7, 'Strongly agree']],
-        widget=widgets.RadioSelectHorizontal
-    )
-    unc8 = models.IntegerField(
-        label='Uncertainty keeps me from living a full life.',
-        choices=[[1, 'Strongly disagree'], [2, ''], [3, ''], [4, ''], [5, ''], [6, ''], [7, 'Strongly agree']],
-        widget=widgets.RadioSelectHorizontal
-    )
-    unc9 = models.IntegerField(
-        label='When it is time to act, uncertainty paralyses me.',
-        choices=[[1, 'Strongly disagree'], [2, ''], [3, ''], [4, ''], [5, ''], [6, ''], [7, 'Strongly agree']],
-        widget=widgets.RadioSelectHorizontal
-    )
-    unc10 = models.IntegerField(
-        label='When I am uncertain, I cannot function well.',
-        choices=[[1, 'Strongly disagree'], [2, ''], [3, ''], [4, ''], [5, ''], [6, ''], [7, 'Strongly agree']],
-        widget=widgets.RadioSelectHorizontal
-    )
-    unc11 = models.IntegerField(
-        label='The smallest doubt can stop me from acting.',
-        choices=[[1, 'Strongly disagree'], [2, ''], [3, ''], [4, ''], [5, ''], [6, ''], [7, 'Strongly agree']],
-        widget=widgets.RadioSelectHorizontal
-    )
-    unc12 = models.IntegerField(
-        label='I must get away from all uncertain situations.',
         choices=[[1, 'Strongly disagree'], [2, ''], [3, ''], [4, ''], [5, ''], [6, ''], [7, 'Strongly agree']],
         widget=widgets.RadioSelectHorizontal
     )

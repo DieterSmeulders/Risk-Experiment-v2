@@ -6,15 +6,88 @@
 {% endblock %}
 
 {% block content %}
+Why do you think your company has chosen this specific risk reporting policy?
 
 
-{% if group.reportingcondition == 'voluntary' %}
-{% formfield player.voluntary %}
-{% endif %}
+{{ form.reason1.label }}<br>
+<table style="table-layout: fixed; width: 100%;">
+    <tr>
+        <td><center>{{ form.reason1.0.choice_label }}<br>{{ form.reason1.0.tag}}</center></td>
+        <td><center><br>{{ form.reason1.1.tag}}</center></td>
+        <td><center><br>{{ form.reason1.2.tag}}</center></td>
+        <td><center><br>{{ form.reason1.3.tag}}</center></td>
+        <td><center><br>{{ form.reason1.4.tag}}</center></td>
+        <td><center><br>{{ form.reason1.5.tag}}</center></td>
+        <td><center>{{ form.reason1.6.choice_label }}<br>{{ form.reason1.6.tag}}</center></td>
+    </tr>
+</table><br><br>
 
-{% if group.reportingcondition == 'mandatory' %}
-{% formfield player.mandatory %}
-{% endif %}
+{{ form.reason1.label }}<br>
+<table style="table-layout: fixed; width: 100%;">
+    <tr>
+        <td><center>{{ form.reason1.0.choice_label }}<br>{{ form.reason1.0.tag}}</center></td>
+        <td><center><br>{{ form.reason1.1.tag}}</center></td>
+        <td><center><br>{{ form.reason1.2.tag}}</center></td>
+        <td><center><br>{{ form.reason1.3.tag}}</center></td>
+        <td><center><br>{{ form.reason1.4.tag}}</center></td>
+        <td><center><br>{{ form.reason1.5.tag}}</center></td>
+        <td><center>{{ form.reason1.6.choice_label }}<br>{{ form.reason1.6.tag}}</center></td>
+    </tr>
+</table><br><br>
+
+{{ form.reason2.label }}<br>
+<table style="table-layout: fixed; width: 100%;">
+    <tr>
+        <td><center>{{ form.reason2.0.choice_label }}<br>{{ form.reason2.0.tag}}</center></td>
+        <td><center><br>{{ form.reason2.1.tag}}</center></td>
+        <td><center><br>{{ form.reason2.2.tag}}</center></td>
+        <td><center><br>{{ form.reason2.3.tag}}</center></td>
+        <td><center><br>{{ form.reason2.4.tag}}</center></td>
+        <td><center><br>{{ form.reason2.5.tag}}</center></td>
+        <td><center>{{ form.reason2.6.choice_label }}<br>{{ form.reason2.6.tag}}</center></td>
+    </tr>
+</table><br><br>
+
+{{ form.reason1.label }}<br>
+<table style="table-layout: fixed; width: 100%;">
+    <tr>
+        <td><center>{{ form.reason3.0.choice_label }}<br>{{ form.reason3.0.tag}}</center></td>
+        <td><center><br>{{ form.reason3.1.tag}}</center></td>
+        <td><center><br>{{ form.reason3.2.tag}}</center></td>
+        <td><center><br>{{ form.reason3.3.tag}}</center></td>
+        <td><center><br>{{ form.reason3.4.tag}}</center></td>
+        <td><center><br>{{ form.reason3.5.tag}}</center></td>
+        <td><center>{{ form.reason3.6.choice_label }}<br>{{ form.reason3.6.tag}}</center></td>
+    </tr>
+</table><br><br>
+
+{{ form.reason4.label }}<br>
+<table style="table-layout: fixed; width: 100%;">
+    <tr>
+        <td><center>{{ form.reason4.0.choice_label }}<br>{{ form.reason4.0.tag}}</center></td>
+        <td><center><br>{{ form.reason4.1.tag}}</center></td>
+        <td><center><br>{{ form.reason4.2.tag}}</center></td>
+        <td><center><br>{{ form.reason4.3.tag}}</center></td>
+        <td><center><br>{{ form.reason4.4.tag}}</center></td>
+        <td><center><br>{{ form.reason4.5.tag}}</center></td>
+        <td><center>{{ form.reason4.6.choice_label }}<br>{{ form.reason4.6.tag}}</center></td>
+    </tr>
+</table><br><br>
+
+{{ form.reason5.label }}<br>
+<table style="table-layout: fixed; width: 100%;">
+    <tr>
+        <td><center>{{ form.reason5.0.choice_label }}<br>{{ form.reason5.0.tag}}</center></td>
+        <td><center><br>{{ form.reason5.1.tag}}</center></td>
+        <td><center><br>{{ form.reason5.2.tag}}</center></td>
+        <td><center><br>{{ form.reason5.3.tag}}</center></td>
+        <td><center><br>{{ form.reason5.4.tag}}</center></td>
+        <td><center><br>{{ form.reason5.5.tag}}</center></td>
+        <td><center>{{ form.reason5.6.choice_label }}<br>{{ form.reason5.6.tag}}</center></td>
+    </tr>
+</table><br><br>
+
+
 
     {% next_button %}
 
