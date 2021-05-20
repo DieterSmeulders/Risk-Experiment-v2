@@ -21,7 +21,25 @@ class M3PlayerIntroPage(Page):
     pass
 
 
-class M4LocationChoice(Page):
+class M3Shop(Page):
+    live_method = "handle_message"
+
+    def vars_for_template(self):
+        return dict(ingredients=INGREDIENTS, menu=RECIPES)
+
+    def js_vars(self):
+        return dict(duration=180, menu=RECIPES, images=IMAGES)
+
+    def is_displayed(self):
+        return self.player.id_in_group == 1
+
+
+class M4LocationChoice1(Page):
+    def is_displayed(self):
+        return self.player.id_in_group == 1
+
+
+class M4LocationChoice2(Page):
     form_model = 'player'
 
     def get_form_fields(self):
@@ -58,25 +76,8 @@ class SPLocation2(Page):
 class M6CultureCondition(Page):
     pass
 
-class M7GameIntro(Page):
+class M7procedure(Page):
     pass
-
-class M8SandwichIntro(Page):
-    def is_displayed(self):
-        return self.player.id_in_group == 1
-
-
-class M9Shop(Page):
-    live_method = "handle_message"
-
-    def vars_for_template(self):
-        return dict(ingredients=INGREDIENTS, menu=RECIPES)
-
-    def js_vars(self):
-        return dict(duration=60, menu=RECIPES, images=IMAGES)
-
-    def is_displayed(self):
-        return self.player.id_in_group == 1
 
 
 class M10AfterPractice(Page):
@@ -347,8 +348,9 @@ class Results(Page):
         return dict(Evaluation=self.group.get_player_by_id(2).get_Evaluation_display(), BasePay=Constants.BasePay,Code=self.participant.code)
 
 
-page_sequence = [M1IntroPage, M2IntroPage2, M3PlayerIntroPage, M4LocationChoice, M5LocationApproval, WRAlloc, N1SPLocation,
-                 M6CultureCondition, M7GameIntro, M8SandwichIntro, M9Shop, M10AfterPractice,
+page_sequence = [M1IntroPage, M2IntroPage2, M3PlayerIntroPage, M3Shop, M4LocationChoice1, M4LocationChoice2,
+                 M5LocationApproval, WRAlloc, N1SPLocation,
+                 M6CultureCondition, M7procedure, M10AfterPractice,
                  M11ComprehensionSurvey1, M11ComprehensionSurvey2, M12Round1, M13AfterRound1Game,
                  M14RiskEvent, M15ReportingScreen, WReport, N6SPEvaluation, M16PostExpQuest, Post1Quality1, Post1Quality2, Post2importance,
                  Post3image1, Post4factor, Post5trust, Post6oblig, Post7perf,

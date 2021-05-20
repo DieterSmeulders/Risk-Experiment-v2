@@ -8,19 +8,48 @@
 {% block content %}
 
 {% if player.id_in_group == 1 %}
-You have been assigned to the role of a <u>regional manager</u>. You are randomly paired with a supervisor.<br><br>
-The company wants to open a new shop in your region. Two locations are selected as candidates for setting up a new shop. Given that you have more information about the region, the supervisor delegated the location decision to you. You will choose the best location based on the information collected about two locations in the region and inform the supervisor about your decision. Afterwards, the company will invest in the location you have chosen and you can start working in the new shop.<br><br>
+You have been assigned to the role of a <u>shop manager</u>. You are randomly paired with a supervisor.<br><br>
+
+Here, you can find the instructions about how to make sandwiches:<br><br>
+
+•	You will make sandwiches as they appear in the “order” window. Each sandwich needs to correspond to the recipe of the order received. <br><br>
+
+•	You can access to the recipe (ingredient list) of each sandwich using a drop-down “Menu” box on the right side of the screen.<br>
+
+•	You need to assemble the ingredients using the drop-down menus for the five different types of ingredients: bread, meats, cheese, vegetables, and condiments.<br>
+
+•	You can add each ingredient to your sandwich by clicking on “add” in front of each type of ingredient. If you make a mistake and you want to correct, you can remove the ingredients by clicking on “Remove ingredients”.<br><br>
+
+•	When you complete a sandwich, click on the “Finished” button. Once you click on the “Finished” button, you will send the sandwich for sale.<br>
+•	All sandwiches that you send for sale will be sold if they are <b>without errors</b>. If a sandwich that you make has an error, you will receive an error message and be asked to modify your sandwich. Make as many sandwiches as you can, but do so with as little errors as possible.<br><br>
+
+
+Your sales revenue is important for the company. Sales revenue is calculated as the number of sandwiches you make multiplied by the selling price of each sandwich.<br><br>
+
+
+              <center><b>Sales revenue = Number of sandwiches made * Selling price of each sandwich</b></center><br><br><br>
+
+
+Once you have carefully read this instruction, click “next” to get familiar with the task for 3 minute. This is a practice session, and thus it has no implications for your performance evaluation. <br><br>
+
+
+
+
+
+
+
+
 
 {% endif%}
 
 {% if player.id_in_group == 2 %}
-You have been assigned to the role of a <u>supervisor</u>. You are randomly paired with a regional manager. <br><br>
+You have been assigned to the role of a <u>supervisor</u>. You are randomly paired with a shop manager. <br><br>
 
 
 The company wants to open a new shop in the region. <u>Two locations are selected as candidates for setting up a new shop </u>. Given that the regional manager has more knowledge about the region, you have delegated the location decision to the regional manager. <br><br>
 
-The regional manager will choose the best location in the region based on the information collected about the two locations in the region and inform you about her/his decision. Afterwards, the company will invest in the location selected and the regional manager can start working in the new shop. <br><br>
-Please wait to be informed about the regional manager's decision. In the meantime, you will receive some information about the company and further instructions about your task. <br><br>
+The shop manager will choose the best location in the region based on the information collected about the two locations and inform you about her/his decision. Afterwards, the company will invest in the location selected and the shop manager can start working in the new shop. <br><br>
+Please wait to be informed about the shop manager's decision. In the meantime, you will receive some information about the company and further instructions about your task. <br><br>
 {% endif%}
 
     {% next_button %}

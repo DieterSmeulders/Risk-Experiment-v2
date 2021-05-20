@@ -1,0 +1,50 @@
+{% extends "global/Page.html" %}
+{% load otree static %}
+
+{% block title %}
+
+{% endblock %}
+
+{% block content %}
+Here you can find the procedure for the next steps:<br><br>
+
+{% if player.id_in_group == 1 %}
+1.	<b>Making sandwiches</b>: You will have 5 minutes to make as many sandwiches as you can.  Your sales revenue is calculated as the number of sandwiches you make multiplied by the selling price of each sandwich.<br>
+The sales revenue is important for the company.<br><br>
+
+2.	<b>Receiving the local market survey</b>: once the time is over, you will receive a local market survey. This survey provides local insights into the potential risks to the sales revenue. This survey is available ONLY to you, not to the supervisor.<br><br>
+
+3.	<b>Risk reporting</b>: {% if group.reportingcondition == 'mandatory' %} The company has a <b> mandatory risk reporting policy</b>, that is, you are required to report the risks (if any) that could impact the sales revenue of your shop going forward. {% else %}The company has a <b>voluntary risk reporting policy</b>, that is, you can, if you wish, report the risks (if any) that could impact the sales revenue of your shop going forward. {% endif %}<b>
+    The supervisor will receive your risk report (if any) and consider it for risk management purposes.<br><br>
+
+4.	<b>Performance evaluation</b>: the supervisor will rate your performance after receiving your sales revenue and risk report. She/he will rate your performance in a range from 1 (Very poor) to 5 (Excellent).<br>
+    <img src="{% static 'global/Evaluation.jpg' %}"/><br><br>
+
+
+You will receive 5 euros for completing the task irrespective of your performance. <br><br>
+{% endif%}
+
+
+{% if player.id_in_group == 2 %}
+1.   The shop manager has 5 minutes to make sandwiches. The shop manager’s sales revenue is calculated as the number of sandwiches she/he makes multiplied by the selling price of each sandwich, which is about 1 euro. <br>
+The sales performance is important for the company.<br><br>
+
+                  <center><b>Sales performance = Number of sandwiches made * selling price of each sandwich</b></center><br><br><br>
+
+
+2. After the time is over, the shop manager will receive a local market survey. This survey provides local insights into the potential risks to the sales revenue. This survey is available ONLY to the shop manager, not to you. <br><br>
+{% if group.reportingcondition == 'mandatory' %} The company has a <b> mandatory risk reporting policy</b>, that is, the shop manager is required to report the risks (if any) that could impact the sales revenue of the shop going forward. {% else %}The company has a <b>voluntary risk reporting policy</b>, that is, the shop manager can, if she/he wishes, report the risks (if any) that could impact the sales revenue of the shop going forward. {% endif %}<br><br>
+
+
+3.   You will receive the risk report of the shop manager (if any). You will also be informed about the shop manager’s sales revenue. Then, you will be asked to rate the performance of the shop manager in a range from 1 (Very poor) to 5 (Excellent).<br>
+    <img src="{% static 'global/Evaluation.jpg' %}"/><br><br>
+
+You do not have access to the local market survey and thus cannot validate the risk report of the shop manager. <br>
+
+You will receive 5 euros for completing the task irrespective of your evaluation. <br><br>
+
+{% endif%}
+
+{% next_button %}
+
+{% endblock %}

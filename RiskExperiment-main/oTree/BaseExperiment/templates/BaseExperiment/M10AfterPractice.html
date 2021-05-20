@@ -4,15 +4,16 @@
 
 {% block content %}
 
-The practice session is over!<br><br>
 
-The company has now opened a shop in the location that you have chosen and you are ready to begin making sandwiches in the new shop.<br><br>
+
+The company has now opened a shop in the location {% if northernlocation == 1 %} A {% else %} B {% endif %} that you have chosen and you are ready to begin making sandwiches in the shop.<br><br>
 
 Get ready to start!<br>
-You have 5 minutes to make as many sandwiches as you can. Your sales performance is calculated as the number of sandwiches you make multiplied by the selling price of each sandwich, which is <b>about
-    {{ BasePrice }}.</b><br><br>
+You have 5 minutes to make as many sandwiches as you can. Your revenue performance is calculated as the number of sandwiches you make multiplied by the selling price of each sandwich.<br><br>
 
-Before you start, please answer a few comprehension questions to ensure that you fully understand the instructions.<br><br>
+The current selling price in this location is <b>about {{ BasePrice }} euro.</b><br><br>
+
+Before you start, please answer a few comprehension questions to ensure that you have fully understood the instructions.<br><br>
 
     {% next_button %}
 

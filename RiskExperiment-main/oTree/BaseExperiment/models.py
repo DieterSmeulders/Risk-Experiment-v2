@@ -244,42 +244,43 @@ class Player(BasePlayer):
     )
     Q1 = models.IntegerField(
         label='1. What is your role?',
-        choices=[[1, 'Regional manager'], [2, 'Supervisor']],
+        choices=[[1, 'shop manager'], [2, 'Supervisor']],
         widget=widgets.RadioSelectHorizontal
     )
     Q2 = models.IntegerField(
         label='2. Who has access to the local market survey reports in the region?',
-        choices=[[1, 'Only the regional manager'], [2, 'Only the supervisor'],
-                 [3, 'Both the regional manager and the supervisor']],
+        choices=[[1, 'Only the shop manager'], [2, 'Only the supervisor'],
+                 [3, 'Both the shop manager and the supervisor']],
         widget=widgets.RadioSelectHorizontal
     )
     Q3 = models.IntegerField(
-        label='3. How much time does the regional manager have to make sandwiches?',
+        label='3. How much time does the shop manager have to make sandwiches?',
         choices=[[1, '10 minutes'], [2, '5 minutes']],
         widget=widgets.RadioSelectHorizontal
     )
     Q4 = models.IntegerField(
-        label='4. What is the key responsibility of the regional manager?',
-        choices=[[1, 'I do not know.'], [2, 'Increasing the sales performance in the region']],
+        label='4. What will the supervisor do?',
+        choices=[[1, 'I do not know.'], [2, 'The supervisor will rate the performance of the shop manager '
+                                            'based on his/her decision making and sales revenue '
+                                            'in a range from 1 (Very poor) to 5 (Excellent)']],
         widget=widgets.RadioSelectHorizontal
     )
     Q5 = models.IntegerField(
-        label='5. How is the sales performance of the regional manager computed?',
-        choices=[[1, 'Sales performance is the number of clients attracted.'],
-                 [2, 'Sales performance is the number of sandwiches made.'],
-                 [3, 'Sales performance is the multiplication of the number of sandwiches made '
-                     'and the selling price of each sandwich in the region.'
-                     'The current selling price is 1 EUR.']],
+        label='5. How is the sales revenue of the shop computed?',
+        choices=[[1, 'Sales revenue is the number of clients attracted.'],
+                 [2, 'Sales revenue is the number of sandwiches made.'],
+                 [3, 'Sales revenue is the product of the number of sandwiches made '
+                     'and the selling price of each sandwich. The current selling price in this location is about 1 euro.']],
         widget=widgets.RadioSelectHorizontal
     )
     Q6 = models.IntegerField(
         label='6. What is the risk reporting policy at AC Company?',
         choices=[[1, 'The company has a mandatory risk reporting policy: '
-                     'the regional manager is required to report '
-                     'the ongoing risks that could impact her/his sales performance.'],
+                     'the shop manager is required to report '
+                     'the risks that could impact his/her sales revenue.'],
                  [2, 'The company has a voluntary risk reporting policy: '
-                     'the regional manager can report the ongoing risks '
-                     'that could impact her/his sales performance if she/he wishes.']],
+                     'the shop manager can report the risks '
+                     'that could impact her/his sales revenue if she/he wishes.']],
         widget=widgets.RadioSelectHorizontal
     )
     Q7 = models.IntegerField(
@@ -302,24 +303,24 @@ class Player(BasePlayer):
         widget=widgets.RadioSelectHorizontal
     )
     NReportedPerf = models.IntegerField(
-        label='Please report your sales performance below.',
+        label='Please report your sales revenue below.',
         min=0, max=30)
 
     NReportedRiskManD = models.LongStringField(
-        label='You are now obliged to report on risks identified in your region (if any) here.'
+        label='You are now obliged to report on risks to your sales revenue (if any) here.'
               'Note that you cannot leave this box blank. '
               'In case you identified no risk, say so.'
     )
 
     NReportedRiskVol = models.LongStringField(
-        label='You are now allowed to report on risks identified in your region (if any) here.'
+        label='You are now allowed to report on risks to your sales revenue (if any) here.'
               'Note that you can leave this box blank and the supervisor will not receive your report.'
               'In case you identified no risk, you can say so, if you wish.',
         blank=True
     )
 
     Evaluation = models.IntegerField(
-        label='Please rate the performance of the regional manager.',
+        label='Please rate the performance of the shop manager.',
         choices=[[1, 'Very Poor'], [2, 'Poor'], [3, 'Average'], [4, 'Good'], [5, 'Excellent']],
         widget=widgets.RadioSelectHorizontal
     )
@@ -388,32 +389,32 @@ class Player(BasePlayer):
         widget=widgets.RadioSelectHorizontal
     )
     S1 = models.IntegerField(
-        label='How informative the risk report of the regional manager was?',
+        label='How informative the risk report of the shop manager was?',
         choices=[[1, 'Little'], [2, ''], [3, ''], [4, ''], [5, ''], [6, ''], [7, 'Very much']],
         widget=widgets.RadioSelectHorizontal
     )
     S2 = models.IntegerField(
-        label='To what extent do you think the regional manager provided all relevant risk information to you?',
+        label='To what extent do you think the shop manager provided all relevant risk information to you?',
         choices=[[1, 'Little'], [2, ''], [3, ''], [4, ''], [5, ''], [6, ''], [7, 'Very much']],
         widget=widgets.RadioSelectHorizontal
     )
     S3 = models.IntegerField(
-        label='How detailed the risk report of the regional manager was?',
+        label='How detailed the risk report of the shop manager was?',
         choices=[[1, 'Little'], [2, ''], [3, ''], [4, ''], [5, ''], [6, ''], [7, 'Very much']],
         widget=widgets.RadioSelectHorizontal
     )
     S4 = models.IntegerField(
-        label='How useful did you find the risk report of the regional manager for the risk management purposes? ',
+        label='How useful did you find the risk report of the shop manager for the risk management purposes? ',
         choices=[[1, 'Little'], [2, ''], [3, ''], [4, ''], [5, ''], [6, ''], [7, 'Very much']],
         widget=widgets.RadioSelectHorizontal
     )
     S5 = models.IntegerField(
-        label='How accurate did you find the risk report of the regional manager?',
+        label='How accurate did you find the risk report of the shop manager?',
         choices=[[1, 'Little'], [2, ''], [3, ''], [4, ''], [5, ''], [6, ''], [7, 'Very much']],
         widget=widgets.RadioSelectHorizontal
     )
     S6 = models.IntegerField(
-        label='How severe did you find the potential risks to the shop given the report of the regional manager?',
+        label='How severe did you find the potential risks to the shop given the report of the shop manager?',
         choices=[[1, 'Little'], [2, ''], [3, ''], [4, ''], [5, ''], [6, ''], [7, 'Very much']],
         widget=widgets.RadioSelectHorizontal
     )
@@ -533,7 +534,7 @@ class Player(BasePlayer):
         widget=widgets.RadioSelectHorizontal
     )
     oblig2 = models.IntegerField(
-        label='I felt that I can easily share the risks to my sales performance to the supervisor.',
+        label='I felt that I can easily share the risks to my sales revenue to the supervisor.',
         choices=[[1, 'Strongly disagree'], [2, ''], [3, ''], [4, ''], [5, ''], [6, ''], [7, 'Strongly agree']],
         widget=widgets.RadioSelectHorizontal
     )
@@ -712,11 +713,9 @@ class Player(BasePlayer):
     age = models.IntegerField(
         label='How old are you?',
         min=17, max=80)
-
     WorkExperience = models.IntegerField(
         label='How many months of work experience do you have?',
         min=0, max=100)
-
     gen1 = models.IntegerField(
         label='My task was boring.',
         choices=[[1, 'Strongly disagree'], [2, ''], [3, ''], [4, ''], [5, 'Strongly agree']],

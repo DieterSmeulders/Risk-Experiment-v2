@@ -11,12 +11,14 @@
 
 {% block content %}
 
-Your time is over. <br><br>
-
-Your sales performance is {{player.revenue}} in dollars.<br><br>
+The time is over. <br><br>
 
 
-Click on “next” to receive the local market survey. This survey is available ONLY to you. The supervisor does NOT have access to it. <br><br>
+A local market survey was conducted in location {% if northernlocation == 1 %} A {% else %} B {% endif %}that you have chosen.<br>
+This survey is available ONLY to you. The supervisor does NOT have access to it. <br><br>
+
+Click on "Next" to get access to the survey. <br><br>
+
 {% next_button %}
 
 {% endblock %}
