@@ -332,10 +332,6 @@ class Post12optimism(Page):
     form_fields = ['opt1', 'opt2', 'opt3', 'unc1', 'unc2', 'unc3']
 
 
-class Post13uncertainaversion1(Page):
-    form_model = 'player'
-    form_fields = ['unc1', 'unc2', 'unc3']
-
 class Post14gender(Page):
     form_model = 'player'
     form_fields = ['gender', 'age', 'WorkExperience']
@@ -357,4 +353,4 @@ page_sequence = [M1IntroPage, M2IntroPage2, M3PlayerIntroPage, M4LocationChoice,
                  M14RiskEvent, M15ReportingScreen, WReport, N6SPEvaluation, M16PostExpQuest, Post1Quality1, Post1Quality2, Post2importance,
                  Post3image1, Post4factor, Post5trust, Post6oblig, Post7perf,
                  Post8mansafetycheck, Post9manvoluntarycheck, Post10volexp, Post11riskattitude1,
-                 Post12optimism, Post13uncertainaversion1, Post14gender, Post15GenQuest, Results]
+                 Post12optimism, Post14gender, Post15GenQuest, Results]
