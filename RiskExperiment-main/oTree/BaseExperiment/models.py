@@ -244,7 +244,7 @@ class Player(BasePlayer):
     )
     Q1 = models.IntegerField(
         label='1. What is your role?',
-        choices=[[1, 'shop manager'], [2, 'Supervisor']],
+        choices=[[1, 'Shop manager'], [2, 'Supervisor']],
         widget=widgets.RadioSelectHorizontal
     )
     Q2 = models.IntegerField(
@@ -308,13 +308,13 @@ class Player(BasePlayer):
 
     NReportedRiskManD = models.LongStringField(
         label='You are now obliged to report on risks to your sales revenue (if any) here.'
-              'Note that you cannot leave this box blank. '
+              ' Note that you cannot leave this box blank. '
               'In case you identified no risk, say so.'
     )
 
     NReportedRiskVol = models.LongStringField(
         label='You are now allowed to report on risks to your sales revenue (if any) here.'
-              'Note that you can leave this box blank and the supervisor will not receive your report.'
+              ' Note that you can leave this box blank and the supervisor will not receive your report.'
               'In case you identified no risk, you can say so, if you wish.',
         blank=True
     )

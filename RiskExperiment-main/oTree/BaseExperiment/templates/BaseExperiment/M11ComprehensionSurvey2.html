@@ -7,12 +7,10 @@
 
 {% block content %}
 
-To ensure that you have fully understood the instructions, please answer the following questions. <br><br>
-
 {% formfields %}
 
 {% if player.id_in_group == 1 %}
-Please make sure that you have understood the instructions. Then click on “next” to start making sandwiches. <b>You have 5 minutes</b>. <br><br>
+Please make sure that you have understood the instructions. Then click on “next” to start working in the shop. You have 5 minutes. <br><br>
 {% endif%}
 {% if player.id_in_group == 2 %}
 Please make sure that you have understood the instructions. Please wait while the shop manager is completing the sandwich making task. This will take about 8 minutes. <br><br>

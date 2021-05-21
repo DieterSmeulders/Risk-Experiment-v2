@@ -9,15 +9,18 @@
 
 {% if player.id_in_group == 2 %}
 
-Thank you for participating in this study! You will receive {{ BasePay }}. Your participation code is <b>{{ Code }}</b> please write it down and save it to receive your payment.<br><br>
+Thank you for participating in this study! <br><br>
+You will receive {{ BasePay }}. Your participation code is <b>{{ Code }}</b>. Please write it down and save it to receive your payment.<br><br>
 
 {% else %}
 Thank you for participating in this study!
 
-The evaluation you received from your manager was: {{ Evaluation }}.<br>
+The evaluation you received from your manager was:
+
+{{ Evaluation }}.<br><br>
 <img src="{% static 'global/Evaluation.jpg' %}"/><br><br>
 
-You will receive {{ BasePay }}. Your participation code is <b>{{ Code }}</b> please write it down and save it to receive your payment.<br><br>
+You will receive {{ BasePay }}. Your participation code is <b>{{ Code }}</b>. Please write it down and save it to receive your payment.<br><br>
 {% endif %}
 
     {% next_button %}

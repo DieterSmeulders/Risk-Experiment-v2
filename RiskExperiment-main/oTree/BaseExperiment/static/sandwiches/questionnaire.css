@@ -1,0 +1,52 @@
+.col-form-label {
+    font-weight: normal;
+}
+
+.field-scale .options {
+    display: flex;
+    align-items: center;
+}
+
+.field-scale .scale-label {
+    display: inline-block;
+    flex: 1;
+}
+
+.field-scale .form-check {
+    display: inline-block;
+    flex: 0;
+    margin: 0 1em;
+    text-align: center;
+}
+
+.field-scale .form-check-input {
+    float: none;
+}
+
+.scale-label-left {
+    text-align: right;
+}
+
+.scale-label-right {
+    text-align: left;
+}
+
+.fields-grid {
+    margin-bottom: 1rem;
+}
+
+.fields-grid .scale-label {
+    font-weight: normal;
+    padding: 0 1em;
+    width: 4.2em;
+}
+
+.fields-grid td, .fields-grid th {
+    text-align: center;
+}
+
+.fields-grid .col-form-label {
+    text-align: left;
+    max-width: 50em;
+
+}

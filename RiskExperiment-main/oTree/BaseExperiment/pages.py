@@ -242,6 +242,14 @@ class N6SPEvaluation(Page):
         return self.player.id_in_group == 2
 
 
+class Post1Quality2temp (Page):
+    form_model = 'player'
+    form_fields = ['S1', 'S2', 'S3', 'S4', 'S5', 'S6']
+
+    def is_displayed(self):
+        return self.player.id_in_group == 2
+
+
 class Post1Quality1(Page):
     form_model = 'player'
     form_fields = ['closure1', 'closure2', 'closure3', 'closure4', 'closure5', 'closure6']
@@ -357,10 +365,12 @@ class Results(Page):
         return dict(Evaluation=self.group.get_player_by_id(2).get_Evaluation_display(), BasePay=Constants.BasePay,Code=self.participant.code)
 
 
-page_sequence = [_PreStartIntro, _PrestartWait, M1IntroPage, M2IntroPage2, M3PlayerIntroPage, M3Shop, M4LocationChoice2,
+page_sequence = [_PreStartIntro, _PrestartWait, M1IntroPage, M2IntroPage2, M3PlayerIntroPage, M3Shop, M4LocationChoice1,
+                 M4LocationChoice2,
                  WRAlloc, N1SPLocation, M5LocationApproval,  M6CultureCondition, M7procedure, M10AfterPractice,
                  M11ComprehensionSurvey1, M11ComprehensionSurvey2, M12Round1, M13AfterRound1Game,
-                 M14RiskEvent, M15ReportingScreen, WReport, WReport2, WReport3, N6SPEvaluation, M16PostExpQuest, Post1Quality1, Post1Quality2, Post2importance,
+                 M14RiskEvent, M15ReportingScreen, WReport, WReport2, WReport3, N5SPBefReporting,
+                 N6SPEvaluation, M16PostExpQuest, Post1Quality2temp, Post1Quality1, Post1Quality2, Post2importance,
                  Post3image1, Post4factor, Post5trust, Post6oblig, Post7perf,
                  Post8mansafetycheck, Post9manvoluntarycheck, Post10volexp, Post11riskattitude1,
                  Post12optimism, Post14gender, Post15GenQuest, Results]
