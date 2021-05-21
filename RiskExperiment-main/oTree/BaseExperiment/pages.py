@@ -7,19 +7,20 @@ from .recipes import RECIPES, INGREDIENTS, images_map
 
 IMAGES = images_map(INGREDIENTS)
 
+class _PreStartIntro(Page):
+    pass
+class _PrestartWait(WaitPage):
+    pass
 
 class M1IntroPage(Page):
     def vars_for_template(self):
         return dict(BasePay=Constants.BasePay)
 
-
 class M2IntroPage2(Page):
     pass
 
-
 class M3PlayerIntroPage(Page):
     pass
-
 
 class M3Shop(Page):
     live_method = "handle_message"
@@ -28,7 +29,7 @@ class M3Shop(Page):
         return dict(ingredients=INGREDIENTS, menu=RECIPES)
 
     def js_vars(self):
-        return dict(duration=180, menu=RECIPES, images=IMAGES)
+        return dict(duration=120, menu=RECIPES, images=IMAGES)
 
     def is_displayed(self):
         return self.player.id_in_group == 1
@@ -62,16 +63,7 @@ class N1SPLocation(Page):
         return self.player.id_in_group == 2
 
 class WRAlloc(WaitPage):
-    pass
-
-class SPLocation2(Page):
-    form_model = 'player'
-
-    def vars_for_template(self):
-        return dict(northernlocation=self.group.get_player_by_id(1).NLocationChoice)
-
-    def is_displayed(self):
-        return self.player.id_in_group == 2
+    body_text = "The shop manager is getting familiar with her/his task, and is selecting a location for the new shop. Please wait. This may take up to 3 minutes."
 
 class M6CultureCondition(Page):
     pass
@@ -79,13 +71,12 @@ class M6CultureCondition(Page):
 class M7procedure(Page):
     pass
 
-
 class M10AfterPractice(Page):
     def is_displayed(self):
         return self.player.id_in_group == 1
 
     def vars_for_template(self):
-        return dict(BasePrice=Constants.BasePrice, BasePay=Constants.BasePay)
+        return dict(BasePrice=Constants.BasePrice, BasePay=Constants.BasePay,northernlocation=self.group.get_player_by_id(1).NLocationChoice)
 
     # Reset Game Values
     def before_next_page(self):
@@ -180,8 +171,12 @@ class M13AfterRound1Game(Page):
     def is_displayed(self):
         return self.player.id_in_group == 1
 
+    def vars_for_template(self):
+        return dict(northernlocation=self.group.get_player_by_id(1).NLocationChoice)
 
 class M14RiskEvent(Page):
+    def vars_for_template(self):
+        return dict(northernlocation=self.group.get_player_by_id(1).NLocationChoice)
     def is_displayed(self):
         return self.player.id_in_group == 1
 
@@ -191,7 +186,7 @@ class M15ReportingScreen(Page):
 
     def vars_for_template(self):
         revenue = self.player.revenue
-        return dict(revenue=revenue)
+        return dict(revenue=revenue,northernlocation=self.group.get_player_by_id(1).NLocationChoice)
 
     def get_form_fields(self):
         if self.group.reportingcondition == 'mandatory':
@@ -206,7 +201,21 @@ class AfterRound1Report(Page):
     def is_displayed(self):
         return self.player.id_in_group == 1
 
-class WReport(WaitPage):
+class WReport(Page):
+#    timer_text = 'The shop manager is making and selling sandwiches. Please Wait:'
+#    timeout_seconds = 360
+    timeout_seconds = 90
+
+    def is_displayed(self):
+        return self.player.id_in_group == 2
+
+class WReport2(Page):
+    timeout_seconds =  200
+
+    def is_displayed(self):
+        return self.player.id_in_group == 2
+
+class WReport3(WaitPage):
     template_name = 'global/RiskWaitPage.html'
 
     def is_displayed(self):
@@ -348,11 +357,10 @@ class Results(Page):
         return dict(Evaluation=self.group.get_player_by_id(2).get_Evaluation_display(), BasePay=Constants.BasePay,Code=self.participant.code)
 
 
-page_sequence = [M1IntroPage, M2IntroPage2, M3PlayerIntroPage, M3Shop, M4LocationChoice1, M4LocationChoice2,
-                 M5LocationApproval, WRAlloc, N1SPLocation,
-                 M6CultureCondition, M7procedure, M10AfterPractice,
+page_sequence = [_PreStartIntro, _PrestartWait, M1IntroPage, M2IntroPage2, M3PlayerIntroPage, M3Shop, M4LocationChoice2,
+                 WRAlloc, N1SPLocation, M5LocationApproval,  M6CultureCondition, M7procedure, M10AfterPractice,
                  M11ComprehensionSurvey1, M11ComprehensionSurvey2, M12Round1, M13AfterRound1Game,
-                 M14RiskEvent, M15ReportingScreen, WReport, N6SPEvaluation, M16PostExpQuest, Post1Quality1, Post1Quality2, Post2importance,
+                 M14RiskEvent, M15ReportingScreen, WReport, WReport2, WReport3, N6SPEvaluation, M16PostExpQuest, Post1Quality1, Post1Quality2, Post2importance,
                  Post3image1, Post4factor, Post5trust, Post6oblig, Post7perf,
                  Post8mansafetycheck, Post9manvoluntarycheck, Post10volexp, Post11riskattitude1,
                  Post12optimism, Post14gender, Post15GenQuest, Results]

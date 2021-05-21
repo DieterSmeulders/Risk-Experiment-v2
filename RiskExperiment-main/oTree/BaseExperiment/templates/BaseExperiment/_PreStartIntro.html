@@ -1,0 +1,14 @@
+{% extends "global/Page.html" %}
+{% load otree static %}
+
+{% block title %}
+
+{% endblock %}
+
+{% block content %}
+Welcome, and thank you for participating in the study!<br><br>
+
+Please do not start the study before your assigned timeslot. When you are ready to begin, please click the next button to begin waiting for other players. If no other players arrive after 10 minutes, please contact the professor.<br><br>
+{% next_button %}
+
+{% endblock %}
