@@ -270,41 +270,27 @@ class Player(BasePlayer):
         choices=[[1, 'Sales revenue is the number of clients attracted.'],
                  [2, 'Sales revenue is the number of sandwiches made.'],
                  [3, 'Sales revenue is the product of the number of sandwiches made '
-                     'and the selling price of each sandwich. The current selling price in this location is about 1 euro.']],
+                     'and the selling price of each sandwich. '
+                     'The current selling price in this location is about 1 euro.']],
         widget=widgets.RadioSelectHorizontal
     )
     Q6 = models.IntegerField(
-        label='6. What is the risk reporting policy at AC Company?',
-        choices=[[1, 'The company has a mandatory risk reporting policy: '
-                     'the shop manager is required to report '
-                     'the risks that could impact his/her sales revenue.'],
-                 [2, 'The company has a voluntary risk reporting policy: '
-                     'the shop manager can report the risks '
-                     'that could impact her/his sales revenue if she/he wishes.']],
+        label='6. Does AC Company adopt a mandatory risk reporting policy?',
+        choices=[[1, 'Yes'], [2, 'No']],
         widget=widgets.RadioSelectHorizontal
     )
     Q7 = models.IntegerField(
-        label='7. How is the company’s culture?',
-        choices=[[1, 'The Company promotes a climate of doing things with an adventurous spirit. '
-                     'People value working in a trial and error way and encourage speaking out freely.'],
-                 [2, 'The Company promotes a climate of doing things accurately. '
-                     'People value working in in a proven way and encourage looking before leaping.']],
+        label='7. At AC Company, can people easily ask others for help in the face of difficulty?',
+        choices=[[1, 'Yes'],
+                 [2, 'No']],
         widget=widgets.RadioSelectHorizontal
     )
     Q8 = models.IntegerField(
-        label='8. How do people in the company interact with each other?',
-        choices=[[1, 'People appreciate each other’s efforts. '
-                     'No negative comments are made about those who make mistakes. '
-                     'People easily ask others for help in the face of difficulties. '
-                     'People are therefore comfortable talking to others about what could go wrong. '],
-                 [2, 'People monitor each other’s efforts. Negative comments are made about those who make mistakes. '
-                     'People hardly ask others for help in the face of difficulties. '
-                     'People are therefore uncomfortable talking to others about what could go wrong.']],
+        label='8. At AC Company, can people talk to others about what could go wrong without being criticized?',
+        choices=[[1, 'Yes'],
+                 [2, 'No']],
         widget=widgets.RadioSelectHorizontal
     )
-    NReportedPerf = models.IntegerField(
-        label='Please report your sales revenue below.',
-        min=0, max=30)
 
     NReportedRiskManD = models.LongStringField(
         label='You are now obliged to report on risks to your sales revenue (if any) here.'
