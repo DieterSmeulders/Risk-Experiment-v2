@@ -94,19 +94,20 @@ class M11ComprehensionSurvey1(Page):
     def Q2_error_message(self, value):
         print('Answer to Q2 is', value)
         if value != 1:
-            return 'Only the regional manager has access to the local market report.'
+            return 'Only the shop manager has access to the market assessment.'
     def Q3_error_message(self, value):
         print('Answer to Q3 is', value)
         if value != 2:
-            return 'The regional manager has 5 minutes to make sandwiches.'
+            return 'The shop manager has 5 minutes to make sandwiches.'
     def Q4_error_message(self, value):
         print('Answer to Q4 is', value)
         if value != 2:
-            return 'The key responsibility of the regional manager is Increasing the sales performance in the region.'
+            return 'The supervisor will rate the performance of the shop manager.'
     def Q5_error_message(self, value):
         print('Answer to Q5 is', value)
         if value != 3:
-            return 'Sales performance is the multiplication of the number of saleable sandwiches made and the selling price of each sandwich in the region.The current selling price is 1 EUR.'
+            return 'Sales revenue is the product of the number of sandwiches made ' \
+                   'and the selling price of each sandwich. The current selling price is 1 EUR.'
 
 
 class M11ComprehensionSurvey2(Page):

@@ -249,7 +249,7 @@ class Player(BasePlayer):
         widget=widgets.RadioSelectHorizontal
     )
     Q2 = models.IntegerField(
-        label='2. Who has access to the local market survey reports in the region?',
+        label='2. Who has access to the market assessment?',
         choices=[[1, 'Only the shop manager'], [2, 'Only the supervisor'],
                  [3, 'Both the shop manager and the supervisor']],
         widget=widgets.RadioSelectHorizontal
@@ -261,7 +261,7 @@ class Player(BasePlayer):
     )
     Q4 = models.IntegerField(
         label='4. What will the supervisor do?',
-        choices=[[1, 'Decide the location of the new shop.'], [2, 'The supervisor will rate the performance of the shop manager '
+        choices=[[1, 'Decide the location of the new shop.'], [2, 'Rate the performance of the shop manager '
                                             'based on his/her decision making and sales revenue '
                                             'in a range from 1 (Very poor) to 5 (Excellent)']],
         widget=widgets.RadioSelectHorizontal
@@ -273,7 +273,7 @@ class Player(BasePlayer):
                  [3, 'Sales revenue is the product of the number of sandwiches made '
                      'and the selling price of each sandwich. '
                      'The current selling price in this location is about 1 euro.']],
-        widget=widgets.RadioSelectHorizontal
+        widget=widgets.RadioSelect
     )
     Q6 = models.IntegerField(
         label='6. Does AC Company adopt a mandatory risk reporting policy?',
