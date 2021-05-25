@@ -8,9 +8,9 @@
 
 <b>The company has now opened a shop in the location {% if northernlocation == 1 %} A {% else %} B {% endif %} that you have chosen.</b><br><br>
 
-Get ready to start working in the shop!<br>
+Get ready to start working in the shop!<br><br>
 You have 5 minutes to make as many sandwiches as you can. Your revenue performance is calculated as the number of sandwiches you make multiplied by the selling price of each sandwich.
-The current selling price in this location is <b> {{ BasePrice }}.</b><br><br>
+The current selling price in this location is <b> {{ BasePrice|to0 }} euro.</b><br><br>
 
 Before you start, please answer a few comprehension questions to ensure that you have fully understood the instructions.<br><br>
 

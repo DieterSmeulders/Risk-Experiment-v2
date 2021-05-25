@@ -63,7 +63,7 @@ class N1SPLocation(Page):
         return self.player.id_in_group == 2
 
 class WRAlloc(WaitPage):
-    body_text = "The shop manager is getting familiar with her/his task, and is selecting a location for the new shop. Please wait. This may take up to 3 minutes."
+    body_text = "The shop manager is getting familiar with her/his task, and is selecting a location for the new shop. Please wait. This may take up to 5 minutes."
 
 class M6CultureCondition(Page):
     pass
@@ -290,7 +290,7 @@ class Post3image1(Page):
 
 class Post4factor(Page):
     form_model = 'player'
-    form_fields = ['factor1', 'factor2', 'factor3', 'factor4', 'factor5', 'factor6', 'factor7', 'factor8']
+    form_fields = ['factor1', 'factor2', 'factor3', 'factor4', 'factor5', 'factor6', 'factor7']
 
     def is_displayed(self):
         return self.player.id_in_group == 1

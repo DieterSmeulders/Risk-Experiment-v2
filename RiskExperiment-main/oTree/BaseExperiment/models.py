@@ -302,7 +302,7 @@ class Player(BasePlayer):
     NReportedRiskVol = models.LongStringField(
         label='You are now allowed to report on risks to your sales revenue (if any) here.'
               ' Note that you can leave this box blank and the supervisor will not receive your report.'
-              'In case you identified no risk, you can say so, if you wish.',
+              ' In case you identified no risk, you can say so, if you wish.',
         blank=True
     )
 
@@ -426,37 +426,37 @@ class Player(BasePlayer):
         widget=widgets.RadioSelectHorizontal
     )
     image1 = models.IntegerField(
-        label='the superior would have a negative image of me',
+        label='...the superior would have a negative image of me',
         choices=[[1, 'Strongly disagree'], [2, ''], [3, ''], [4, ''], [5, ''], [6, ''], [7, 'Strongly agree']],
         widget=widgets.RadioSelectHorizontal
     )
     image2 = models.IntegerField(
-        label='my image in the eyes of the supervisor would be improved',
+        label='...my image in the eyes of the supervisor would be improved',
         choices=[[1, 'Strongly disagree'], [2, ''], [3, ''], [4, ''], [5, ''], [6, ''], [7, 'Strongly agree']],
         widget=widgets.RadioSelectHorizontal
     )
     image3 = models.IntegerField(
-        label='I would look bad in the eyes of the supervisor',
+        label='...I would look bad in the eyes of the supervisor',
         choices=[[1, 'Strongly disagree'], [2, ''], [3, ''], [4, ''], [5, ''], [6, ''], [7, 'Strongly agree']],
         widget=widgets.RadioSelectHorizontal
     )
     image4 = models.IntegerField(
-        label='the supervisor would think better of me',
+        label='...the supervisor would think better of me',
         choices=[[1, 'Strongly disagree'], [2, ''], [3, ''], [4, ''], [5, ''], [6, ''], [7, 'Strongly agree']],
         widget=widgets.RadioSelectHorizontal
     )
     image5 = models.IntegerField(
-        label='the supervisor would think worse of me',
+        label='...the supervisor would think worse of me',
         choices=[[1, 'Strongly disagree'], [2, ''], [3, ''], [4, ''], [5, ''], [6, ''], [7, 'Strongly agree']],
         widget=widgets.RadioSelectHorizontal
     )
     image6 = models.IntegerField(
-        label='the supervisor would appreciate it',
+        label='...the supervisor would appreciate it',
         choices=[[1, 'Strongly disagree'], [2, ''], [3, ''], [4, ''], [5, ''], [6, ''], [7, 'Strongly agree']],
         widget=widgets.RadioSelectHorizontal
     )
     image7 = models.IntegerField(
-        label='the supervisor would penalize me',
+        label='...the supervisor would penalize me',
         choices=[[1, 'Strongly disagree'], [2, ''], [3, ''], [4, ''], [5, ''], [6, ''], [7, 'Strongly agree']],
         widget=widgets.RadioSelectHorizontal
     )
@@ -466,37 +466,32 @@ class Player(BasePlayer):
         widget=widgets.RadioSelectHorizontal
     )
     factor2 = models.IntegerField(
-        label='..provide all the information that you had about your region to the supervisor?',
-        choices=[[1, 'Little'], [2, ''], [3, ''], [4, ''], [5, ''], [6, ''], [7, 'Very much']],
-        widget=widgets.RadioSelectHorizontal
-    )
-    factor3 = models.IntegerField(
-        label='..be honest in your report?',
-        choices=[[1, 'Little'], [2, ''], [3, ''], [4, ''], [5, ''], [6, ''], [7, 'Very much']],
-        widget=widgets.RadioSelectHorizontal
-    )
-    factor4 = models.IntegerField(
         label='..show the supervisor that you made the right location choice?',
         choices=[[1, 'Little'], [2, ''], [3, ''], [4, ''], [5, ''], [6, ''], [7, 'Very much']],
         widget=widgets.RadioSelectHorizontal
     )
-    factor5 = models.IntegerField(
+    factor3 = models.IntegerField(
         label='..report risks in such a way that could have positively impact your performance evaluation?',
         choices=[[1, 'Little'], [2, ''], [3, ''], [4, ''], [5, ''], [6, ''], [7, 'Very much']],
         widget=widgets.RadioSelectHorizontal
     )
-    factor6 = models.IntegerField(
+    factor4 = models.IntegerField(
         label='..look good in the eyes of the supervisor?',
         choices=[[1, 'Little'], [2, ''], [3, ''], [4, ''], [5, ''], [6, ''], [7, 'Very much']],
         widget=widgets.RadioSelectHorizontal
     )
-    factor7 = models.IntegerField(
+    factor5 = models.IntegerField(
         label='..look competent in the eyes of the supervisor?',
         choices=[[1, 'Little'], [2, ''], [3, ''], [4, ''], [5, ''], [6, ''], [7, 'Very much']],
         widget=widgets.RadioSelectHorizontal
     )
-    factor8 = models.IntegerField(
+    factor6 = models.IntegerField(
         label='..avoid creating a negative impression on the supervisor?',
+        choices=[[1, 'Little'], [2, ''], [3, ''], [4, ''], [5, ''], [6, ''], [7, 'Very much']],
+        widget=widgets.RadioSelectHorizontal
+    )
+    factor7 = models.IntegerField(
+        label='..be honest in your report?',
         choices=[[1, 'Little'], [2, ''], [3, ''], [4, ''], [5, ''], [6, ''], [7, 'Very much']],
         widget=widgets.RadioSelectHorizontal
     )
