@@ -1,1 +1,2 @@
 otree>=2.1.28
+otreeutils>=0.10.0

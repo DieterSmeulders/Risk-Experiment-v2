@@ -1,5 +1,6 @@
 import random
 import itertools
+import otreeutils
 from otree.api import (
     models,
     widgets,
@@ -260,7 +261,7 @@ class Player(BasePlayer):
     )
     Q4 = models.IntegerField(
         label='4. What will the supervisor do?',
-        choices=[[1, 'I do not know.'], [2, 'The supervisor will rate the performance of the shop manager '
+        choices=[[1, 'Decide the location of the new shop.'], [2, 'The supervisor will rate the performance of the shop manager '
                                             'based on his/her decision making and sales revenue '
                                             'in a range from 1 (Very poor) to 5 (Excellent)']],
         widget=widgets.RadioSelectHorizontal

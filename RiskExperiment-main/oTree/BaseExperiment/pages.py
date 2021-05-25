@@ -362,7 +362,8 @@ class Post15GenQuest(Page):
 
 class Results(Page):
     def vars_for_template(self):
-        return dict(Evaluation=self.group.get_player_by_id(2).get_Evaluation_display(), BasePay=Constants.BasePay,Code=self.participant.code)
+        Partcode = self.participant.code[:3]
+        return dict(Evaluation=self.group.get_player_by_id(2).get_Evaluation_display(), BasePay=Constants.BasePay,Code=Partcode)
 
 
 page_sequence = [_PreStartIntro, _PrestartWait, M1IntroPage, M2IntroPage2, M3PlayerIntroPage, M3Shop, M4LocationChoice1,
