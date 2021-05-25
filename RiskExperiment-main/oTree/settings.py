@@ -32,7 +32,11 @@ LANGUAGE_CODE = 'en'
 REAL_WORLD_CURRENCY_CODE = 'EUR'
 USE_POINTS = False
 
-ROOMS = []
+ROOMS = [dict(
+        name='MCCM',
+        display_name='Management Control and Cost Management Study',
+#        participant_label_file='_rooms/econ101.txt',
+    )]
 
 ADMIN_USERNAME = 'admin'
 # for security, best to set admin password in an environment variable
