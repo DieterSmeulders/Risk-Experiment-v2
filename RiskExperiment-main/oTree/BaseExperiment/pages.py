@@ -65,6 +65,9 @@ class N1SPLocation(Page):
 class WRAlloc(WaitPage):
     body_text = "The shop manager is getting familiar with her/his task, and is selecting a location for the new shop. Please wait. This may take up to 5 minutes."
 
+    def is_displayed(self):
+        return self.player.id_in_group == 2
+
 class M6CultureCondition(Page):
     pass
 

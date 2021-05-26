@@ -4,7 +4,7 @@
     <th class="col-form-label">{{field.label}}</th>
     {% for choice in field %}
     <td>
-        <input class="form-check-input" type="radio" name="{{field.name}}" value="{{choice}}">
+        <input class="form-check-input" type="radio" name={{field.name}} value={{choice}}>
     </td>
     {% endfor %}
 </tr>
